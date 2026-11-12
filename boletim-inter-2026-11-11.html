@@ -110,6 +110,48 @@ details li:target{background:var(--rosa)}
 footer{padding:12px 0 20px;font-size:10.5px;color:var(--txt2)}
 .topo{display:inline-flex;align-items:center;min-height:44px;font-weight:700}
 
+
+/* Card de análise da IA */
+.ia{margin-top:10px;background:var(--branco);border:2px solid var(--verm);border-radius:12px;padding:12px;box-shadow:0 4px 0 var(--rosa)}
+.ia-head h3{font-size:16px;line-height:1.2;margin:6px 0 2px;color:var(--txt)}
+.ia-label{display:inline-flex;align-items:center;min-height:26px;padding:0 10px;border-radius:999px;background:var(--verm);color:#fff;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.ia-kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin:10px 0}
+.ia-kpi{background:var(--bg);border:1px solid var(--borda);border-radius:10px;padding:8px}
+.ia-kpi .v{display:block;font-size:32px;line-height:1;font-weight:800;color:var(--verm);font-variant-numeric:tabular-nums}
+.ia-kpi .l{font-size:10.5px;color:var(--txt2)}
+.ia-kpi.destaque{background:var(--rosa);border-color:var(--verm-suave)}
+.ia-grid{display:grid;grid-template-columns:1fr;gap:8px}
+.ia-bloco{border:1px solid var(--borda);border-radius:10px;padding:10px}
+.ia-full{margin-top:8px}
+.ia-bloco h4{font-size:12px;margin:0 0 8px}
+.rbar{display:grid;grid-template-columns:86px 1fr 40px;align-items:center;gap:6px;margin:5px 0;font-size:12px}
+.rbar .trk{height:14px;background:var(--bg);border-radius:4px;overflow:hidden}
+.rbar .fill{height:100%;background:var(--verm-suave);border-radius:4px}
+.rbar.inter .fill{background:var(--verm)}
+.rbar.inter span:first-child{font-weight:700}
+.rbar b{text-align:right;font-variant-numeric:tabular-nums}
+.rbar:focus-visible{outline:3px solid var(--verm)}
+.ia-tab{width:100%;border-collapse:collapse;font-size:12px;font-variant-numeric:tabular-nums}
+.ia-tab th{font-size:10.5px;color:var(--txt2);text-align:left;padding:4px;border-bottom:1px solid var(--borda)}
+.ia-tab td{padding:6px 4px;border-bottom:1px solid var(--borda)}
+.r-alto{color:var(--verm)}.r-medio{color:var(--amar)}.r-baixo{color:var(--verde)}
+.jogo{margin:0 0 8px}
+.jogo .t{display:flex;justify-content:space-between;gap:6px;font-size:11.5px;font-weight:700}
+.jogo .t span{font-weight:400;color:var(--txt2);font-size:10.5px}
+.stack{display:flex;height:18px;border-radius:5px;overflow:hidden;margin-top:3px;font-size:10px;font-weight:700;color:#fff}
+.stack div{display:flex;align-items:center;justify-content:center;min-width:0}
+.stack .e{color:var(--txt)}
+.cen,.cd{list-style:none;margin:0;padding:0;font-size:12px}
+.cen li{display:flex;justify-content:space-between;gap:8px;padding:5px 0;border-bottom:1px solid var(--borda)}
+.cen li b{font-variant-numeric:tabular-nums}
+.cd li{padding:4px 0}
+.cd b{color:var(--verm);margin-right:4px}
+.ia-veredito{margin-top:8px;background:var(--rosa);border-radius:10px;padding:10px;font-size:12px}
+.ia-veredito p+p{margin-top:6px}
+.ia-veredito p{margin:0}
+.ia-met{margin-top:8px;border-radius:10px}
+.ia-met p{font-size:11px;color:var(--txt2);margin:0 0 10px}
+
 @media (min-width:760px){
   body{font-size:13px}
   .wrap{padding:0 20px}
@@ -121,6 +163,11 @@ footer{padding:12px 0 20px;font-size:10.5px;color:var(--txt2)}
   .manchete{font-size:25px}
   .painel{grid-template-columns:1fr 1fr}
   .painel .full{grid-column:1/-1}
+  .ia{padding:16px}
+  .ia-head h3{font-size:19px}
+  .ia-kpis{grid-template-columns:repeat(4,1fr)}
+  .ia-kpi .v{font-size:36px}
+  .ia-grid{grid-template-columns:1fr 1fr}
   .ag thead{position:static;width:auto;height:auto;clip:auto;overflow:visible}
   .ag thead th{text-align:left;font-size:10.5px;color:var(--txt2);padding:6px;border-bottom:2px solid var(--borda)}
   .ag tbody tr{display:table-row}
@@ -239,6 +286,83 @@ footer{padding:12px 0 20px;font-size:10.5px;color:var(--txt2)}
       <p class="nota">Desempate: pontos, depois vitórias. Vitória fica à frente do Inter por ter 10 vitórias.</p>
     </div>
   </div>
+
+  <article class="ia" id="analise-ia" aria-labelledby="ia-t">
+    <div class="ia-head">
+      <span class="ia-label">✦ Análise proveniente de IA</span>
+      <h3 id="ia-t">Análise proveniente de IA com relação ao rebaixamento</h3>
+      <p class="nota">Simulação feita pelo Claude: 200 mil campeonatos sorteados a partir da tabela real após a 34ª rodada e dos 41 jogos restantes · 11/11/2026, 22h40</p>
+    </div>
+
+    <div class="ia-kpis">
+      <div class="ia-kpi destaque"><span class="v">34%</span><span class="l">risco de queda do Inter</span></div>
+      <div class="ia-kpi"><span class="v">43,3</span><span class="l">pts projetados (faixa 40–47)</span></div>
+      <div class="ia-kpi"><span class="v">43</span><span class="l">pts do 16º na mediana (41–44)</span></div>
+      <div class="ia-kpi"><span class="v">44</span><span class="l">meta realista: risco cai a 5%</span></div>
+    </div>
+
+    <div class="ia-grid">
+      <div class="ia-bloco">
+        <h4>Risco de rebaixamento por clube</h4>
+        <div class="rbars" id="ia-risco"></div>
+        <p class="nota">Remo (99,9%) e Chapecoense (100%) fora do gráfico. Sobram duas vagas no Z4 para sete clubes.</p>
+      </div>
+
+      <div class="ia-bloco">
+        <h4>Pontuação final do Inter × risco</h4>
+        <table class="ia-tab">
+          <thead><tr><th scope="col">Termina com</th><th scope="col">Chance de chegar</th><th scope="col">Risco de queda</th></tr></thead>
+          <tbody>
+            <tr><td>41 pts</td><td>11%</td><td><b class="r-alto">78%</b></td></tr>
+            <tr><td>42 pts</td><td>17%</td><td><b class="r-alto">50%</b></td></tr>
+            <tr><td>43 pts</td><td>11%</td><td><b class="r-medio">29%</b></td></tr>
+            <tr><td>44 pts</td><td>14%</td><td><b class="r-baixo">5%</b></td></tr>
+            <tr><td>45+ pts</td><td>34%</td><td><b class="r-baixo">&lt;1%</b></td></tr>
+          </tbody>
+        </table>
+        <p class="nota">45 pts quase eliminam o risco nesta simulação, mas não são garantia matemática.</p>
+      </div>
+
+      <div class="ia-bloco">
+        <h4>Jogo a jogo: chances do Inter</h4>
+        <div id="ia-jogos"></div>
+        <div class="legenda"><span><i style="background:#1F6B3A"></i>Vitória</span><span><i style="background:#C9B8BD"></i>Empate</span><span><i style="background:#B82C42"></i>Derrota</span></div>
+      </div>
+
+      <div class="ia-bloco">
+        <h4>Cenários decisivos</h4>
+        <ul class="cen">
+          <li><span>Vence o Vasco (19/11)</span><b class="r-baixo">12%</b></li>
+          <li><span>Empata com o Vasco</span><b class="r-medio">36%</b></li>
+          <li><span>Perde para o Vasco</span><b class="r-alto">48%</b></li>
+          <li><span>Vence Vitória e Bragantino no Beira-Rio</span><b class="r-baixo">&lt;1%</b></li>
+          <li><span>Vence só um dos dois em casa</span><b class="r-medio">25%</b></li>
+          <li><span>Não vence nenhum em casa</span><b class="r-alto">72%</b></li>
+        </ul>
+        <p class="nota">Risco final de queda em cada cenário.</p>
+      </div>
+    </div>
+
+    <div class="ia-bloco ia-full">
+      <h4>Confrontos diretos que podem decidir</h4>
+      <ul class="cd">
+        <li><b>Qua 18/11</b> Corinthians x Botafogo · Grêmio x Bahia</li>
+        <li><b>Seg 23/11</b> Internacional x Vitória — o jogo de seis pontos do Inter</li>
+        <li><b>Dom 29/11</b> Corinthians x Grêmio — um dos dois rivais perde pontos</li>
+        <li><b>Qua 02/12</b> Grêmio x Mirassol · Vasco x Vitória · Remo x Corinthians · Cruzeiro x Internacional, todos às 21h30</li>
+      </ul>
+    </div>
+
+    <div class="ia-veredito">
+      <p><b>Leitura da IA:</b> o cenário mais provável é o Inter escapar (≈2 em 3 simulações), mas com margem curta: a posição final mais frequente é 17º (19%), logo à frente do 16º (17%). O ponto a favor é o saldo de gols (−4), o melhor entre os ameaçados, que sugere time mais forte do que a pontuação mostra. Contra: o calendário fora de casa é duro, e hoje o Inter fica atrás do Vitória no critério de vitórias (9 a 10). Grêmio (54%), Vitória (43%) e Corinthians (42%) correm mais risco hoje.</p>
+      <p><b>Meta objetiva:</b> 6 pontos no Beira-Rio. Com Vitória e Bragantino vencidos, o risco cai para menos de 1%; sem nenhuma vitória em casa, sobe para 72%.</p>
+    </div>
+
+    <details class="ia-met">
+      <summary>Como a simulação foi feita</summary>
+      <p>Modelo de Poisson: cada clube recebe uma força de ataque e de defesa calculada pelos gols pró e contra nos 34 jogos (com ajuste à média da liga), mais vantagem de mando. Cada um dos 41 jogos restantes, incluindo Chapecoense x Vasco (adiado, 14/11), é sorteado 200 mil vezes com variação aleatória na força dos times; o desempate segue pontos, vitórias, saldo e gols pró. O modelo não considera lesões, suspensões, troca de técnico ou motivação. Como checagem, o modelo independente do ValorFinal 2.0 chega a 35,7% para o Inter, perto dos 34% daqui. É estimativa, não previsão garantida.</p>
+    </details>
+  </article>
 </section>
 
 <section id="agenda" aria-labelledby="h-ag">
@@ -409,6 +533,26 @@ footer{padding:12px 0 20px;font-size:10.5px;color:var(--txt2)}
   document.querySelectorAll("#tabela th button").forEach(function(b){b.addEventListener("click",function(){var k=b.dataset.ord;if(ord.k===k)ord.asc=!ord.asc;else{ord.k=k;ord.asc=(k==="pos"||k==="clube");}desenhaTabela();});});
   document.querySelectorAll("[data-tv]").forEach(function(b){b.addEventListener("click",function(){var so=b.dataset.tv==="conf";document.querySelectorAll("[data-tv]").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});var n=0;document.querySelectorAll("#agenda-tab tbody tr").forEach(function(tr){var mostra=!so||tr.dataset.st==="conf";tr.hidden=!mostra;if(mostra)n++;});document.getElementById("ag-vazio").hidden=n>0;document.getElementById("agenda-tab").style.display=n?"":"none";});});
   desenhaLinha();atualiza();
+})();
+</script>
+
+<script>
+(function(){
+  var risco=[["Grêmio",53.5],["Vitória",42.5],["Corinthians",42.4],["Internacional",33.9],["Mirassol",18.8],["Coritiba",4.9],["Vasco",2.1],["Botafogo",1.9]];
+  var tip=document.getElementById("tip");
+  function on(el,t){function sh(e){tip.textContent=t;tip.style.opacity=1;var r=el.getBoundingClientRect();var x=(e.clientX||r.left+20)+10,y=(e.clientY||r.top)-34;tip.style.left=Math.max(6,Math.min(x,innerWidth-230))+"px";tip.style.top=Math.max(6,y)+"px";}
+    el.addEventListener("mousemove",sh);el.addEventListener("focus",sh);el.addEventListener("mouseleave",function(){tip.style.opacity=0});el.addEventListener("blur",function(){tip.style.opacity=0});}
+  var box=document.getElementById("ia-risco");
+  risco.forEach(function(d){var r=document.createElement("div");r.className="rbar"+(d[0]==="Internacional"?" inter":"");r.tabIndex=0;
+    var pct=d[1].toFixed(1).replace(".",",");r.setAttribute("aria-label",d[0]+": "+pct+"% de risco de queda");
+    r.innerHTML="<span>"+d[0]+"</span><span class='trk'><span class='fill' style='display:block;width:"+d[1]+"%'></span></span><b>"+Math.round(d[1])+"%</b>";
+    on(r,d[0]+": "+pct+"% de risco de queda nas simulações");box.appendChild(r);});
+  var jogos=[["Vasco x Inter","Qui 19/11 · fora",30,26,44],["Inter x Vitória","Seg 23/11 · casa",51,26,23],["Inter x Bragantino","Dom 29/11 · casa",39,28,32],["Cruzeiro x Inter","Qua 02/12 · fora",23,24,53]];
+  var jb=document.getElementById("ia-jogos");
+  jogos.forEach(function(j){var d=document.createElement("div");d.className="jogo";d.tabIndex=0;
+    var txt=j[0]+": vitória "+j[2]+"%, empate "+j[3]+"%, derrota "+j[4]+"%";d.setAttribute("aria-label",txt);
+    d.innerHTML="<div class='t'>"+j[0]+"<span>"+j[1]+"</span></div><div class='stack' aria-hidden='true'><div style='width:"+j[2]+"%;background:#1F6B3A'>"+j[2]+"%</div><div class='e' style='width:"+j[3]+"%;background:#C9B8BD'>"+j[3]+"%</div><div style='width:"+j[4]+"%;background:#B82C42'>"+j[4]+"%</div></div>";
+    on(d,txt);jb.appendChild(d);});
 })();
 </script>
 </body>
