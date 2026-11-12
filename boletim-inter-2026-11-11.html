@@ -3,295 +3,457 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
 <title>Boletim do Inter — 11/11/2026</title>
-<meta name="description" content="Situação do Internacional no Brasileirão 2026: posição, próximo jogo, elenco, contexto e agenda. Edição de 11/11/2026.">
+<meta name="description" content="Situação do Internacional no Brasileirão 2026 após a 34ª rodada: tabela, próximo jogo, elenco, simulação de rebaixamento e agenda.">
 <style>
 :root{
-  --bg:#FFFAFB; --rosa:#FCECEF; --borda:#EFD9DE; --verm:#B82C42; --verm-suave:#E7A9B4;
-  --txt:#40222A; --txt2:#795B63; --branco:#FFFFFF; --verde:#1F6B3A; --verde-bg:#E6F3EA;
-  --amar:#7A5A00; --amar-bg:#FFF4D1;
+  --papel:#FFFAFB; --rosa:#FCECEF; --borda:#EFD9DE; --colorado:#B82C42; --colorado-f:#8E1F33; --colorado-s:#E7A9B4;
+  --tinta:#40222A; --tinta2:#795B63; --branco:#FFFFFF; --superficie:#FFFFFF;
+  --verde:#1F6B3A; --verde-bg:#E3F1E7; --ambar:#7A5A00; --ambar-bg:#FFF2C9; --neutro:#C9B8BD;
+  --hero-txt:#FFF6F7; --hero-sub:#F6D3D9;
+  --cond:"Avenir Next Condensed","Bahnschrift SemiCondensed","Bahnschrift","Roboto Condensed","Arial Narrow",sans-serif-condensed,system-ui,sans-serif;
+  --corpo:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+:root[data-theme="dark"]{
+  --papel:#1E1015; --rosa:#2C161E; --borda:#47262F; --colorado:#E2566C; --colorado-f:#B82C42; --colorado-s:#7A3442;
+  --tinta:#F6E9EC; --tinta2:#C7A9B1; --superficie:#271419; --branco:#271419;
+  --verde:#6FCB8D; --verde-bg:#17301F; --ambar:#F2CB5B; --ambar-bg:#3A2E0C; --neutro:#6E5960;
+  --hero-txt:#FFF6F7; --hero-sub:#F6D3D9;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --papel:#1E1015; --rosa:#2C161E; --borda:#47262F; --colorado:#E2566C; --colorado-f:#B82C42; --colorado-s:#7A3442;
+    --tinta:#F6E9EC; --tinta2:#C7A9B1; --superficie:#271419; --branco:#271419;
+    --verde:#6FCB8D; --verde-bg:#17301F; --ambar:#F2CB5B; --ambar-bg:#3A2E0C; --neutro:#6E5960;
+  }
 }
 *{box-sizing:border-box}
 [hidden]{display:none!important}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--txt);font:12px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-text-size-adjust:100%}
-a{color:var(--verm)}
-:focus-visible{outline:3px solid var(--verm);outline-offset:2px;border-radius:4px}
-.wrap{max-width:1080px;margin:0 auto;padding:0 10px}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;background:var(--papel);color:var(--tinta);font:12px/1.4 var(--corpo);-webkit-text-size-adjust:100%}
+a{color:var(--colorado)}
+:focus-visible{outline:3px solid var(--colorado);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 10px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.num-c{font-family:var(--cond);font-variant-numeric:tabular-nums;font-stretch:condensed}
+.nota{font-size:10.5px;color:var(--tinta2);margin:6px 0 0}
 
 /* Cabeçalho */
-header{padding:10px 0 6px}
-.marca{display:flex;align-items:center;gap:8px}
-.badge{width:28px;height:28px;flex:none}
-.marca b{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--verm)}
-.meta{font-size:10.5px;color:var(--txt2);margin:2px 0 0}
-h1{font-size:22px;line-height:1.15;margin:6px 0 0;letter-spacing:-.01em}
+.mast{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 0 4px}
+.marca{display:flex;align-items:center;gap:8px;min-width:0}
+.badge{width:30px;height:30px;flex:none}
+.marca b{font-family:var(--cond);font-size:16px;font-weight:700;letter-spacing:.01em;color:var(--colorado)}
+.marca small{display:block;font-size:10.5px;color:var(--tinta2);font-weight:400}
+.acoes{display:flex;gap:6px;flex:none}
+.ic{width:44px;height:44px;border-radius:12px;border:1px solid var(--borda);background:var(--superficie);color:var(--tinta);display:grid;place-items:center;cursor:pointer;padding:0}
+.ic svg{width:20px;height:20px}
+h1{font-family:var(--cond);font-size:28px;line-height:1.05;font-weight:800;margin:4px 0 8px;letter-spacing:-.01em}
 
 /* Navegação */
-nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--borda)}
-nav ul{display:flex;gap:6px;list-style:none;margin:0;padding:6px 0}
-nav a{display:flex;align-items:center;justify-content:center;min-height:44px;padding:0 14px;border:1px solid var(--borda);border-radius:999px;background:var(--branco);color:var(--txt);text-decoration:none;font-weight:600;font-size:12px}
-nav a:hover{border-color:var(--verm);color:var(--verm)}
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--papel) 92%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--borda)}
+nav ul{display:flex;gap:6px;list-style:none;margin:0;padding:6px 0;overflow-x:auto;scrollbar-width:none}
+nav a{display:flex;align-items:center;min-height:44px;padding:0 11px;border-radius:999px;color:var(--tinta);text-decoration:none;font-weight:600;font-size:12.5px;white-space:nowrap;border:1px solid transparent}
+nav a.ativo{background:var(--colorado);color:#fff}
+nav a:not(.ativo):hover{border-color:var(--borda)}
 
-section{padding-top:12px}
-h2{font-size:14px;margin:0 0 8px;color:var(--verm)}
-h3{font-size:12px;margin:0}
+section{padding-top:14px}
+h2{font-family:var(--cond);font-size:20px;font-weight:800;margin:0 0 8px;line-height:1.1}
+h3,h4{margin:0}
 
-/* Cards */
+/* Hero: a linha */
+.hero{margin-top:10px;background:var(--colorado-f);background:linear-gradient(160deg,#B82C42 0%,#8E1F33 100%);color:var(--hero-txt);border-radius:18px;padding:14px 12px;display:grid;gap:12px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;border-radius:50%;border:28px solid rgba(255,255,255,.06);pointer-events:none}
+.hero-tit{font-family:var(--cond);font-size:26px;line-height:1.05;font-weight:800;margin:0;max-width:20ch}
+.hero-sub{margin:6px 0 0;color:var(--hero-sub);font-size:12px}
+.forma{display:flex;gap:4px;align-items:center;margin-top:10px;flex-wrap:wrap}
+.forma span.t{font-size:10.5px;color:var(--hero-sub);margin-right:4px}
+.pill{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;font-family:var(--cond);font-weight:800;font-size:13px}
+.pill.v{background:#E3F1E7;color:#1F6B3A}.pill.e{background:#F3E8EB;color:#5B4148}.pill.d{background:#40222A;color:#FCECEF}
+.escada{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:6px 8px;list-style:none;margin:0}
+.escada li{display:grid;grid-template-columns:28px 1fr 34px;align-items:center;gap:6px;min-height:24px;padding:0 6px;border-radius:7px;font-size:12px}
+.escada li .p{font-family:var(--cond);font-weight:700;font-size:15px;text-align:right}
+.escada li .o{font-family:var(--cond);color:var(--hero-sub);font-size:13px}
+.escada li.z4{color:#F6D3D9}
+.escada li.inter{background:#FFF6F7;color:#8E1F33;font-weight:800;box-shadow:0 2px 0 rgba(0,0,0,.18)}
+.escada li.inter .o{color:#B82C42}
+.escada li.linha{min-height:20px;grid-template-columns:1fr auto 1fr;padding:0}
+.escada li.linha::before,.escada li.linha::after{content:"";border-top:2px dashed #FFF6F7;opacity:.85}
+.escada li.linha span{font-size:10.5px;color:#FFF6F7;padding:0 6px;font-weight:600}
+.cont{background:#FFF6F7;color:#40222A;border-radius:14px;padding:10px 12px}
+.cont .q{font-size:11px;color:#795B63;margin:0}
+.cont .jogo{font-family:var(--cond);font-size:22px;font-weight:800;color:#8E1F33;margin:2px 0}
+.relogio{display:flex;gap:6px;margin:6px 0}
+.relogio div{background:#FCECEF;border-radius:10px;padding:4px 8px;min-width:52px;text-align:center}
+.relogio b{display:block;font-family:var(--cond);font-size:26px;line-height:1.05;color:#B82C42;font-variant-numeric:tabular-nums}
+.relogio small{font-size:10px;color:#795B63}
+.cont .det{font-size:11.5px;margin:0}
+.chip{display:inline-flex;align-items:center;gap:4px;border-radius:999px;padding:2px 8px;font-size:10.5px;font-weight:700}
+.ok{background:var(--verde-bg);color:var(--verde)}
+.pend{background:var(--ambar-bg);color:var(--ambar)}
+.proj{background:var(--rosa);color:var(--colorado)}
+.cont .ok{background:#E3F1E7;color:#1F6B3A}
+
+/* Cards dos 5 pontos */
 .cards{display:grid;grid-template-columns:1fr;gap:8px}
-.card{background:var(--branco);border:1px solid var(--borda);border-radius:11px;padding:11px}
+.card{background:var(--superficie);border:1px solid var(--borda);border-radius:12px;padding:11px}
 .card.prox{background:var(--rosa)}
-.card-top{display:flex;align-items:center;gap:6px;margin-bottom:6px}
-.num{font-size:11px;font-weight:700;color:var(--verm);font-variant-numeric:tabular-nums}
-.card h3{font-size:12px;text-transform:uppercase;letter-spacing:.04em;flex:1}
+.card-top{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.card-top .n{font-family:var(--cond);font-weight:800;font-size:15px;color:var(--colorado);font-variant-numeric:tabular-nums}
+.card-top h3{font-size:12px;font-weight:700;flex:1}
 .refs{display:flex;gap:4px}
-.ref{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;border:1px solid var(--borda);border-radius:6px;font-size:10.5px;text-decoration:none;background:var(--bg);color:var(--txt2)}
-.ref:hover{color:var(--verm);border-color:var(--verm)}
+.ref{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;border:1px solid var(--borda);border-radius:6px;font-size:10.5px;text-decoration:none;background:var(--papel);color:var(--tinta2)}
+.ref:hover{color:var(--colorado);border-color:var(--colorado)}
 .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:2px 0 6px}
-.kpi{border-left:3px solid var(--verm-suave);padding-left:7px}
-.kpi .v{display:block;font-size:34px;line-height:1;font-weight:800;color:var(--verm);font-variant-numeric:tabular-nums}
-.kpi .l{font-size:10.5px;color:var(--txt2)}
-.delta{display:inline-block;font-size:10.5px;font-weight:600;color:var(--verde);background:var(--verde-bg);border-radius:6px;padding:2px 6px;margin-bottom:6px}
-.manchete{font-size:21px;line-height:1.15;font-weight:800;color:var(--verm);margin:0}
+.kpi .v{display:block;font-family:var(--cond);font-size:36px;line-height:1;font-weight:800;color:var(--colorado);font-variant-numeric:tabular-nums}
+.kpi .l{font-size:10.5px;color:var(--tinta2)}
+.delta{display:inline-block;font-size:10.5px;font-weight:700;color:var(--verde);background:var(--verde-bg);border-radius:6px;padding:2px 6px;margin-bottom:6px}
+.manchete{font-family:var(--cond);font-size:24px;line-height:1.05;font-weight:800;color:var(--colorado);margin:0}
 .faixa{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 10px;margin-bottom:6px}
-.hora{font-size:18px;font-weight:700;font-variant-numeric:tabular-nums}
+.hora{font-family:var(--cond);font-size:19px;font-weight:700;font-variant-numeric:tabular-nums}
 .card p{margin:0}
 .card p+p{margin-top:5px}
-.nota{font-size:10.5px;color:var(--txt2)}
-.tag{display:inline-block;font-size:10.5px;font-weight:700;border-radius:6px;padding:1px 6px}
-.ok{background:var(--verde-bg);color:var(--verde)}
-.pend{background:var(--amar-bg);color:var(--amar)}
-.proj{background:var(--rosa);color:var(--verm)}
 
 /* Painel */
+.strip{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
+.st{background:var(--superficie);border:1px solid var(--borda);border-radius:12px;padding:9px 10px}
+.st .l{font-size:10.5px;color:var(--tinta2)}
+.st .v{display:block;font-family:var(--cond);font-size:30px;line-height:1.05;font-weight:800;font-variant-numeric:tabular-nums}
+.st .d{font-size:10.5px;font-weight:700}
+.up{color:var(--verde)}.dn{color:var(--colorado)}
 .painel{display:grid;grid-template-columns:1fr;gap:8px;margin-top:8px}
-.bloco{background:var(--branco);border:1px solid var(--borda);border-radius:11px;padding:11px}
-.bloco h3{margin-bottom:6px}
+.bloco{background:var(--superficie);border:1px solid var(--borda);border-radius:12px;padding:11px;min-width:0}
+.bloco h3{font-size:13px;font-weight:700;margin-bottom:8px}
 .filtros{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 8px}
-.btn{min-height:44px;padding:0 12px;border:1px solid var(--borda);border-radius:999px;background:var(--branco);color:var(--txt);font:600 12px/1 inherit;font-family:inherit;cursor:pointer}
-.btn[aria-pressed="true"]{background:var(--verm);border-color:var(--verm);color:#fff}
+.btn{min-height:44px;padding:0 13px;border:1px solid var(--borda);border-radius:999px;background:var(--superficie);color:var(--tinta);font:600 12px/1 var(--corpo);cursor:pointer}
+.btn[aria-pressed="true"]{background:var(--colorado);border-color:var(--colorado);color:#fff}
 .chart svg{display:block;width:100%;height:auto;overflow:visible}
-.chart text{font-family:inherit}
-.legenda{display:flex;flex-wrap:wrap;gap:10px;font-size:10.5px;color:var(--txt2);margin-top:4px}
-.legenda i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px}
-.vazio{padding:12px;text-align:center;color:var(--txt2);background:var(--bg);border:1px dashed var(--borda);border-radius:8px;font-size:12px}
-.busca{width:100%;min-height:44px;padding:0 12px;border:1px solid var(--borda);border-radius:8px;font:12px inherit;font-family:inherit;color:var(--txt);background:var(--bg);margin-bottom:6px}
+.chart text{font-family:var(--corpo)}
+.legenda{display:flex;flex-wrap:wrap;gap:10px;font-size:10.5px;color:var(--tinta2);margin-top:6px}
+.legenda i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:-1px}
+.vazio{padding:14px;text-align:center;color:var(--tinta2);background:var(--papel);border:1px dashed var(--borda);border-radius:10px;font-size:12px}
+.busca{width:100%;min-height:44px;padding:0 12px;border:1px solid var(--borda);border-radius:10px;font:12px var(--corpo);color:var(--tinta);background:var(--papel);margin-bottom:6px}
 .tab{width:100%;border-collapse:collapse;font-size:12px;font-variant-numeric:tabular-nums}
 .tab th,.tab td{padding:6px 4px;border-bottom:1px solid var(--borda);text-align:right}
 .tab th:nth-child(2),.tab td:nth-child(2){text-align:left}
-.tab th button{all:unset;cursor:pointer;font-weight:700;font-size:10.5px;color:var(--txt2);min-height:32px;display:inline-flex;align-items:center;gap:2px}
-.tab th button:focus-visible{outline:3px solid var(--verm)}
+.tab th button{all:unset;cursor:pointer;font-weight:700;font-size:10.5px;color:var(--tinta2);min-height:32px;display:inline-flex;align-items:center;gap:2px}
+.tab th button:focus-visible{outline:3px solid var(--colorado)}
+.tab th[aria-sort="ascending"] button::after{content:"▲";font-size:8px}
+.tab th[aria-sort="descending"] button::after{content:"▼";font-size:8px}
 .tab tr.inter td{background:var(--rosa);font-weight:700}
-.tab tr.z4 td:first-child{box-shadow:inset 3px 0 0 var(--verm)}
-#tip{position:fixed;pointer-events:none;background:var(--txt);color:#fff;font-size:11px;padding:5px 8px;border-radius:6px;opacity:0;transition:opacity .1s;z-index:9;max-width:220px}
+.tab tr.z4 td:first-child{box-shadow:inset 3px 0 0 var(--colorado)}
+.donut-wrap{display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:center}
+.gols{display:grid;gap:6px;font-size:12px}
+.gols .b{height:10px;border-radius:5px;background:var(--papel);overflow:hidden;margin-top:3px}
+.gols .b span{display:block;height:100%;border-radius:5px}
+#tip{position:fixed;pointer-events:none;background:#40222A;color:#fff;font-size:11px;padding:6px 8px;border-radius:8px;opacity:0;transition:opacity .1s;z-index:40;max-width:230px}
 
-/* Agenda */
-.agenda-wrap{background:var(--branco);border:1px solid var(--borda);border-radius:11px;padding:11px}
-.ag{width:100%;border-collapse:collapse}
-.ag caption{text-align:left;font-size:10.5px;color:var(--txt2);padding-bottom:6px}
-.ag thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-.ag tbody tr{display:grid;grid-template-columns:76px 50px repeat(4,minmax(0,1fr));gap:6px 6px;padding:9px 0;border-top:1px solid var(--borda)}
-.ag tbody tr:first-child{border-top:0}
-.ag td{display:block;padding:0;font-size:11.5px;overflow-wrap:anywhere}
-.ag td::before{content:attr(data-label);display:block;font-size:9.5px;font-weight:600;color:var(--txt2);text-transform:uppercase;letter-spacing:.02em;white-space:nowrap}
-.ag td.c-data,.ag td.c-hora{font-size:14px;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
-.ag td.c-adv{grid-column:span 4;font-weight:700;font-size:12px}
-.ag td.c-comp,.ag td.c-tv,.ag td.c-st{grid-column:span 2}
-.ag .det{display:block;font-weight:400;font-size:11px;color:var(--txt2)}
-.linha-tv{font-size:10.5px;color:var(--txt2);margin:8px 0 0}
-
-/* Fontes / rodapé */
-details{background:var(--branco);border:1px solid var(--borda);border-radius:11px;padding:0 11px}
-summary{min-height:44px;display:flex;align-items:center;cursor:pointer;font-weight:700;color:var(--verm)}
-details ol{margin:0 0 10px;padding-left:22px;font-size:11px}
-details li{margin:4px 0}
-details li:target{background:var(--rosa)}
-footer{padding:12px 0 20px;font-size:10.5px;color:var(--txt2)}
-.topo{display:inline-flex;align-items:center;min-height:44px;font-weight:700}
-
-
-/* Card de análise da IA */
-.ia{margin-top:10px;background:var(--branco);border:2px solid var(--verm);border-radius:12px;padding:12px;box-shadow:0 4px 0 var(--rosa)}
-.ia-head h3{font-size:16px;line-height:1.2;margin:6px 0 2px;color:var(--txt)}
-.ia-label{display:inline-flex;align-items:center;min-height:26px;padding:0 10px;border-radius:999px;background:var(--verm);color:#fff;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+/* Análise de IA */
+.ia{background:var(--superficie);border:2px solid var(--colorado);border-radius:16px;padding:12px;position:relative}
+.ia-label{display:inline-flex;align-items:center;gap:6px;min-height:28px;padding:0 12px;border-radius:999px;background:var(--colorado);color:#fff;font-size:12px;font-weight:800}
+.ia-head h3{font-family:var(--cond);font-size:22px;line-height:1.1;font-weight:800;margin:8px 0 2px}
 .ia-kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin:10px 0}
-.ia-kpi{background:var(--bg);border:1px solid var(--borda);border-radius:10px;padding:8px}
-.ia-kpi .v{display:block;font-size:32px;line-height:1;font-weight:800;color:var(--verm);font-variant-numeric:tabular-nums}
-.ia-kpi .l{font-size:10.5px;color:var(--txt2)}
-.ia-kpi.destaque{background:var(--rosa);border-color:var(--verm-suave)}
+.ia-kpi{background:var(--papel);border:1px solid var(--borda);border-radius:12px;padding:8px 10px}
+.ia-kpi .v{display:block;font-family:var(--cond);font-size:32px;line-height:1;font-weight:800;color:var(--colorado);font-variant-numeric:tabular-nums}
+.ia-kpi .l{font-size:10.5px;color:var(--tinta2)}
+.ia-kpi.destaque{background:var(--rosa);border-color:var(--colorado-s)}
 .ia-grid{display:grid;grid-template-columns:1fr;gap:8px}
-.ia-bloco{border:1px solid var(--borda);border-radius:10px;padding:10px}
-.ia-full{margin-top:8px}
-.ia-bloco h4{font-size:12px;margin:0 0 8px}
-.rbar{display:grid;grid-template-columns:86px 1fr 40px;align-items:center;gap:6px;margin:5px 0;font-size:12px}
-.rbar .trk{height:14px;background:var(--bg);border-radius:4px;overflow:hidden}
-.rbar .fill{height:100%;background:var(--verm-suave);border-radius:4px}
-.rbar.inter .fill{background:var(--verm)}
+.ia-bloco{border:1px solid var(--borda);border-radius:12px;padding:10px;min-width:0}
+.ia-bloco h4{font-size:12.5px;margin:0 0 8px}
+.rbar{display:grid;grid-template-columns:88px 1fr 40px;align-items:center;gap:6px;margin:5px 0;font-size:12px;border-radius:6px}
+.rbar .trk{height:14px;background:var(--papel);border-radius:4px;overflow:hidden}
+.rbar .fill{display:block;height:100%;background:var(--colorado-s);border-radius:4px;transform-origin:left;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.rbar.inter .fill{background:var(--colorado)}
 .rbar.inter span:first-child{font-weight:700}
 .rbar b{text-align:right;font-variant-numeric:tabular-nums}
-.rbar:focus-visible{outline:3px solid var(--verm)}
 .ia-tab{width:100%;border-collapse:collapse;font-size:12px;font-variant-numeric:tabular-nums}
-.ia-tab th{font-size:10.5px;color:var(--txt2);text-align:left;padding:4px;border-bottom:1px solid var(--borda)}
+.ia-tab th{font-size:10.5px;color:var(--tinta2);text-align:left;padding:4px;border-bottom:1px solid var(--borda);font-weight:600}
 .ia-tab td{padding:6px 4px;border-bottom:1px solid var(--borda)}
-.r-alto{color:var(--verm)}.r-medio{color:var(--amar)}.r-baixo{color:var(--verde)}
-.jogo{margin:0 0 8px}
-.jogo .t{display:flex;justify-content:space-between;gap:6px;font-size:11.5px;font-weight:700}
-.jogo .t span{font-weight:400;color:var(--txt2);font-size:10.5px}
-.stack{display:flex;height:18px;border-radius:5px;overflow:hidden;margin-top:3px;font-size:10px;font-weight:700;color:#fff}
+.r-alto{color:var(--colorado)}.r-medio{color:var(--ambar)}.r-baixo{color:var(--verde)}
+.jg{margin:0 0 9px}
+.jg .t{display:flex;justify-content:space-between;gap:6px;font-size:11.5px;font-weight:700}
+.jg .t span{font-weight:400;color:var(--tinta2);font-size:10.5px}
+.stack{display:flex;height:20px;border-radius:6px;overflow:hidden;margin-top:3px;font-size:10px;font-weight:700;color:#fff}
 .stack div{display:flex;align-items:center;justify-content:center;min-width:0}
-.stack .e{color:var(--txt)}
+.stack .e{color:#40222A}
 .cen,.cd{list-style:none;margin:0;padding:0;font-size:12px}
-.cen li{display:flex;justify-content:space-between;gap:8px;padding:5px 0;border-bottom:1px solid var(--borda)}
+.cen li{display:flex;justify-content:space-between;gap:8px;padding:6px 0;border-bottom:1px solid var(--borda)}
 .cen li b{font-variant-numeric:tabular-nums}
 .cd li{padding:4px 0}
-.cd b{color:var(--verm);margin-right:4px}
-.ia-veredito{margin-top:8px;background:var(--rosa);border-radius:10px;padding:10px;font-size:12px}
-.ia-veredito p+p{margin-top:6px}
-.ia-veredito p{margin:0}
-.ia-met{margin-top:8px;border-radius:10px}
-.ia-met p{font-size:11px;color:var(--txt2);margin:0 0 10px}
+.cd b{color:var(--colorado);margin-right:4px}
+.ia-veredito{margin-top:8px;background:var(--rosa);border-radius:12px;padding:10px;font-size:12px}
+.ia-veredito p{margin:0}.ia-veredito p+p{margin-top:6px}
+
+/* Simulador */
+.sim{margin-top:8px;border:1px dashed var(--colorado-s);border-radius:14px;padding:10px;background:var(--papel)}
+.sim h4{font-family:var(--cond);font-size:18px;font-weight:800;margin:0 0 2px}
+.sim-jogos{display:grid;gap:6px;margin:8px 0}
+.sj{display:grid;grid-template-columns:1fr auto;align-items:center;gap:8px;background:var(--superficie);border:1px solid var(--borda);border-radius:10px;padding:6px 8px}
+.sj b{font-size:12px}.sj small{display:block;font-size:10.5px;color:var(--tinta2)}
+.seg{display:flex;border:1px solid var(--borda);border-radius:10px;overflow:hidden}
+.seg button{width:44px;height:44px;border:0;background:var(--superficie);color:var(--tinta);font:800 14px var(--cond);cursor:pointer;border-left:1px solid var(--borda)}
+.seg button:first-child{border-left:0}
+.seg button[aria-pressed="true"][data-r="v"]{background:#1F6B3A;color:#fff}
+.seg button[aria-pressed="true"][data-r="e"]{background:#8A767C;color:#fff}
+.seg button[aria-pressed="true"][data-r="d"]{background:#B82C42;color:#fff}
+.sim-out{display:grid;grid-template-columns:132px 1fr;gap:10px;align-items:center}
+.gauge text{font-family:var(--cond)}
+.sim-txt b.big{display:block;font-family:var(--cond);font-size:26px;line-height:1.05}
+.presets{display:flex;flex-wrap:wrap;gap:6px}
+details.met{margin-top:8px;border:1px solid var(--borda);border-radius:12px;padding:0 10px}
+details.met p{font-size:11px;color:var(--tinta2);margin:0 0 10px}
+
+/* Agenda */
+.agenda-wrap{background:var(--superficie);border:1px solid var(--borda);border-radius:12px;padding:11px}
+.ag{width:100%;border-collapse:collapse}
+.ag caption{text-align:left;font-size:10.5px;color:var(--tinta2);padding-bottom:6px}
+.ag thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.ag tbody tr{display:grid;grid-template-columns:78px 50px repeat(4,minmax(0,1fr));gap:6px;padding:9px 0;border-top:1px solid var(--borda)}
+.ag tbody tr:first-child{border-top:0}
+.ag tbody tr.prox-jogo{background:var(--rosa);border-radius:10px;padding:9px 6px;margin:0 -6px}
+.ag td{display:block;padding:0;font-size:11.5px;overflow-wrap:anywhere}
+.ag td::before{content:attr(data-label);display:block;font-size:9.5px;font-weight:600;color:var(--tinta2);letter-spacing:.02em;white-space:nowrap}
+.ag td.c-data,.ag td.c-hora{font-family:var(--cond);font-size:14px;font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}
+.ag td.c-adv{grid-column:span 4;font-weight:700;font-size:12px}
+.ag td.c-comp,.ag td.c-tv,.ag td.c-st{grid-column:span 2}
+.ag .det{display:block;font-weight:400;font-size:11px;color:var(--tinta2)}
+.ag .chip{white-space:nowrap;font-size:10px;padding:2px 6px;gap:3px}
+.linha-tv{font-size:10.5px;color:var(--tinta2);margin:8px 0 0}
+
+/* Fontes e rodapé */
+details.fontes{background:var(--superficie);border:1px solid var(--borda);border-radius:12px;padding:0 11px}
+summary{min-height:44px;display:flex;align-items:center;cursor:pointer;font-weight:700;color:var(--colorado)}
+details.fontes ol{margin:0 0 10px;padding-left:22px;font-size:11px}
+details.fontes li{margin:4px 0}
+details.fontes li:target{background:var(--rosa)}
+footer{padding:14px 0 24px;font-size:10.5px;color:var(--tinta2);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px}
+.topo{display:inline-flex;align-items:center;min-height:44px;font-weight:700}
+.toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:#40222A;color:#fff;padding:10px 14px;border-radius:10px;font-size:12px;z-index:50}
+
+/* Movimento: um só momento, a chegada do Inter à escada */
+@keyframes chega{from{transform:translateY(46px);opacity:.3}to{transform:none;opacity:1}}
+.escada li.inter{animation:chega .9s cubic-bezier(.2,.8,.2,1) .2s both}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.escada li.inter{animation:none}.rbar .fill{transition:none}}
 
 @media (min-width:760px){
   body{font-size:13px}
-  .wrap{padding:0 20px}
-  h1{font-size:28px}
+  .wrap{padding:0 22px}
+  h1{font-size:36px}
+  .hero{grid-template-columns:1.25fr 1fr;grid-template-areas:"tit esc" "cont esc";padding:22px;gap:16px 22px}
+  .hero-a{grid-area:tit}.escada{grid-area:esc;align-self:start}.cont{grid-area:cont;align-self:end}
+  .hero-tit{font-size:40px}
+  nav a{padding:0 14px}
+  .escada li{min-height:28px;font-size:13px}
   .cards{grid-template-columns:repeat(6,1fr);gap:10px}
   .card{grid-column:span 2;padding:14px}
   .card.g{grid-column:span 3}
-  .kpi .v{font-size:38px}
-  .manchete{font-size:25px}
-  .painel{grid-template-columns:1fr 1fr}
+  .manchete{font-size:28px}
+  .kpi .v{font-size:40px}
+  .strip{grid-template-columns:repeat(5,1fr)}
+  .painel{grid-template-columns:repeat(6,1fr)}
   .painel .full{grid-column:1/-1}
-  .ia{padding:16px}
-  .ia-head h3{font-size:19px}
+  .painel .p3{grid-column:span 3}
+  .painel .p2{grid-column:span 2}
+  .painel .p4{grid-column:span 4}
+  .ia{padding:18px}
+  .ia-head h3{font-size:28px}
   .ia-kpis{grid-template-columns:repeat(4,1fr)}
-  .ia-kpi .v{font-size:36px}
+  .ia-kpi .v{font-size:38px}
   .ia-grid{grid-template-columns:1fr 1fr}
+  .sim-body{display:grid;grid-template-columns:1.2fr 1fr;gap:14px;align-items:center}
   .ag thead{position:static;width:auto;height:auto;clip:auto;overflow:visible}
-  .ag thead th{text-align:left;font-size:10.5px;color:var(--txt2);padding:6px;border-bottom:2px solid var(--borda)}
+  .ag thead th{text-align:left;font-size:10.5px;color:var(--tinta2);padding:6px;border-bottom:2px solid var(--borda);font-weight:600}
   .ag tbody tr{display:table-row}
-  .ag td{display:table-cell;padding:8px 6px;border-top:1px solid var(--borda);vertical-align:top;font-size:12px}
+  .ag tbody tr.prox-jogo{margin:0}
+  .ag td{display:table-cell;padding:9px 6px;border-top:1px solid var(--borda);vertical-align:top;font-size:12px}
   .ag td::before{display:none}
-  .ag td.c-data,.ag td.c-hora{font-size:15px;white-space:nowrap}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 <a class="sr" href="#destaques">Pular para o conteúdo</a>
 <div class="wrap" id="topo">
-<header>
-  <div class="marca">
-    <svg class="badge" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="#B82C42"/><circle cx="16" cy="16" r="10.5" fill="none" stroke="#FFFAFB" stroke-width="2"/><path d="M16 9.5l2 4.3 4.6.5-3.4 3.1 1 4.6-4.2-2.4-4.2 2.4 1-4.6-3.4-3.1 4.6-.5z" fill="#FFFAFB"/></svg>
-    <b>Boletim do Inter</b>
-  </div>
-  <p class="meta">Edição de quarta-feira, 11/11/2026 · consulta às 22h24 (Brasília) · Brasileirão 2026, após a 34ª rodada</p>
+  <header class="mast">
+    <div class="marca">
+      <svg class="badge" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="#B82C42"/><circle cx="16" cy="16" r="10.5" fill="none" stroke="#FFFAFB" stroke-width="2"/><path d="M16 9.5l2 4.3 4.6.5-3.4 3.1 1 4.6-4.2-2.4-4.2 2.4 1-4.6-3.4-3.1 4.6-.5z" fill="#FFFAFB"/></svg>
+      <div><b>Boletim do Inter</b><small>Quarta-feira, 11 de novembro de 2026. Consulta às 22h24 (Brasília)</small></div>
+    </div>
+    <div class="acoes">
+      <button class="ic" type="button" id="btn-copiar" aria-label="Copiar resumo do boletim"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg></button>
+      <button class="ic" type="button" id="btn-tema" aria-label="Alternar tema claro ou escuro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </div>
+  </header>
   <h1>O Inter, em 5 pontos.</h1>
-</header>
 </div>
+
 <nav aria-label="Seções"><div class="wrap"><ul>
-  <li><a href="#destaques">Destaques</a></li>
+  <li><a href="#destaques" class="ativo">Destaques</a></li>
+  <li><a href="#numeros">Números</a></li>
+  <li><a href="#analise">Análise IA</a></li>
   <li><a href="#agenda">Agenda</a></li>
   <li><a href="#fontes">Fontes</a></li>
 </ul></div></nav>
 
 <main class="wrap">
 <section id="destaques" aria-labelledby="h-dest">
-  <h2 id="h-dest">O que importa hoje</h2>
-  <div class="cards">
+  <div class="hero" aria-label="Resumo da situação">
+    <div class="hero-a">
+      <p class="hero-tit">Faltam 4 rodadas. O Inter está 1 ponto acima da linha.</p>
+      <p class="hero-sub">16º com 38 pontos, após vencer o Coritiba por 1 x 0 em 03/11. Corinthians e Grêmio, com 37, abrem o Z4.</p>
+      <div class="forma" aria-label="Últimos cinco jogos no Brasileirão, do mais antigo ao mais recente: empate, derrota, vitória, derrota, vitória">
+        <span class="t">Últimos 5</span>
+        <span class="pill e" title="Grêmio 1 x 1 Inter, 11/10">E</span>
+        <span class="pill d" title="Mirassol 2 x 0 Inter, 16/10">D</span>
+        <span class="pill v" title="Inter 3 x 0 Botafogo, 24/10">V</span>
+        <span class="pill d" title="Fluminense 2 x 1 Inter, 28/10">D</span>
+        <span class="pill v" title="Inter 1 x 0 Coritiba, 03/11">V</span>
+      </div>
+    </div>
+    <ol class="escada" aria-label="Classificação do 11º ao 20º, com a linha do rebaixamento entre o 16º e o 17º">
+      <li><span class="o">11º</span><span>Botafogo</span><span class="p">42</span></li>
+      <li><span class="o">12º</span><span>Coritiba</span><span class="p">42</span></li>
+      <li><span class="o">13º</span><span>Vasco</span><span class="p">41</span></li>
+      <li><span class="o">14º</span><span>Mirassol</span><span class="p">40</span></li>
+      <li><span class="o">15º</span><span>Vitória</span><span class="p">38</span></li>
+      <li class="inter"><span class="o">16º</span><span>Internacional</span><span class="p">38</span></li>
+      <li class="linha" aria-hidden="true"><span>linha do rebaixamento</span></li>
+      <li class="z4"><span class="o">17º</span><span>Corinthians</span><span class="p">37</span></li>
+      <li class="z4"><span class="o">18º</span><span>Grêmio</span><span class="p">37</span></li>
+      <li class="z4"><span class="o">19º</span><span>Remo</span><span class="p">29</span></li>
+      <li class="z4"><span class="o">20º</span><span>Chapecoense</span><span class="p">21</span></li>
+    </ol>
+    <div class="cont">
+      <p class="q">Próximo jogo começa em</p>
+      <p class="jogo">Vasco x Inter</p>
+      <div class="relogio" id="relogio" aria-live="off">
+        <div><b id="r-d">–</b><small>dias</small></div>
+        <div><b id="r-h">–</b><small>horas</small></div>
+        <div><b id="r-m">–</b><small>min</small></div>
+      </div>
+      <p class="det" id="relogio-txt">Quinta 19/11, 19h30, em São Januário. 35ª rodada. <span class="chip ok">🟢 Confirmado</span> SporTV e Premiere.</p>
+    </div>
+  </div>
 
+  <h2 id="h-dest" style="margin-top:16px">O que importa hoje</h2>
+  <div class="cards">
     <article class="card g" aria-labelledby="c1">
-      <div class="card-top"><span class="num">01</span><h3 id="c1">Situação do Inter</h3>
+      <div class="card-top"><span class="n">01</span><h3 id="c1">Situação do Inter</h3>
         <span class="refs"><a class="ref" href="#f1" aria-label="Fonte 1">1</a><a class="ref" href="#f2" aria-label="Fonte 2">2</a><a class="ref" href="#f12" aria-label="Fonte 12">12</a></span></div>
       <div class="kpis">
         <div class="kpi"><span class="v">16º</span><span class="l">posição</span></div>
         <div class="kpi"><span class="v">38</span><span class="l">pontos</span></div>
         <div class="kpi"><span class="v">34</span><span class="l">jogos</span></div>
       </div>
-      <span class="delta">▲ 2 posições e +3 pts vs. após a 33ª (18º, 35 pts)</span>
+      <span class="delta">▲ 2 posições e +3 pts desde a 33ª rodada (era 18º, com 35)</span>
       <p>Último jogo: Inter 1 x 0 Coritiba, terça 03/11, no Beira-Rio (34ª). Fica 1 ponto acima do Z4, aberto pelo Corinthians (37). Campanha: 9V, 11E, 14D; saldo −4.</p>
     </article>
 
     <article class="card g prox" aria-labelledby="c2">
-      <div class="card-top"><span class="num">02</span><h3 id="c2">Próximo jogo</h3>
+      <div class="card-top"><span class="n">02</span><h3 id="c2">Próximo jogo</h3>
         <span class="refs"><a class="ref" href="#f3" aria-label="Fonte 3">3</a><a class="ref" href="#f4" aria-label="Fonte 4">4</a><a class="ref" href="#f5" aria-label="Fonte 5">5</a></span></div>
-      <div class="faixa"><p class="manchete">Vasco x Inter</p><span class="hora">Qui 19/11 · 19h30</span></div>
-      <p>São Januário, Rio de Janeiro · Brasileirão, 35ª rodada.</p>
-      <p><span class="tag ok">🟢 Confirmado</span> SporTV (TV fechada) e Premiere (pay-per-view). Vasco: 13º, 41 pts, com um jogo a menos.</p>
+      <div class="faixa"><p class="manchete">Vasco x Inter</p><span class="hora">Qui 19/11, 19h30</span></div>
+      <p>São Januário, Rio de Janeiro. Brasileirão, 35ª rodada.</p>
+      <p><span class="chip ok">🟢 Confirmado</span> SporTV (TV fechada) e Premiere (pay-per-view). Vasco: 13º, 41 pts, com um jogo a menos.</p>
     </article>
 
     <article class="card" aria-labelledby="c3">
-      <div class="card-top"><span class="num">03</span><h3 id="c3">Elenco</h3>
+      <div class="card-top"><span class="n">03</span><h3 id="c3">Elenco</h3>
         <span class="refs"><a class="ref" href="#f6" aria-label="Fonte 6">6</a><a class="ref" href="#f7" aria-label="Fonte 7">7</a><a class="ref" href="#f8" aria-label="Fonte 8">8</a></span></div>
-      <div class="faixa"><p class="manchete">Maripán fora</p><span class="tag pend">suspensão automática</span></div>
+      <div class="faixa"><p class="manchete">Maripán fora</p><span class="chip pend">suspensão automática</span></div>
       <p>Expulso contra o Coritiba, desfalca o Inter em São Januário.</p>
-      <p><b>Alan Patrick</b> (lesão na coxa direita) treinou com bola sem dor em 10/11; volta depende de liberação médica. <span class="tag proj">Projeção</span> deve atuar no jogo-treino de sábado (14/11), como Anthoni e Sanabria. Escalação ainda não confirmada.</p>
+      <p><b>Alan Patrick</b> (lesão na coxa direita) treinou com bola sem dor em 10/11; volta depende de liberação médica. <span class="chip proj">Projeção</span> deve atuar no jogo-treino de sábado (14/11), como Anthoni e Sanabria. Escalação ainda não confirmada.</p>
     </article>
 
     <article class="card" aria-labelledby="c4">
-      <div class="card-top"><span class="num">04</span><h3 id="c4">Contexto esportivo</h3>
+      <div class="card-top"><span class="n">04</span><h3 id="c4">Contexto esportivo</h3>
         <span class="refs"><a class="ref" href="#f2" aria-label="Fonte 2">2</a><a class="ref" href="#f1" aria-label="Fonte 1">1</a></span></div>
       <div class="faixa"><p class="manchete">9 de 9</p><span class="hora">em casa com Baptista</span></div>
       <p>Eduardo Baptista venceu Corinthians, Botafogo e Coritiba no Beira-Rio. Na 35ª, Corinthians x Botafogo e Grêmio x Bahia jogam antes (qua 18/11); Vitória x Bragantino é no mesmo horário do Inter.</p>
     </article>
 
     <article class="card" aria-labelledby="c5">
-      <div class="card-top"><span class="num">05</span><h3 id="c5">Perspectiva</h3>
+      <div class="card-top"><span class="n">05</span><h3 id="c5">Perspectiva</h3>
         <span class="refs"><a class="ref" href="#f1" aria-label="Fonte 1">1</a><a class="ref" href="#f10" aria-label="Fonte 10">10</a></span></div>
       <div class="kpis">
         <div class="kpi"><span class="v">12</span><span class="l">pts em disputa</span></div>
-        <div class="kpi"><span class="v">50</span><span class="l">máximo</span></div>
-        <div class="kpi"><span class="v">7</span><span class="l">pts p/ chegar a 45</span></div>
+        <div class="kpi"><span class="v">50</span><span class="l">máximo possível</span></div>
+        <div class="kpi"><span class="v">7</span><span class="l">pts para chegar a 45</span></div>
       </div>
       <p>Restam 4 jogos (2 em casa). Duas vitórias no Beira-Rio levam a 44. O modelo ValorFinal 2.0 projeta o 16º com 43 pts (faixa 41–44): referência, não garantia de permanência.</p>
     </article>
   </div>
+</section>
 
-  <div class="painel" aria-label="Números da reta final">
+<section id="numeros" aria-labelledby="h-num">
+  <h2 id="h-num">Os números da briga</h2>
+  <div class="strip" aria-label="Indicadores com comparação à rodada anterior">
+    <div class="st"><span class="l">Posição</span><span class="v">16º</span><span class="d up">▲ 2 (era 18º)</span></div>
+    <div class="st"><span class="l">Pontos</span><span class="v">38</span><span class="d up">+3 na rodada</span></div>
+    <div class="st"><span class="l">Margem para o Z4</span><span class="v">+1</span><span class="d up">era 2 pts abaixo</span></div>
+    <div class="st"><span class="l">Saldo de gols</span><span class="v">−4</span><span class="d up">era −5</span></div>
+    <div class="st"><span class="l">Aproveitamento</span><span class="v">37%</span><span class="d up">era 35%</span></div>
+  </div>
+
+  <div class="painel">
     <div class="bloco full">
-      <h3>Parte de baixo da tabela — após a 34ª rodada</h3>
+      <h3>Parte de baixo da tabela, após a 34ª rodada</h3>
       <div class="filtros" role="group" aria-label="Filtrar faixa da tabela">
         <button class="btn" type="button" data-faixa="todos" aria-pressed="true">11º ao 20º</button>
         <button class="btn" type="button" data-faixa="briga" aria-pressed="false">Briga direta (14º–18º)</button>
         <button class="btn" type="button" data-faixa="z4" aria-pressed="false">Só Z4</button>
       </div>
-      <div class="chart" id="chart-tabela" role="img" aria-label="Gráfico de barras com os pontos dos clubes da parte de baixo da tabela"></div>
-      <div class="legenda"><span><i style="background:#B82C42"></i>Internacional</span><span><i style="background:#E7A9B4"></i>Demais clubes</span><span><i style="background:#40222A"></i>Z4 (17º–20º)</span></div>
+      <div class="chart" id="chart-tabela" role="img" aria-label="Barras com os pontos dos clubes da parte de baixo da tabela"></div>
+      <div class="legenda"><span><i style="background:#B82C42"></i>Internacional</span><span><i style="background:var(--colorado-s)"></i>Fora do Z4</span><span><i style="background:#5B2B36"></i>Z4 (17º–20º)</span><span><i style="background:none;border-top:2px dashed var(--tinta2);height:0;width:14px;border-radius:0"></i>Linha do Inter (38)</span></div>
     </div>
 
-    <div class="bloco">
-      <h3>Pontos do Inter, rodada a rodada</h3>
-      <div class="chart" id="chart-pontos" role="img" aria-label="Linha com os pontos acumulados do Inter da 29ª à 34ª rodada: 31, 32, 32, 35, 35 e 38"></div>
-      <p class="nota">Pontos acumulados calculados a partir dos resultados oficiais (29ª a 34ª).</p>
+    <div class="bloco p4">
+      <h3>Pontos do Inter rodada a rodada, com a projeção da IA</h3>
+      <div class="chart" id="chart-pontos" role="img" aria-label="Pontos acumulados da 29ª à 34ª rodada (31, 32, 32, 35, 35 e 38) e projeção de 43,3 pontos ao fim, com faixa de 40 a 47"></div>
+      <div class="legenda"><span><i style="background:#B82C42"></i>Pontos reais</span><span><i style="background:var(--colorado-s)"></i>Faixa provável (80% das simulações)</span><span><i style="background:none;border-top:2px dashed #1F6B3A;height:0;width:14px;border-radius:0"></i>Linha típica do 16º (43)</span></div>
     </div>
 
-    <div class="bloco">
+    <div class="bloco p2">
+      <h3>Campanha em 34 jogos</h3>
+      <div class="donut-wrap">
+        <div class="chart" id="chart-donut" role="img" aria-label="9 vitórias, 11 empates e 14 derrotas; aproveitamento de 37%"></div>
+        <div class="gols">
+          <div>Gols pró <b class="num-c" style="font-size:16px">38</b><div class="b"><span style="width:84%;background:#1F6B3A"></span></div></div>
+          <div>Gols contra <b class="num-c" style="font-size:16px">42</b><div class="b"><span style="width:93%;background:#B82C42"></span></div></div>
+          <p class="nota" style="margin:0">Melhor saldo entre os 7 ameaçados.</p>
+        </div>
+      </div>
+      <div class="legenda"><span><i style="background:#1F6B3A"></i>9 V</span><span><i style="background:var(--neutro)"></i>11 E</span><span><i style="background:#B82C42"></i>14 D</span></div>
+    </div>
+
+    <div class="bloco full">
       <h3>Classificação detalhada</h3>
       <label class="sr" for="busca">Buscar clube</label>
-      <input class="busca" id="busca" type="search" placeholder="Buscar clube…" autocomplete="off">
+      <input class="busca" id="busca" type="search" placeholder="Buscar clube" autocomplete="off">
       <table class="tab" id="tabela">
         <caption class="sr">Classificação do 11º ao 20º lugar, ordenável</caption>
         <thead><tr>
-          <th scope="col"><button type="button" data-ord="pos">#</button></th>
+          <th scope="col" aria-sort="ascending"><button type="button" data-ord="pos">#</button></th>
           <th scope="col"><button type="button" data-ord="clube">Clube</button></th>
           <th scope="col"><button type="button" data-ord="p">P</button></th>
           <th scope="col"><button type="button" data-ord="j">J</button></th>
           <th scope="col"><button type="button" data-ord="v">V</button></th>
           <th scope="col"><button type="button" data-ord="sg">SG</button></th>
+          <th scope="col"><button type="button" data-ord="risco">Risco IA</button></th>
         </tr></thead>
         <tbody></tbody>
       </table>
-      <div class="vazio" id="tab-vazio" hidden>Nenhum clube encontrado para esse filtro.</div>
-      <p class="nota">Desempate: pontos, depois vitórias. Vitória fica à frente do Inter por ter 10 vitórias.</p>
+      <div class="vazio" id="tab-vazio" hidden>Nenhum clube com esse nome nesta faixa. Limpe a busca ou escolha outra faixa.</div>
+      <p class="nota">Desempate: pontos, depois vitórias. Vitória fica à frente do Inter por ter 10 vitórias. Risco IA: simulação da seção seguinte.</p>
     </div>
   </div>
+</section>
 
-  <article class="ia" id="analise-ia" aria-labelledby="ia-t">
+<section id="analise" aria-labelledby="ia-t">
+  <article class="ia">
     <div class="ia-head">
       <span class="ia-label">✦ Análise proveniente de IA</span>
       <h3 id="ia-t">Análise proveniente de IA com relação ao rebaixamento</h3>
-      <p class="nota">Simulação feita pelo Claude: 200 mil campeonatos sorteados a partir da tabela real após a 34ª rodada e dos 41 jogos restantes · 11/11/2026, 22h40</p>
+      <p class="nota">Simulação feita pelo Claude: 200 mil campeonatos sorteados a partir da tabela real após a 34ª rodada e dos 41 jogos restantes, em 11/11/2026, às 22h40.</p>
     </div>
 
     <div class="ia-kpis">
@@ -304,12 +466,11 @@ footer{padding:12px 0 20px;font-size:10.5px;color:var(--txt2)}
     <div class="ia-grid">
       <div class="ia-bloco">
         <h4>Risco de rebaixamento por clube</h4>
-        <div class="rbars" id="ia-risco"></div>
+        <div id="ia-risco"></div>
         <p class="nota">Remo (99,9%) e Chapecoense (100%) fora do gráfico. Sobram duas vagas no Z4 para sete clubes.</p>
       </div>
-
       <div class="ia-bloco">
-        <h4>Pontuação final do Inter × risco</h4>
+        <h4>Pontuação final do Inter e risco</h4>
         <table class="ia-tab">
           <thead><tr><th scope="col">Termina com</th><th scope="col">Chance de chegar</th><th scope="col">Risco de queda</th></tr></thead>
           <tbody>
@@ -322,13 +483,11 @@ footer{padding:12px 0 20px;font-size:10.5px;color:var(--txt2)}
         </table>
         <p class="nota">45 pts quase eliminam o risco nesta simulação, mas não são garantia matemática.</p>
       </div>
-
       <div class="ia-bloco">
         <h4>Jogo a jogo: chances do Inter</h4>
         <div id="ia-jogos"></div>
         <div class="legenda"><span><i style="background:#1F6B3A"></i>Vitória</span><span><i style="background:#C9B8BD"></i>Empate</span><span><i style="background:#B82C42"></i>Derrota</span></div>
       </div>
-
       <div class="ia-bloco">
         <h4>Cenários decisivos</h4>
         <ul class="cen">
@@ -343,96 +502,116 @@ footer{padding:12px 0 20px;font-size:10.5px;color:var(--txt2)}
       </div>
     </div>
 
-    <div class="ia-bloco ia-full">
+    <div class="sim" id="simulador">
+      <div class="sim-body">
+        <div>
+          <h4>Monte o seu final de campeonato</h4>
+          <p class="nota" style="margin-top:0">Escolha o resultado do Inter em cada jogo. O risco vem das simulações em que o Inter terminou com essa pontuação.</p>
+          <div class="sim-jogos" id="sim-jogos"></div>
+          <div class="presets" role="group" aria-label="Cenários prontos">
+            <button class="btn" type="button" data-preset="vveev">Só vence em casa</button>
+            <button class="btn" type="button" data-preset="evve">Embalado</button>
+            <button class="btn" type="button" data-preset="dedd">Pessimista</button>
+            <button class="btn" type="button" data-preset="limpar">Limpar</button>
+          </div>
+        </div>
+        <div class="sim-out" aria-live="polite">
+          <div class="gauge" id="gauge"></div>
+          <div class="sim-txt" id="sim-txt"><b class="big">Escolha os 4 resultados</b><span class="nota">Toque em V, E ou D em cada jogo para ver os pontos finais e o risco.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ia-bloco" style="margin-top:8px">
       <h4>Confrontos diretos que podem decidir</h4>
       <ul class="cd">
-        <li><b>Qua 18/11</b> Corinthians x Botafogo · Grêmio x Bahia</li>
-        <li><b>Seg 23/11</b> Internacional x Vitória — o jogo de seis pontos do Inter</li>
-        <li><b>Dom 29/11</b> Corinthians x Grêmio — um dos dois rivais perde pontos</li>
-        <li><b>Qua 02/12</b> Grêmio x Mirassol · Vasco x Vitória · Remo x Corinthians · Cruzeiro x Internacional, todos às 21h30</li>
+        <li><b>Qua 18/11</b> Corinthians x Botafogo e Grêmio x Bahia</li>
+        <li><b>Seg 23/11</b> Internacional x Vitória, o jogo de seis pontos do Inter</li>
+        <li><b>Dom 29/11</b> Corinthians x Grêmio: um dos dois rivais perde pontos</li>
+        <li><b>Qua 02/12</b> Grêmio x Mirassol, Vasco x Vitória, Remo x Corinthians e Cruzeiro x Internacional, todos às 21h30</li>
       </ul>
     </div>
 
     <div class="ia-veredito">
-      <p><b>Leitura da IA:</b> o cenário mais provável é o Inter escapar (≈2 em 3 simulações), mas com margem curta: a posição final mais frequente é 17º (19%), logo à frente do 16º (17%). O ponto a favor é o saldo de gols (−4), o melhor entre os ameaçados, que sugere time mais forte do que a pontuação mostra. Contra: o calendário fora de casa é duro, e hoje o Inter fica atrás do Vitória no critério de vitórias (9 a 10). Grêmio (54%), Vitória (43%) e Corinthians (42%) correm mais risco hoje.</p>
+      <p><b>Leitura da IA:</b> o cenário mais provável é o Inter escapar (cerca de 2 em 3 simulações), mas com margem curta: a posição final mais frequente é 17º (19%), logo à frente do 16º (17%). O ponto a favor é o saldo de gols (−4), o melhor entre os ameaçados, que sugere time mais forte do que a pontuação mostra. Contra: o calendário fora de casa é duro, e hoje o Inter fica atrás do Vitória no critério de vitórias (9 a 10). Grêmio (54%), Vitória (43%) e Corinthians (42%) correm mais risco hoje.</p>
       <p><b>Meta objetiva:</b> 6 pontos no Beira-Rio. Com Vitória e Bragantino vencidos, o risco cai para menos de 1%; sem nenhuma vitória em casa, sobe para 72%.</p>
     </div>
 
-    <details class="ia-met">
+    <details class="met">
       <summary>Como a simulação foi feita</summary>
-      <p>Modelo de Poisson: cada clube recebe uma força de ataque e de defesa calculada pelos gols pró e contra nos 34 jogos (com ajuste à média da liga), mais vantagem de mando. Cada um dos 41 jogos restantes, incluindo Chapecoense x Vasco (adiado, 14/11), é sorteado 200 mil vezes com variação aleatória na força dos times; o desempate segue pontos, vitórias, saldo e gols pró. O modelo não considera lesões, suspensões, troca de técnico ou motivação. Como checagem, o modelo independente do ValorFinal 2.0 chega a 35,7% para o Inter, perto dos 34% daqui. É estimativa, não previsão garantida.</p>
+      <p>Modelo de Poisson: cada clube recebe uma força de ataque e de defesa calculada pelos gols pró e contra nos 34 jogos (com ajuste à média da liga), mais vantagem de mando. Cada um dos 41 jogos restantes, incluindo Chapecoense x Vasco (adiado, 14/11), é sorteado 200 mil vezes com variação aleatória na força dos times; o desempate segue pontos, vitórias, saldo e gols pró. O simulador acima usa o risco médio para cada pontuação final do Inter, sem fixar os resultados dos rivais. O modelo não considera lesões, suspensões, troca de técnico ou motivação. Como checagem, o modelo independente do ValorFinal 2.0 chega a 35,7% para o Inter, perto dos 34% daqui. É estimativa, não previsão garantida.</p>
     </details>
   </article>
 </section>
 
 <section id="agenda" aria-labelledby="h-ag">
-  <h2 id="h-ag">Agenda rápida — 2026</h2>
+  <h2 id="h-ag">Agenda rápida 2026</h2>
   <div class="agenda-wrap">
     <div class="filtros" role="group" aria-label="Filtrar jogos">
       <button class="btn" type="button" data-tv="todos" aria-pressed="true">Todos os jogos</button>
       <button class="btn" type="button" data-tv="conf" aria-pressed="false">Só TV confirmada</button>
     </div>
     <table class="ag" id="agenda-tab">
-      <caption>Brasileirão 2026 · horários de Brasília</caption>
+      <caption>Brasileirão 2026, horários de Brasília</caption>
       <thead><tr><th scope="col">Data</th><th scope="col">Horário</th><th scope="col">Adversário</th><th scope="col">Competição</th><th scope="col">Onde assistir</th><th scope="col">Status</th></tr></thead>
       <tbody>
-        <tr data-st="conf">
+        <tr data-st="conf" class="prox-jogo">
           <td class="c-data" data-label="Data">Qui 19/11</td>
           <td class="c-hora" data-label="Horário">19h30</td>
-          <td class="c-adv" data-label="Adversário">Vasco x Internacional <span class="det">Fora · São Januário, Rio de Janeiro</span></td>
-          <td class="c-comp" data-label="Competição">Brasileirão · 35ª rodada</td>
+          <td class="c-adv" data-label="Adversário">Vasco x Internacional <span class="det">Fora, em São Januário (Rio de Janeiro)</span></td>
+          <td class="c-comp" data-label="Competição">Brasileirão, 35ª rodada</td>
           <td class="c-tv" data-label="Onde assistir">SporTV e Premiere</td>
-          <td class="c-st" data-label="Status"><span class="tag ok">🟢 Confirmado</span></td>
+          <td class="c-st" data-label="Status"><span class="chip ok">🟢 Confirmado</span></td>
         </tr>
         <tr data-st="pend">
           <td class="c-data" data-label="Data">Seg 23/11</td>
           <td class="c-hora" data-label="Horário">19h30</td>
-          <td class="c-adv" data-label="Adversário">Internacional x Vitória <span class="det">Casa · Beira-Rio, Porto Alegre</span></td>
-          <td class="c-comp" data-label="Competição">Brasileirão · 36ª rodada</td>
+          <td class="c-adv" data-label="Adversário">Internacional x Vitória <span class="det">Casa, no Beira-Rio (Porto Alegre)</span></td>
+          <td class="c-comp" data-label="Competição">Brasileirão, 36ª rodada</td>
           <td class="c-tv" data-label="Onde assistir">A confirmar</td>
-          <td class="c-st" data-label="Status"><span class="tag pend">🟡 A confirmar</span></td>
+          <td class="c-st" data-label="Status"><span class="chip pend">🟡 A confirmar</span></td>
         </tr>
         <tr data-st="pend">
           <td class="c-data" data-label="Data">Dom 29/11</td>
           <td class="c-hora" data-label="Horário">18h30</td>
-          <td class="c-adv" data-label="Adversário">Internacional x RB Bragantino <span class="det">Casa · Beira-Rio, Porto Alegre</span></td>
-          <td class="c-comp" data-label="Competição">Brasileirão · 37ª rodada</td>
+          <td class="c-adv" data-label="Adversário">Internacional x RB Bragantino <span class="det">Casa, no Beira-Rio (Porto Alegre)</span></td>
+          <td class="c-comp" data-label="Competição">Brasileirão, 37ª rodada</td>
           <td class="c-tv" data-label="Onde assistir">A confirmar</td>
-          <td class="c-st" data-label="Status"><span class="tag pend">🟡 A confirmar</span></td>
+          <td class="c-st" data-label="Status"><span class="chip pend">🟡 A confirmar</span></td>
         </tr>
         <tr data-st="pend">
           <td class="c-data" data-label="Data">Qua 02/12</td>
           <td class="c-hora" data-label="Horário">21h30</td>
-          <td class="c-adv" data-label="Adversário">Cruzeiro x Internacional <span class="det">Fora · Mineirão, Belo Horizonte · rodada final simultânea</span></td>
-          <td class="c-comp" data-label="Competição">Brasileirão · 38ª rodada</td>
+          <td class="c-adv" data-label="Adversário">Cruzeiro x Internacional <span class="det">Fora, no Mineirão (Belo Horizonte). Rodada final simultânea</span></td>
+          <td class="c-comp" data-label="Competição">Brasileirão, 38ª rodada</td>
           <td class="c-tv" data-label="Onde assistir">A confirmar</td>
-          <td class="c-st" data-label="Status"><span class="tag pend">🟡 A confirmar</span></td>
+          <td class="c-st" data-label="Status"><span class="chip pend">🟡 A confirmar</span></td>
         </tr>
       </tbody>
     </table>
-    <div class="vazio" id="ag-vazio" hidden>Nenhum jogo com transmissão confirmada neste filtro.</div>
+    <div class="vazio" id="ag-vazio" hidden>Nenhum jogo com transmissão confirmada ainda. Volte para "Todos os jogos" para ver a agenda completa.</div>
     <p class="linha-tv">Transmissões checadas; pendências sinalizadas em amarelo.</p>
   </div>
 </section>
 
 <section id="fontes" aria-labelledby="h-f">
   <h2 id="h-f" class="sr">Fontes</h2>
-  <details>
+  <details class="fontes">
     <summary>Fontes consultadas (13)</summary>
     <ol>
-      <li id="f1"><a href="https://valorfinal.com.br/brasileirao/">ValorFinal — classificação e modelo após a 34ª rodada</a> · atualizado 11/11/2026, 12h30</li>
-      <li id="f2"><a href="https://www.osul.com.br/eduardo-baptista-aposta-em-seis-pontos-no-beira-rio-para-afastar-o-inter-do-rebaixamento/">O Sul — Baptista e os jogos no Beira-Rio</a> · 08/11/2026</li>
-      <li id="f3"><a href="https://internacional.com.br/">Internacional — site oficial, próximos jogos</a></li>
-      <li id="f4"><a href="https://maquinadoesporte.com.br/onde-assistir/vasco-x-internacional-onde-assistir-ao-jogo-da-35a-rodada-do-brasileirao/">Máquina do Esporte — onde assistir Vasco x Inter</a></li>
-      <li id="f5"><a href="https://www.mktesportivo.com/2026/11/onde-assistir-vasco-x-internacional-ao-vivo-pelo-brasileirao-2026/">MKTEsportivo — onde assistir Vasco x Inter</a> · 11/11/2026</li>
-      <li id="f6"><a href="https://www.osul.com.br/stjd-suspende-zagueiro-maripan-e-preparador-de-goleiros-do-inter/">O Sul — STJD e suspensão de Maripán</a> · 10/11/2026</li>
-      <li id="f7"><a href="https://br.bolavip.com/internacional/eduardo-baptista-adota-preparacao-especial-para-alan-patrick">Bolavip — recuperação de Alan Patrick</a> · 11/11/2026</li>
-      <li id="f8"><a href="https://www.tropicalfmsc.com.br/post/inter-far%C3%A1-jogo-treino-durante-parada-do-brasileir%C3%A3o">Tropical FM — jogo-treino de 14/11</a> · 11/11/2026</li>
-      <li id="f9"><a href="https://www.futebolexpert.com.br/onde-assistir/vasco">Futebol Expert — agenda de transmissões do Vasco</a></li>
-      <li id="f10"><a href="https://www.lance.com.br/futebol-nacional/brasileirao-cbf-divulga-datas-e-horarios-das-duas-ultimas-rodadas-veja.html">Lance! — CBF detalha 37ª e 38ª rodadas</a> · 06/11/2026</li>
-      <li id="f11"><a href="https://www.radiopampa.com.br/confira-as-datas-e-horarios-dos-proximos-tres-jogos-do-inter-pelo-brasileirao/">Rádio Pampa — CBF detalha 35ª e 36ª rodadas</a> · 30/10/2026</li>
-      <li id="f12"><a href="https://www.brasil247.com/tendencias/2026/11/02/brasileirao-2026-34-rodada/">Brasil 247 — classificação após a 33ª rodada</a> · 02/11/2026</li>
-      <li id="f13"><a href="https://www.itatiaia.com.br/esportes/futebol/futebol-nacional/futebol-do-sul/internacional/internacional-no-brasileirao-datas-e-horarios-dos-jogos-das-rodadas-37-e-38/">Itatiaia — datas do Inter nas rodadas 37 e 38</a> · 06/11/2026</li>
+      <li id="f1"><a href="https://valorfinal.com.br/brasileirao/">ValorFinal: classificação e modelo após a 34ª rodada</a>, atualizado 11/11/2026, 12h30</li>
+      <li id="f2"><a href="https://www.osul.com.br/eduardo-baptista-aposta-em-seis-pontos-no-beira-rio-para-afastar-o-inter-do-rebaixamento/">O Sul: Baptista e os jogos no Beira-Rio</a>, 08/11/2026</li>
+      <li id="f3"><a href="https://internacional.com.br/">Internacional, site oficial: próximos jogos</a></li>
+      <li id="f4"><a href="https://maquinadoesporte.com.br/onde-assistir/vasco-x-internacional-onde-assistir-ao-jogo-da-35a-rodada-do-brasileirao/">Máquina do Esporte: onde assistir Vasco x Inter</a></li>
+      <li id="f5"><a href="https://www.mktesportivo.com/2026/11/onde-assistir-vasco-x-internacional-ao-vivo-pelo-brasileirao-2026/">MKTEsportivo: onde assistir Vasco x Inter</a>, 11/11/2026</li>
+      <li id="f6"><a href="https://www.osul.com.br/stjd-suspende-zagueiro-maripan-e-preparador-de-goleiros-do-inter/">O Sul: STJD e suspensão de Maripán</a>, 10/11/2026</li>
+      <li id="f7"><a href="https://br.bolavip.com/internacional/eduardo-baptista-adota-preparacao-especial-para-alan-patrick">Bolavip: recuperação de Alan Patrick</a>, 11/11/2026</li>
+      <li id="f8"><a href="https://www.tropicalfmsc.com.br/post/inter-far%C3%A1-jogo-treino-durante-parada-do-brasileir%C3%A3o">Tropical FM: jogo-treino de 14/11</a>, 11/11/2026</li>
+      <li id="f9"><a href="https://www.futebolexpert.com.br/onde-assistir/vasco">Futebol Expert: transmissões do Vasco</a></li>
+      <li id="f10"><a href="https://www.lance.com.br/futebol-nacional/brasileirao-cbf-divulga-datas-e-horarios-das-duas-ultimas-rodadas-veja.html">Lance!: CBF detalha 37ª e 38ª rodadas</a>, 06/11/2026</li>
+      <li id="f11"><a href="https://www.lance.com.br/futebol-nacional/cbf-detalha-rodadas-35-e-36-do-brasileirao-veja-datas-e-horarios-dos-jogos.html">Lance!: CBF detalha 35ª e 36ª rodadas</a>, 30/10/2026</li>
+      <li id="f12"><a href="https://www.brasil247.com/tendencias/2026/11/02/brasileirao-2026-34-rodada/">Brasil 247: classificação após a 33ª rodada</a>, 02/11/2026</li>
+      <li id="f13"><a href="https://www.itatiaia.com.br/esportes/futebol/futebol-nacional/futebol-do-sul/internacional/internacional-no-brasileirao-datas-e-horarios-dos-jogos-das-rodadas-37-e-38/">Itatiaia: datas do Inter nas rodadas 37 e 38</a>, 06/11/2026</li>
     </ol>
   </details>
 </section>
@@ -440,80 +619,145 @@ footer{padding:12px 0 20px;font-size:10.5px;color:var(--txt2)}
 
 <footer class="wrap">
   <p>Este arquivo é um retrato da consulta de 11/11/2026, às 22h24 (Brasília), e não se atualiza sozinho.</p>
-  <a class="topo" href="#topo">↑ Voltar ao topo</a>
+  <a class="topo" href="#topo">Voltar ao topo</a>
 </footer>
 <div id="tip" role="tooltip"></div>
+<div class="toast" id="toast" role="status" hidden></div>
 
 <script>
 (function(){
-  var dados=[
-    {pos:11,clube:"Botafogo",p:42,j:34,v:11,sg:-7},
-    {pos:12,clube:"Coritiba",p:42,j:34,v:11,sg:-11},
-    {pos:13,clube:"Vasco",p:41,j:33,v:11,sg:-7},
-    {pos:14,clube:"Mirassol",p:40,j:34,v:10,sg:-9},
-    {pos:15,clube:"Vitória",p:38,j:34,v:10,sg:-16},
-    {pos:16,clube:"Internacional",p:38,j:34,v:9,sg:-4},
-    {pos:17,clube:"Corinthians",p:37,j:34,v:9,sg:-6},
-    {pos:18,clube:"Grêmio",p:37,j:34,v:9,sg:-9},
-    {pos:19,clube:"Remo",p:29,j:34,v:6,sg:-20},
-    {pos:20,clube:"Chapecoense",p:21,j:33,v:4,sg:-35}
-  ];
-  var pontos=[{r:"29ª",p:31,res:"V 2x1 Corinthians"},{r:"30ª",p:32,res:"E 1x1 Grêmio"},{r:"31ª",p:32,res:"D 0x2 Mirassol"},{r:"32ª",p:35,res:"V 3x0 Botafogo"},{r:"33ª",p:35,res:"D 1x2 Fluminense"},{r:"34ª",p:38,res:"V 1x0 Coritiba"}];
-  var faixa="todos", busca="", ord={k:"pos",asc:true};
+  "use strict";
   var NS="http://www.w3.org/2000/svg";
   var tip=document.getElementById("tip");
-  function showTip(e,t){tip.textContent=t;tip.style.opacity=1;var r=e.target.getBoundingClientRect();var x=(e.clientX||r.left+r.width/2)+10,y=(e.clientY||r.top)-34;x=Math.min(x,window.innerWidth-230);tip.style.left=Math.max(6,x)+"px";tip.style.top=Math.max(6,y)+"px";}
-  function hideTip(){tip.style.opacity=0;}
+  function cssv(n){return getComputedStyle(document.documentElement).getPropertyValue(n).trim();}
   function el(n,a,txt){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;return e;}
-  function filtrados(){
-    return dados.filter(function(d){
-      if(faixa==="briga"&&(d.pos<14||d.pos>18))return false;
-      if(faixa==="z4"&&d.pos<17)return false;
-      if(busca&&d.clube.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").indexOf(busca)<0)return false;
-      return true;
-    });
+  function dica(alvo,texto){
+    function mostra(e){tip.textContent=texto;tip.style.opacity=1;var r=alvo.getBoundingClientRect();var x=(e.clientX||r.left+r.width/2)+10,y=(e.clientY||r.top)-36;tip.style.left=Math.max(6,Math.min(x,innerWidth-240))+"px";tip.style.top=Math.max(6,y)+"px";}
+    function esconde(){tip.style.opacity=0;}
+    alvo.addEventListener("mousemove",mostra);alvo.addEventListener("focus",mostra);alvo.addEventListener("mouseleave",esconde);alvo.addEventListener("blur",esconde);
   }
-  function desenhaBarras(){
+
+  /* Tema */
+  var raiz=document.documentElement;
+  try{var t=localStorage.getItem("boletim-tema");if(t)raiz.setAttribute("data-theme",t);}catch(e){}
+  document.getElementById("btn-tema").addEventListener("click",function(){
+    var escuro=raiz.getAttribute("data-theme")?raiz.getAttribute("data-theme")==="dark":matchMedia("(prefers-color-scheme: dark)").matches;
+    var novo=escuro?"light":"dark";raiz.setAttribute("data-theme",novo);
+    try{localStorage.setItem("boletim-tema",novo);}catch(e){}
+    redesenha();
+  });
+
+  /* Contagem regressiva */
+  var alvoJogo=new Date("2026-11-19T19:30:00-03:00").getTime();
+  function relogio(){
+    var ms=alvoJogo-Date.now();
+    if(ms<=0){document.getElementById("relogio").hidden=true;document.querySelector(".cont .q").textContent="Horário do jogo já passou";document.getElementById("relogio-txt").textContent="Este boletim é de 11/11 e não traz o placar. Consulte uma edição mais recente.";return;}
+    var d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5),m=Math.floor(ms%36e5/6e4);
+    document.getElementById("r-d").textContent=d;document.getElementById("r-h").textContent=h;document.getElementById("r-m").textContent=m;
+  }
+  relogio();setInterval(relogio,30000);
+
+  /* Copiar resumo */
+  var toast=document.getElementById("toast");
+  function aviso(t){toast.textContent=t;toast.hidden=false;clearTimeout(aviso.t);aviso.t=setTimeout(function(){toast.hidden=true;},2400);}
+  document.getElementById("btn-copiar").addEventListener("click",function(){
+    var txt="Boletim do Inter, 11/11/2026\n• 16º, 38 pts em 34 jogos, 1 acima do Z4\n• Próximo: Vasco x Inter, qui 19/11, 19h30, São Januário (SporTV e Premiere)\n• Maripán suspenso; Alan Patrick depende de liberação\n• Simulação de IA: 34% de risco de queda; meta: vencer Vitória e Bragantino no Beira-Rio\nhttps://cmgalvao.github.io/boletim-inter/";
+    function fallback(){var a=document.createElement("textarea");a.value=txt;document.body.appendChild(a);a.select();try{document.execCommand("copy");aviso("Resumo copiado");}catch(e){aviso("Não foi possível copiar. Selecione o texto manualmente.");}a.remove();}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(function(){aviso("Resumo copiado");},fallback);}else fallback();
+  });
+
+  /* Navegação ativa */
+  var links=[].slice.call(document.querySelectorAll("nav a"));
+  if("IntersectionObserver" in window){
+    var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle("ativo",a.getAttribute("href")==="#"+e.target.id);});}});},{rootMargin:"-40% 0px -55% 0px"});
+    ["destaques","numeros","analise","agenda","fontes"].forEach(function(id){obs.observe(document.getElementById(id));});
+  }
+
+  /* Dados */
+  var dados=[
+    {pos:11,clube:"Botafogo",p:42,j:34,v:11,sg:-7,risco:1.9},
+    {pos:12,clube:"Coritiba",p:42,j:34,v:11,sg:-11,risco:4.9},
+    {pos:13,clube:"Vasco",p:41,j:33,v:11,sg:-7,risco:2.1},
+    {pos:14,clube:"Mirassol",p:40,j:34,v:10,sg:-9,risco:18.8},
+    {pos:15,clube:"Vitória",p:38,j:34,v:10,sg:-16,risco:42.5},
+    {pos:16,clube:"Internacional",p:38,j:34,v:9,sg:-4,risco:33.9},
+    {pos:17,clube:"Corinthians",p:37,j:34,v:9,sg:-6,risco:42.4},
+    {pos:18,clube:"Grêmio",p:37,j:34,v:9,sg:-9,risco:53.5},
+    {pos:19,clube:"Remo",p:29,j:34,v:6,sg:-20,risco:99.9},
+    {pos:20,clube:"Chapecoense",p:21,j:33,v:4,sg:-35,risco:100}
+  ];
+  var pontos=[{r:"29ª",p:31,res:"V 2x1 Corinthians"},{r:"30ª",p:32,res:"E 1x1 Grêmio"},{r:"31ª",p:32,res:"D 0x2 Mirassol"},{r:"32ª",p:35,res:"V 3x0 Botafogo"},{r:"33ª",p:35,res:"D 1x2 Fluminense"},{r:"34ª",p:38,res:"V 1x0 Coritiba"}];
+  var faixa="todos",busca="",ord={k:"pos",asc:true};
+  function semAcento(s){return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");}
+  function filtrados(){return dados.filter(function(d){
+    if(faixa==="briga"&&(d.pos<14||d.pos>18))return false;
+    if(faixa==="z4"&&d.pos<17)return false;
+    if(busca&&semAcento(d.clube).indexOf(busca)<0)return false;return true;});}
+
+  function barras(){
     var box=document.getElementById("chart-tabela");box.innerHTML="";
     var ds=filtrados();
-    if(!ds.length){box.innerHTML='<div class="vazio">Sem clubes para exibir neste filtro.</div>';return;}
-    var W=Math.max(300,box.clientWidth||640),rowH=26,top=4,left=104,H=top+ds.length*rowH+18,max=45;
+    if(!ds.length){box.innerHTML='<div class="vazio">Nenhum clube nesta combinação de faixa e busca.</div>';return;}
+    var W=Math.max(300,box.clientWidth||640),rowH=28,top=6,left=112,right=34,H=top+ds.length*rowH+20,max=45;
+    var tinta=cssv("--tinta"),tinta2=cssv("--tinta2"),borda=cssv("--borda"),suave=cssv("--colorado-s");
     var s=el("svg",{viewBox:"0 0 "+W+" "+H,"aria-hidden":"true"});
-    [0,15,30,45].forEach(function(t){var x=left+(W-left-40)*t/max;s.appendChild(el("line",{x1:x,x2:x,y1:top,y2:H-16,stroke:"#EFD9DE"}));s.appendChild(el("text",{x:x,y:H-3,"font-size":"11","text-anchor":"middle",fill:"#795B63"},t));});
+    var esc=function(v){return left+(W-left-right)*v/max;};
+    [0,15,30,45].forEach(function(t){s.appendChild(el("line",{x1:esc(t),x2:esc(t),y1:top,y2:H-18,stroke:borda}));s.appendChild(el("text",{x:esc(t),y:H-4,"font-size":"11","text-anchor":"middle",fill:tinta2},t));});
     ds.forEach(function(d,i){
-      var y=top+i*rowH,w=(W-left-40)*d.p/max;
-      var cor=d.clube==="Internacional"?"#B82C42":(d.pos>=17?"#40222A":"#E7A9B4");
-      s.appendChild(el("text",{x:left-8,y:y+rowH/2+4,"font-size":"12","text-anchor":"end",fill:"#40222A","font-weight":d.clube==="Internacional"?"700":"400"},d.pos+"º "+d.clube));
-      var r=el("rect",{x:left,y:y+4,width:w,height:rowH-8,rx:4,fill:cor,tabindex:"0"});
-      var t=d.pos+"º "+d.clube+": "+d.p+" pts em "+d.j+" jogos, "+d.v+" vitórias, saldo "+d.sg;
-      r.appendChild(el("title",{},t));
-      r.addEventListener("mousemove",function(e){showTip(e,t)});r.addEventListener("mouseleave",hideTip);
-      r.addEventListener("focus",function(e){showTip(e,t)});r.addEventListener("blur",hideTip);
+      var y=top+i*rowH,w=esc(d.p)-left,inter=d.clube==="Internacional";
+      var cor=inter?"#B82C42":(d.pos>=17?"#5B2B36":suave);
+      s.appendChild(el("text",{x:left-8,y:y+rowH/2+4,"font-size":"12","text-anchor":"end",fill:tinta,"font-weight":inter?"700":"400"},d.pos+"º "+d.clube));
+      var r=el("rect",{x:left,y:y+5,width:Math.max(2,w),height:rowH-10,rx:5,fill:cor,tabindex:"0","aria-label":d.clube+", "+d.p+" pontos"});
+      dica(r,d.pos+"º "+d.clube+": "+d.p+" pts em "+d.j+" jogos, "+d.v+" vitórias, saldo "+(d.sg>0?"+":"")+d.sg);
       s.appendChild(r);
-      s.appendChild(el("text",{x:left+w+5,y:y+rowH/2+4,"font-size":"12","font-weight":"700",fill:"#40222A"},d.p));
+      s.appendChild(el("text",{x:left+w+6,y:y+rowH/2+4,"font-size":"12","font-weight":"700",fill:tinta},d.p));
     });
+    var xl=esc(38);s.appendChild(el("line",{x1:xl,x2:xl,y1:top,y2:H-18,stroke:tinta2,"stroke-dasharray":"4 4","stroke-width":"1.5"}));
     box.appendChild(s);
   }
-  function desenhaLinha(){
+
+  function linha(){
     var box=document.getElementById("chart-pontos");box.innerHTML="";
-    var W=320,H=170,l=30,r=14,t=16,b=26,min=28,max=40;
+    var W=Math.max(300,box.clientWidth||600),H=200,l=30,r=56,t=18,b=28,min=28,max=50;
+    var tinta=cssv("--tinta"),tinta2=cssv("--tinta2"),borda=cssv("--borda"),suave=cssv("--colorado-s");
     var s=el("svg",{viewBox:"0 0 "+W+" "+H,"aria-hidden":"true"});
-    [30,34,38].forEach(function(v){var y=t+(H-t-b)*(1-(v-min)/(max-min));s.appendChild(el("line",{x1:l,x2:W-r,y1:y,y2:y,stroke:"#EFD9DE"}));s.appendChild(el("text",{x:l-6,y:y+4,"font-size":"10","text-anchor":"end",fill:"#795B63"},v));});
-    var pts=pontos.map(function(d,i){return [l+(W-l-r)*i/(pontos.length-1),t+(H-t-b)*(1-(d.p-min)/(max-min))];});
-    s.appendChild(el("polyline",{points:pts.map(function(p){return p.join(",")}).join(" "),fill:"none",stroke:"#B82C42","stroke-width":"2.5"}));
+    var n=pontos.length,passos=n+3; // 6 rodadas reais + 4 futuras (35 a 38) = 10 posições
+    var X=function(i){return l+(W-l-r)*i/(passos);},Y=function(v){return t+(H-t-b)*(1-(v-min)/(max-min));};
+    [30,35,40,45,50].forEach(function(v){s.appendChild(el("line",{x1:l,x2:W-r+30,y1:Y(v),y2:Y(v),stroke:borda}));s.appendChild(el("text",{x:l-6,y:Y(v)+4,"font-size":"10","text-anchor":"end",fill:tinta2},v));});
+    // faixa projetada 34ª -> 38ª
+    var x0=X(n-1),x1=X(passos);
+    s.appendChild(el("path",{d:"M"+x0+" "+Y(38)+" L"+x1+" "+Y(47)+" L"+x1+" "+Y(40)+" Z",fill:suave,opacity:".55"}));
+    s.appendChild(el("line",{x1:x0,y1:Y(38),x2:x1,y2:Y(43.3),stroke:"#B82C42","stroke-width":"2","stroke-dasharray":"5 4"}));
+    s.appendChild(el("line",{x1:l,x2:W-r+30,y1:Y(43),y2:Y(43),stroke:"#1F6B3A","stroke-width":"1.5","stroke-dasharray":"3 4"}));
+    s.appendChild(el("text",{x:W-r+30,y:Y(43)-5,"font-size":"10","text-anchor":"end",fill:"#1F6B3A"},"16º típico: 43"));
+    var pc=el("circle",{cx:x1,cy:Y(43.3),r:7,fill:"#fff",stroke:"#B82C42","stroke-width":"2.5",tabindex:"0","stroke-dasharray":"3 2"});
+    dica(pc,"Projeção ao fim da 38ª: 43,3 pts (80% das simulações entre 40 e 47)");s.appendChild(pc);
+    s.appendChild(el("text",{x:x1+10,y:Y(43.3)+4,"font-size":"12","font-weight":"700",fill:tinta},"43,3"));
+    s.appendChild(el("text",{x:x1,y:H-8,"font-size":"10","text-anchor":"middle",fill:tinta2},"38ª"));
+    var pts=pontos.map(function(d,i){return [X(i),Y(d.p)];});
+    s.appendChild(el("polyline",{points:pts.map(function(p){return p.join(",");}).join(" "),fill:"none",stroke:"#B82C42","stroke-width":"3","stroke-linejoin":"round"}));
     pontos.forEach(function(d,i){
-      var c=el("circle",{cx:pts[i][0],cy:pts[i][1],r:6,fill:"#fff",stroke:"#B82C42","stroke-width":"2.5",tabindex:"0"});
-      var tx=d.r+" rodada: "+d.p+" pts ("+d.res+")";
-      c.appendChild(el("title",{},tx));
-      c.addEventListener("mousemove",function(e){showTip(e,tx)});c.addEventListener("mouseleave",hideTip);
-      c.addEventListener("focus",function(e){showTip(e,tx)});c.addEventListener("blur",hideTip);
-      s.appendChild(c);
-      s.appendChild(el("text",{x:pts[i][0],y:pts[i][1]-10,"font-size":"11","text-anchor":"middle","font-weight":"700",fill:"#40222A"},d.p));
-      s.appendChild(el("text",{x:pts[i][0],y:H-8,"font-size":"10","text-anchor":"middle",fill:"#795B63"},d.r));
+      var c=el("circle",{cx:pts[i][0],cy:pts[i][1],r:6,fill:cssv("--superficie"),stroke:"#B82C42","stroke-width":"2.5",tabindex:"0"});
+      dica(c,d.r+" rodada: "+d.p+" pts ("+d.res+")");s.appendChild(c);
+      s.appendChild(el("text",{x:pts[i][0],y:pts[i][1]-11,"font-size":"11","text-anchor":"middle","font-weight":"700",fill:tinta},d.p));
+      if(i%1===0)s.appendChild(el("text",{x:pts[i][0],y:H-8,"font-size":"10","text-anchor":"middle",fill:tinta2},d.r));
     });
     box.appendChild(s);
   }
-  function desenhaTabela(){
+
+  function donut(){
+    var box=document.getElementById("chart-donut");box.innerHTML="";
+    var parts=[[9,"#1F6B3A","vitórias"],[11,cssv("--neutro"),"empates"],[14,"#B82C42","derrotas"]],tot=34,R=46,C=2*Math.PI*R,acc=0;
+    var s=el("svg",{viewBox:"0 0 120 120","aria-hidden":"true"});
+    parts.forEach(function(p){
+      var len=C*p[0]/tot;var c=el("circle",{cx:60,cy:60,r:R,fill:"none",stroke:p[1],"stroke-width":"16","stroke-dasharray":(len-2)+" "+(C-len+2),"stroke-dashoffset":-acc,transform:"rotate(-90 60 60)",tabindex:"0"});
+      dica(c,p[0]+" "+p[2]+" ("+Math.round(p[0]/tot*100)+"%)");s.appendChild(c);acc+=len;});
+    s.appendChild(el("text",{x:60,y:62,"text-anchor":"middle","font-size":"26","font-weight":"800",fill:cssv("--tinta"),"font-family":"Avenir Next Condensed,Bahnschrift,Roboto Condensed,Arial Narrow,sans-serif"},"37%"));
+    s.appendChild(el("text",{x:60,y:78,"text-anchor":"middle","font-size":"9.5",fill:cssv("--tinta2")},"aproveitamento"));
+    box.appendChild(s);
+  }
+
+  function tabela(){
     var tb=document.querySelector("#tabela tbody");tb.innerHTML="";
     var ds=filtrados().slice().sort(function(a,b){var x=a[ord.k],y=b[ord.k];if(typeof x==="string")return ord.asc?x.localeCompare(y,"pt-BR"):y.localeCompare(x,"pt-BR");return ord.asc?x-y:y-x;});
     document.getElementById("tab-vazio").hidden=ds.length>0;
@@ -521,38 +765,83 @@ footer{padding:12px 0 20px;font-size:10.5px;color:var(--txt2)}
     ds.forEach(function(d){
       var tr=document.createElement("tr");
       if(d.clube==="Internacional")tr.className="inter";else if(d.pos>=17)tr.className="z4";
-      tr.innerHTML="<td>"+d.pos+"º</td><td>"+d.clube+(d.j<34?" <span class='nota'>(1 jogo a menos)</span>":"")+"</td><td>"+d.p+"</td><td>"+d.j+"</td><td>"+d.v+"</td><td>"+(d.sg>0?"+":"")+d.sg+"</td>";
+      var rc=d.risco>=40?"r-alto":(d.risco>=10?"r-medio":"r-baixo");
+      var rt=d.risco>=99.9?(d.risco===100?"100%":"99,9%"):(d.risco<1?"<1%":Math.round(d.risco)+"%");
+      tr.innerHTML="<td>"+d.pos+"º</td><td>"+d.clube+(d.j<34?" <span class='nota'>(1 jogo a menos)</span>":"")+"</td><td>"+d.p+"</td><td>"+d.j+"</td><td>"+d.v+"</td><td>"+(d.sg>0?"+":"")+d.sg+"</td><td><b class='"+rc+"'>"+rt+"</b></td>";
       tb.appendChild(tr);
     });
     document.querySelectorAll("#tabela th").forEach(function(th){var b=th.querySelector("button");th.setAttribute("aria-sort",b.dataset.ord===ord.k?(ord.asc?"ascending":"descending"):"none");});
   }
-  function atualiza(){desenhaBarras();desenhaTabela();}
-  var rz;window.addEventListener("resize",function(){clearTimeout(rz);rz=setTimeout(desenhaBarras,150);});
-  document.querySelectorAll("[data-faixa]").forEach(function(b){b.addEventListener("click",function(){faixa=b.dataset.faixa;document.querySelectorAll("[data-faixa]").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});atualiza();});});
-  document.getElementById("busca").addEventListener("input",function(e){busca=e.target.value.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");atualiza();});
-  document.querySelectorAll("#tabela th button").forEach(function(b){b.addEventListener("click",function(){var k=b.dataset.ord;if(ord.k===k)ord.asc=!ord.asc;else{ord.k=k;ord.asc=(k==="pos"||k==="clube");}desenhaTabela();});});
-  document.querySelectorAll("[data-tv]").forEach(function(b){b.addEventListener("click",function(){var so=b.dataset.tv==="conf";document.querySelectorAll("[data-tv]").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});var n=0;document.querySelectorAll("#agenda-tab tbody tr").forEach(function(tr){var mostra=!so||tr.dataset.st==="conf";tr.hidden=!mostra;if(mostra)n++;});document.getElementById("ag-vazio").hidden=n>0;document.getElementById("agenda-tab").style.display=n?"":"none";});});
-  desenhaLinha();atualiza();
-})();
-</script>
+  function atualiza(){barras();tabela();}
+  document.querySelectorAll("[data-faixa]").forEach(function(b){b.addEventListener("click",function(){faixa=b.dataset.faixa;document.querySelectorAll("[data-faixa]").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false");});atualiza();});});
+  document.getElementById("busca").addEventListener("input",function(e){busca=semAcento(e.target.value.trim());atualiza();});
+  document.querySelectorAll("#tabela th button").forEach(function(b){b.addEventListener("click",function(){var k=b.dataset.ord;if(ord.k===k)ord.asc=!ord.asc;else{ord.k=k;ord.asc=(k==="pos"||k==="clube");}tabela();});});
 
-<script>
-(function(){
+  /* Agenda */
+  document.querySelectorAll("[data-tv]").forEach(function(b){b.addEventListener("click",function(){
+    var so=b.dataset.tv==="conf",n=0;
+    document.querySelectorAll("[data-tv]").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false");});
+    document.querySelectorAll("#agenda-tab tbody tr").forEach(function(tr){var m=!so||tr.dataset.st==="conf";tr.hidden=!m;if(m)n++;});
+    document.getElementById("ag-vazio").hidden=n>0;document.getElementById("agenda-tab").style.display=n?"":"none";});});
+
+  /* IA: risco por clube */
   var risco=[["Grêmio",53.5],["Vitória",42.5],["Corinthians",42.4],["Internacional",33.9],["Mirassol",18.8],["Coritiba",4.9],["Vasco",2.1],["Botafogo",1.9]];
-  var tip=document.getElementById("tip");
-  function on(el,t){function sh(e){tip.textContent=t;tip.style.opacity=1;var r=el.getBoundingClientRect();var x=(e.clientX||r.left+20)+10,y=(e.clientY||r.top)-34;tip.style.left=Math.max(6,Math.min(x,innerWidth-230))+"px";tip.style.top=Math.max(6,y)+"px";}
-    el.addEventListener("mousemove",sh);el.addEventListener("focus",sh);el.addEventListener("mouseleave",function(){tip.style.opacity=0});el.addEventListener("blur",function(){tip.style.opacity=0});}
-  var box=document.getElementById("ia-risco");
+  var rb=document.getElementById("ia-risco");
   risco.forEach(function(d){var r=document.createElement("div");r.className="rbar"+(d[0]==="Internacional"?" inter":"");r.tabIndex=0;
     var pct=d[1].toFixed(1).replace(".",",");r.setAttribute("aria-label",d[0]+": "+pct+"% de risco de queda");
-    r.innerHTML="<span>"+d[0]+"</span><span class='trk'><span class='fill' style='display:block;width:"+d[1]+"%'></span></span><b>"+Math.round(d[1])+"%</b>";
-    on(r,d[0]+": "+pct+"% de risco de queda nas simulações");box.appendChild(r);});
-  var jogos=[["Vasco x Inter","Qui 19/11 · fora",30,26,44],["Inter x Vitória","Seg 23/11 · casa",51,26,23],["Inter x Bragantino","Dom 29/11 · casa",39,28,32],["Cruzeiro x Inter","Qua 02/12 · fora",23,24,53]];
+    r.innerHTML="<span>"+d[0]+"</span><span class='trk'><span class='fill' style='width:"+d[1]+"%;transform:scaleX(0)'></span></span><b>"+Math.round(d[1])+"%</b>";
+    dica(r,d[0]+": "+pct+"% de risco de queda nas simulações");rb.appendChild(r);});
+  var fills=rb.querySelectorAll(".fill");
+  if("IntersectionObserver" in window){var o2=new IntersectionObserver(function(es){if(es[0].isIntersecting){fills.forEach(function(f){f.style.transform="scaleX(1)";});o2.disconnect();}});o2.observe(rb);}
+  else fills.forEach(function(f){f.style.transform="scaleX(1)";});
+
+  var jogos=[["Vasco x Inter","Qui 19/11, fora",30,26,44,"Vasco"],["Inter x Vitória","Seg 23/11, casa",51,26,23,"Vitória"],["Inter x Bragantino","Dom 29/11, casa",39,28,32,"Bragantino"],["Cruzeiro x Inter","Qua 02/12, fora",23,24,53,"Cruzeiro"]];
   var jb=document.getElementById("ia-jogos");
-  jogos.forEach(function(j){var d=document.createElement("div");d.className="jogo";d.tabIndex=0;
-    var txt=j[0]+": vitória "+j[2]+"%, empate "+j[3]+"%, derrota "+j[4]+"%";d.setAttribute("aria-label",txt);
+  jogos.forEach(function(j){var d=document.createElement("div");d.className="jg";d.tabIndex=0;
+    var txt=j[0]+": vitória do Inter "+j[2]+"%, empate "+j[3]+"%, derrota "+j[4]+"%";d.setAttribute("aria-label",txt);
     d.innerHTML="<div class='t'>"+j[0]+"<span>"+j[1]+"</span></div><div class='stack' aria-hidden='true'><div style='width:"+j[2]+"%;background:#1F6B3A'>"+j[2]+"%</div><div class='e' style='width:"+j[3]+"%;background:#C9B8BD'>"+j[3]+"%</div><div style='width:"+j[4]+"%;background:#B82C42'>"+j[4]+"%</div></div>";
-    on(d,txt);jb.appendChild(d);});
+    dica(d,txt);jb.appendChild(d);});
+
+  /* Simulador */
+  var riscoPorPts={38:99.9,39:99.4,40:97.2,41:77.9,42:49.8,43:29.4,44:4.6,45:0.7,46:0.05,47:0,48:0,49:0,50:0};
+  var esc={};var sj=document.getElementById("sim-jogos");
+  jogos.forEach(function(j,i){
+    var row=document.createElement("div");row.className="sj";
+    row.innerHTML="<div><b>"+j[0]+"</b><small>"+j[1]+"</small></div><div class='seg' role='group' aria-label='Resultado do Inter contra o "+j[5]+"'>"+
+      ["v","e","d"].map(function(r){return "<button type='button' data-i='"+i+"' data-r='"+r+"' aria-pressed='false' aria-label='"+({v:"Vitória",e:"Empate",d:"Derrota"})[r]+" do Inter'>"+r.toUpperCase()+"</button>";}).join("")+"</div>";
+    sj.appendChild(row);});
+  function gauge(p){
+    var box=document.getElementById("gauge");box.innerHTML="";
+    var s=el("svg",{viewBox:"0 0 132 84",class:"gauge","aria-hidden":"true"});
+    var R=54,cx=66,cy=72,len=Math.PI*R;
+    var arc="M"+(cx-R)+" "+cy+" A"+R+" "+R+" 0 0 1 "+(cx+R)+" "+cy;
+    s.appendChild(el("path",{d:arc,fill:"none",stroke:cssv("--borda"),"stroke-width":"14","stroke-linecap":"round"}));
+    if(p!=null){var cor=p>=40?"#B82C42":(p>=10?"#C48A00":"#1F6B3A");
+      var a=el("path",{d:arc,fill:"none",stroke:cor,"stroke-width":"14","stroke-linecap":"round","stroke-dasharray":len,"stroke-dashoffset":len*(1-Math.max(p,1.5)/100)});
+      a.style.transition="stroke-dashoffset .6s ease";s.appendChild(a);}
+    s.appendChild(el("text",{x:cx,y:cy-6,"text-anchor":"middle","font-size":"26","font-weight":"800",fill:cssv("--tinta")},p==null?"–":(p<1?"<1%":(p>=99.5?">99%":Math.round(p)+"%"))));
+    s.appendChild(el("text",{x:cx,y:cy+10,"text-anchor":"middle","font-size":"9.5",fill:cssv("--tinta2"),"font-family":"system-ui,sans-serif"},"risco de queda"));
+    box.appendChild(s);}
+  function simula(){
+    var ks=Object.keys(esc),out=document.getElementById("sim-txt");
+    document.querySelectorAll(".seg button").forEach(function(b){b.setAttribute("aria-pressed",esc[b.dataset.i]===b.dataset.r?"true":"false");});
+    if(ks.length<4){gauge(null);var falta=4-ks.length;out.innerHTML="<b class='big'>"+(ks.length?"Falta"+(falta>1?"m ":" ")+falta+" jogo"+(falta>1?"s":""):"Escolha os 4 resultados")+"</b><span class='nota'>Toque em V, E ou D em cada jogo para ver os pontos finais e o risco.</span>";return;}
+    var pts=38;ks.forEach(function(k){pts+=({v:3,e:1,d:0})[esc[k]];});
+    var p=riscoPorPts[pts];gauge(p);
+    var leitura=p>=90?"Rebaixamento quase certo.":p>=40?"Fica na zona de perigo e depende dos rivais.":p>=10?"Escapa na maioria dos cenários, mas sem folga.":p>=1?"Permanência muito provável.":"Permanência praticamente assegurada nas simulações, sem garantia matemática.";
+    out.innerHTML="<b class='big'>"+pts+" pontos</b><span>"+leitura+"</span><span class='nota' style='display:block'>Risco estimado: "+(p<1?"menos de 1%":(p>=99.5?"acima de 99%":p.toFixed(1).replace(".",",")+"%"))+".</span>";
+  }
+  sj.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;var i=b.dataset.i;esc[i]=esc[i]===b.dataset.r?undefined:b.dataset.r;if(!esc[i])delete esc[i];simula();});
+  document.querySelectorAll("[data-preset]").forEach(function(b){b.addEventListener("click",function(){
+    var v=b.dataset.preset;esc={};
+    if(v==="vveev"){esc={0:"d",1:"v",2:"v",3:"d"};}
+    else if(v==="evve"){esc={0:"e",1:"v",2:"v",3:"e"};}
+    else if(v==="dedd"){esc={0:"d",1:"e",2:"d",3:"d"};}
+    simula();});});
+
+  function redesenha(){barras();linha();donut();simula();}
+  var rz;window.addEventListener("resize",function(){clearTimeout(rz);rz=setTimeout(function(){barras();linha();},150);});
+  linha();donut();atualiza();simula();
 })();
 </script>
 </body>
