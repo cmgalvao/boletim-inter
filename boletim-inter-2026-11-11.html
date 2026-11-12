@@ -3,368 +3,310 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light dark">
 <title>Boletim do Inter — 11/11/2026</title>
-<meta name="description" content="Situação do Internacional no Brasileirão 2026 após a 34ª rodada: tabela, próximo jogo, elenco, simulação de rebaixamento e agenda.">
+<meta name="description" content="Situação do Internacional no Brasileirão 2026 após a 34ª rodada: a reta final, os 5 pontos do dia, simulação de rebaixamento e agenda.">
 <style>
 :root{
-  --papel:#1A0A10; --rosa:#2E1219; --borda:#43202B; --colorado:#E0384F; --colorado-f:#B82C42; --colorado-s:#7E3341;
-  --tinta:#FFF1E6; --tinta2:#C9A9B0; --branco:#24111A; --superficie:#24111A; --elev:#2C1520;
-  --verde:#4CC985; --verde-bg:#143322; --ambar:#F2C14E; --ambar-bg:#3A2D0E; --neutro:#6E5960;
-  --barra:#6A4A53; --z4:#9E2A3F; --tip-bg:#FFF1E6; --tip-tx:#2A0F17;
-  --hero-txt:#FFF6F7; --hero-sub:#E9C9CF;
-  --cond:"Avenir Next Condensed","Bahnschrift SemiCondensed","Bahnschrift","Roboto Condensed","Arial Narrow",sans-serif-condensed,system-ui,sans-serif;
-  --corpo:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  color-scheme:dark;
-}
-:root[data-theme="light"]{
-  --papel:#FFFAFB; --rosa:#FCECEF; --borda:#EFD9DE; --colorado:#B82C42; --colorado-f:#8E1F33; --colorado-s:#E7A9B4;
-  --tinta:#40222A; --tinta2:#795B63; --branco:#FFFFFF; --superficie:#FFFFFF; --elev:#FFFFFF;
-  --verde:#1F6B3A; --verde-bg:#E3F1E7; --ambar:#7A5A00; --ambar-bg:#FFF2C9; --neutro:#C9B8BD;
-  --barra:#E7A9B4; --z4:#5B2B36; --tip-bg:#40222A; --tip-tx:#FFFFFF;
-  color-scheme:light;
+  --branco:#FFFFFF; --vermelho:#CF1A31; --vermelho-f:#A8132A; --rosa:#FCE8EB; --rosa-2:#F6C5CD;
+  --tinta:#2B0A10; --tinta2:#7A4A52; --linha:#F1C9CF; --vinho:#5A0C18;
+  --verde:#1E7A45; --verde-bg:#E2F2E8; --ambar:#7F5900; --ambar-bg:#FFF1CC;
+  --sans:Roboto,"Helvetica Neue","Segoe UI",Arial,system-ui,sans-serif;
+  --serif:"Instrument Serif","Bodoni 72","Didot","Playfair Display",Georgia,"Times New Roman",serif;
+  --mono:ui-monospace,"SF Mono","Roboto Mono",Menlo,Consolas,monospace;
 }
 *{box-sizing:border-box}
 [hidden]{display:none!important}
-html{scroll-behavior:smooth;scroll-padding-top:110px}
-body{margin:0;background:var(--papel);color:var(--tinta);font:12px/1.4 var(--corpo);-webkit-text-size-adjust:100%}
-a{color:var(--colorado)}
-:focus-visible{outline:3px solid var(--colorado);outline-offset:2px;border-radius:6px}
-.wrap{max-width:1120px;margin:0 auto;padding:0 10px}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--branco);color:var(--tinta);font:12px/1.4 var(--sans);-webkit-text-size-adjust:100%}
+a{color:var(--vermelho)}
+:focus-visible{outline:3px solid var(--vermelho);outline-offset:2px}
+.wrap{max-width:1480px;margin:0 auto;padding:0 10px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.num-c{font-family:var(--cond);font-variant-numeric:tabular-nums;font-stretch:condensed}
+em,.it{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.005em}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
 .nota{font-size:10.5px;color:var(--tinta2);margin:6px 0 0}
 
-/* Cabeçalho */
-.mast{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 0 4px}
-.marca{display:flex;align-items:center;gap:8px;min-width:0}
-.badge{width:30px;height:30px;flex:none}
-.marca b{font-family:var(--cond);font-size:16px;font-weight:700;letter-spacing:.01em;color:var(--colorado)}
-.marca small{display:block;font-size:10.5px;color:var(--tinta2);font-weight:400}
-.acoes{display:flex;gap:6px;flex:none}
-.ic{width:44px;height:44px;border-radius:12px;border:1px solid var(--borda);background:var(--superficie);color:var(--tinta);display:grid;place-items:center;cursor:pointer;padding:0}
-.ic svg{width:20px;height:20px}
-h1{font-family:var(--cond);font-size:28px;line-height:1.05;font-weight:800;margin:4px 0 8px;letter-spacing:-.01em}
+/* Barra */
+.barra{position:sticky;top:0;z-index:30;background:var(--branco);border-bottom:1px solid var(--linha)}
+.barra .wrap{display:grid;grid-template-columns:1fr auto;align-items:center;gap:0 10px;min-height:52px}
+.marca{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--vermelho);min-height:44px}
+.marca svg{height:18px;width:auto}
+.edicao{font-size:13px;color:var(--vermelho);text-align:right}
+.barra nav{grid-column:1/-1}
+.barra nav ul{display:flex;gap:2px;list-style:none;margin:0;padding:0;overflow-x:auto;scrollbar-width:none}
+.barra nav a{display:flex;align-items:center;min-height:44px;padding:0 9px;color:var(--vermelho);text-decoration:none;font-size:13.5px;white-space:nowrap}
+.barra nav a.ativo{font-family:var(--serif);font-style:italic;font-size:16px;text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px}
+.copiar{width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--vermelho);border-radius:999px;background:var(--branco);color:var(--vermelho);cursor:pointer;padding:0}
+.copiar svg{width:18px;height:18px}
+.dir{display:flex;align-items:center;gap:10px;justify-content:flex-end}
 
-/* Navegação */
-nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--papel) 92%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--borda)}
-nav ul{display:flex;gap:6px;list-style:none;margin:0;padding:6px 0;overflow-x:auto;scrollbar-width:none}
-nav a{display:flex;align-items:center;min-height:44px;padding:0 9px;border-radius:999px;color:var(--tinta);text-decoration:none;font-weight:600;font-size:12.5px;white-space:nowrap;border:1px solid transparent}
-nav a.ativo{background:var(--colorado);color:#fff}
-nav a:not(.ativo):hover{border-color:var(--borda)}
+/* Abertura */
+.abre{display:grid;gap:10px;padding:14px 0 12px}
+.ab{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:8px;color:var(--vermelho);font-size:13px}
+.ab .seta{height:1px;background:var(--vermelho);position:relative}
+.ab .seta::after{content:"";position:absolute;right:-1px;top:-4px;border:4.5px solid transparent;border-left:7px solid var(--vermelho);border-right:0}
+.ab b{font-weight:500;font-size:15px}
+h1{font-size:30px;line-height:1.02;font-weight:400;color:var(--vermelho);margin:0;letter-spacing:-.015em}
+h1 em{display:block;font-size:1.12em;line-height:.95}
+.tag{color:var(--vermelho);font-size:13.5px;line-height:1.35;margin:0;max-width:40ch}
+.pilula{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 26px;border:1px solid var(--vermelho);border-radius:50%;color:var(--vermelho);text-decoration:none;font-family:var(--serif);font-style:italic;font-size:19px;justify-self:start}
+.pilula:hover{background:var(--vermelho);color:var(--branco)}
 
-section{padding-top:14px}
-h2{font-family:var(--cond);font-size:20px;font-weight:800;margin:0 0 8px;line-height:1.1}
-h3,h4{margin:0}
+/* Os 4 painéis: a reta final */
+.reta{display:grid;grid-auto-flow:column;grid-auto-columns:84%;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;scrollbar-width:thin}
+.pn{scroll-snap-align:start;position:relative;background:var(--vermelho);color:var(--branco);min-height:430px;display:grid;grid-template-rows:auto 1fr auto;padding:16px 18px 18px;overflow:hidden}
+.pn.fora{background:var(--vermelho-f)}
+.pn .num{display:flex;justify-content:space-between;gap:8px;font-family:var(--mono);font-size:13px;font-weight:700}
+.pn .num span:last-child{font-weight:400;opacity:.9}
+.pn .campo{position:relative;min-height:212px}
+.pn>div:last-child{min-height:150px}
+.pn .campo::before{content:"";position:absolute;left:-18px;right:-18px;top:50%;border-top:1px dashed rgba(255,255,255,.85)}
+.pn .campo::after{content:"";position:absolute;left:-18px;right:-18px;bottom:0;border-top:1px solid rgba(255,255,255,.85)}
+.pn .circ{position:absolute;left:50%;top:50%;width:118px;height:118px;transform:translate(-50%,-50%);border:1px solid #fff;border-radius:50%}
+.pn .circ::after{content:"";position:absolute;left:50%;top:50%;width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:#fff}
+.pn .rel{position:absolute;left:0;top:6px;margin:0;font-family:var(--serif);font-style:italic;font-size:15px;line-height:1.2}
+.pn .rel b{font-family:var(--sans);font-style:normal;font-weight:500;font-size:26px;display:inline-block;margin-right:2px;font-variant-numeric:tabular-nums}
+.pn .chance{position:absolute;left:0;right:0;bottom:10px}
+.pn .barra-ch{display:flex;height:4px;background:rgba(255,255,255,.25)}
+.pn .barra-ch i{display:block;height:100%}
+.pn .chance p{display:flex;justify-content:space-between;margin:6px 0 0;font-family:var(--mono);font-size:10.5px}
+.pn h3{font-size:24px;line-height:1.02;font-weight:400;margin:16px 0 10px}
+.pn h3 em{display:block;font-size:1.12em}
+.pn p.txt{margin:0;font-size:12.5px;line-height:1.35;max-width:36ch}
+.pn .tv{display:inline-block;margin-top:8px;font-size:11px;border:1px solid rgba(255,255,255,.7);border-radius:999px;padding:2px 9px}
 
-/* Hero: a linha */
-.hero{margin-top:10px;background:var(--colorado-f);background:linear-gradient(160deg,#B82C42 0%,#8E1F33 100%);color:var(--hero-txt);border-radius:18px;padding:14px 12px;display:grid;gap:12px;position:relative;overflow:hidden}
-.hero::after{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;border-radius:50%;border:28px solid rgba(255,255,255,.06);pointer-events:none}
-.hero-tit{font-family:var(--cond);font-size:26px;line-height:1.05;font-weight:800;margin:0;max-width:20ch}
-.hero-sub{margin:6px 0 0;color:var(--hero-sub);font-size:12px}
-.forma{display:flex;gap:4px;align-items:center;margin-top:10px;flex-wrap:wrap}
-.forma span.t{font-size:10.5px;color:var(--hero-sub);margin-right:4px}
-.pill{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;font-family:var(--cond);font-weight:800;font-size:13px}
-.pill.v{background:#E3F1E7;color:#1F6B3A}.pill.e{background:#F3E8EB;color:#5B4148}.pill.d{background:#40222A;color:#FCECEF}
-.escada{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:6px 8px;list-style:none;margin:0}
-.escada li{display:grid;grid-template-columns:28px 1fr 34px;align-items:center;gap:6px;min-height:24px;padding:0 6px;border-radius:7px;font-size:12px}
-.escada li .p{font-family:var(--cond);font-weight:700;font-size:15px;text-align:right}
-.escada li .o{font-family:var(--cond);color:var(--hero-sub);font-size:13px}
-.escada li.z4{color:#F6D3D9}
-.escada li.inter{background:#FFF6F7;color:#8E1F33;font-weight:800;box-shadow:0 2px 0 rgba(0,0,0,.18)}
-.escada li.inter .o{color:#B82C42}
-.escada li.linha{min-height:20px;grid-template-columns:1fr auto 1fr;padding:0}
-.escada li.linha::before,.escada li.linha::after{content:"";border-top:2px dashed #FFF6F7;opacity:.85}
-.escada li.linha span{font-size:10.5px;color:#FFF6F7;padding:0 6px;font-weight:600}
-.cont{background:#FFF6F7;color:#40222A;border-radius:14px;padding:10px 12px}
-.cont .q{font-size:11px;color:#795B63;margin:0}
-.cont .jogo{font-family:var(--cond);font-size:22px;font-weight:800;color:#8E1F33;margin:2px 0}
-.relogio{display:flex;gap:6px;margin:6px 0}
-.relogio div{background:#FCECEF;border-radius:10px;padding:4px 8px;min-width:52px;text-align:center}
-.relogio b{display:block;font-family:var(--cond);font-size:26px;line-height:1.05;color:#B82C42;font-variant-numeric:tabular-nums}
-.relogio small{font-size:10px;color:#795B63}
-.cont .det{font-size:11.5px;margin:0}
-.chip{display:inline-flex;align-items:center;gap:4px;border-radius:999px;padding:2px 8px;font-size:10.5px;font-weight:700}
+/* Seções */
+section{padding-top:26px}
+.titulo{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:6px 16px;border-top:1px solid var(--vermelho);padding-top:12px;margin-bottom:12px}
+h2{font-size:26px;line-height:1;font-weight:400;color:var(--vermelho);margin:0;letter-spacing:-.01em}
+h2 em{display:block;font-size:1.12em}
+.titulo p{margin:0;color:var(--tinta2);font-size:12px;max-width:44ch}
+
+/* Cards 01–05 */
+.cards{display:grid;grid-template-columns:1fr;gap:8px}
+.card{border:1px solid var(--vermelho);padding:12px;background:var(--branco);min-width:0}
+.card.prox{background:var(--rosa)}
+.card-top{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.card-top .n{font-family:var(--mono);font-weight:700;font-size:12px;color:var(--vermelho)}
+.card-top h3{font-size:12px;font-weight:500;color:var(--vermelho);margin:0;flex:1}
+.refs{display:flex;gap:4px}
+.ref{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;border:1px solid var(--linha);font-size:10.5px;text-decoration:none;color:var(--tinta2);font-family:var(--mono)}
+.ref:hover{border-color:var(--vermelho);color:var(--vermelho)}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:0 0 6px}
+.kpi .v{display:block;font-size:36px;line-height:1;font-weight:400;color:var(--vermelho);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.kpi .l{font-size:10.5px;color:var(--tinta2)}
+.delta{display:inline-block;font-size:10.5px;font-weight:500;color:var(--verde);background:var(--verde-bg);padding:2px 6px;margin-bottom:6px}
+.manchete{font-size:22px;line-height:1.05;font-weight:400;color:var(--vermelho);margin:0}
+.manchete em{font-size:1.1em}
+.faixa{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 10px;margin-bottom:6px}
+.hora{font-family:var(--mono);font-size:15px;font-weight:700;color:var(--tinta)}
+.card p{margin:0}.card p+p{margin-top:5px}
+.chip{display:inline-flex;align-items:center;gap:4px;padding:1px 7px;font-size:10.5px;font-weight:500;border-radius:999px;white-space:nowrap}
 .ok{background:var(--verde-bg);color:var(--verde)}
 .pend{background:var(--ambar-bg);color:var(--ambar)}
-.proj{background:var(--rosa);color:var(--colorado)}
-.cont .ok{background:#E3F1E7;color:#1F6B3A}
+.proj{background:var(--rosa);color:var(--vermelho);border:1px solid var(--rosa-2)}
 
-/* Cards dos 5 pontos */
-.cards{display:grid;grid-template-columns:1fr;gap:8px}
-.card{background:var(--superficie);border:1px solid var(--borda);border-radius:12px;padding:11px}
-.card.prox{background:var(--rosa)}
-.card-top{display:flex;align-items:center;gap:8px;margin-bottom:6px}
-.card-top .n{font-family:var(--cond);font-weight:800;font-size:15px;color:var(--colorado);font-variant-numeric:tabular-nums}
-.card-top h3{font-size:12px;font-weight:700;flex:1}
-.refs{display:flex;gap:4px}
-.ref{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;border:1px solid var(--borda);border-radius:6px;font-size:10.5px;text-decoration:none;background:var(--papel);color:var(--tinta2)}
-.ref:hover{color:var(--colorado);border-color:var(--colorado)}
-.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:2px 0 6px}
-.kpi .v{display:block;font-family:var(--cond);font-size:36px;line-height:1;font-weight:800;color:var(--colorado);font-variant-numeric:tabular-nums}
-.kpi .l{font-size:10.5px;color:var(--tinta2)}
-.delta{display:inline-block;font-size:10.5px;font-weight:700;color:var(--verde);background:var(--verde-bg);border-radius:6px;padding:2px 6px;margin-bottom:6px}
-.manchete{font-family:var(--cond);font-size:24px;line-height:1.05;font-weight:800;color:var(--colorado);margin:0}
-.faixa{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 10px;margin-bottom:6px}
-.hora{font-family:var(--cond);font-size:19px;font-weight:700;font-variant-numeric:tabular-nums}
-.card p{margin:0}
-.card p+p{margin-top:5px}
-
-/* Painel */
-.strip{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
-.st{background:var(--superficie);border:1px solid var(--borda);border-radius:12px;padding:9px 10px}
+/* Números */
+.strip{display:grid;grid-template-columns:repeat(2,1fr);border:1px solid var(--vermelho)}
+.st{padding:10px;border-right:1px solid var(--linha);border-bottom:1px solid var(--linha)}
 .st .l{font-size:10.5px;color:var(--tinta2)}
-.st .v{display:block;font-family:var(--cond);font-size:30px;line-height:1.05;font-weight:800;font-variant-numeric:tabular-nums}
-.st .d{font-size:10.5px;font-weight:700}
-.up{color:var(--verde)}.dn{color:var(--colorado)}
+.st .v{display:block;font-size:30px;line-height:1.05;color:var(--vermelho);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.st .d{font-size:10.5px;font-weight:500;color:var(--verde)}
 .painel{display:grid;grid-template-columns:1fr;gap:8px;margin-top:8px}
-.bloco{background:var(--superficie);border:1px solid var(--borda);border-radius:12px;padding:11px;min-width:0}
-.bloco h3{font-size:13px;font-weight:700;margin-bottom:8px}
+.bloco{border:1px solid var(--linha);padding:12px;min-width:0;background:var(--branco)}
+.bloco h3{font-size:13px;font-weight:500;color:var(--vermelho);margin:0 0 8px}
 .filtros{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 8px}
-.btn{min-height:44px;padding:0 13px;border:1px solid var(--borda);border-radius:999px;background:var(--superficie);color:var(--tinta);font:600 12px/1 var(--corpo);cursor:pointer}
-.btn[aria-pressed="true"]{background:var(--colorado);border-color:var(--colorado);color:#fff}
+.btn{min-height:44px;padding:0 14px;border:1px solid var(--vermelho);border-radius:999px;background:var(--branco);color:var(--vermelho);font:400 12.5px var(--sans);cursor:pointer}
+.btn[aria-pressed="true"]{background:var(--vermelho);color:var(--branco)}
 .chart svg{display:block;width:100%;height:auto;overflow:visible}
-.chart text{font-family:var(--corpo)}
+.chart text{font-family:var(--sans)}
 .legenda{display:flex;flex-wrap:wrap;gap:10px;font-size:10.5px;color:var(--tinta2);margin-top:6px}
-.legenda i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:-1px}
-.vazio{padding:14px;text-align:center;color:var(--tinta2);background:var(--papel);border:1px dashed var(--borda);border-radius:10px;font-size:12px}
-.busca{width:100%;min-height:44px;padding:0 12px;border:1px solid var(--borda);border-radius:10px;font:12px var(--corpo);color:var(--tinta);background:var(--papel);margin-bottom:6px}
+.legenda i{display:inline-block;width:10px;height:10px;margin-right:4px;vertical-align:-1px}
+.vazio{padding:14px;text-align:center;color:var(--tinta2);border:1px dashed var(--vermelho);font-size:12px}
+.busca{width:100%;min-height:44px;padding:0 12px;border:1px solid var(--linha);font:12.5px var(--sans);color:var(--tinta);background:var(--branco);margin-bottom:6px;border-radius:0}
+.busca:focus{border-color:var(--vermelho)}
 .tab{width:100%;border-collapse:collapse;font-size:12px;font-variant-numeric:tabular-nums}
-.tab th,.tab td{padding:6px 4px;border-bottom:1px solid var(--borda);text-align:right}
+.tab th,.tab td{padding:6px 4px;border-bottom:1px solid var(--linha);text-align:right}
 .tab th:nth-child(2),.tab td:nth-child(2){text-align:left}
-.tab th button{all:unset;cursor:pointer;font-weight:700;font-size:10.5px;color:var(--tinta2);min-height:32px;display:inline-flex;align-items:center;gap:2px}
-.tab th button:focus-visible{outline:3px solid var(--colorado)}
+.tab th button{all:unset;cursor:pointer;font-weight:500;font-size:10.5px;color:var(--tinta2);min-height:32px;display:inline-flex;align-items:center;gap:2px}
+.tab th button:focus-visible{outline:3px solid var(--vermelho)}
 .tab th[aria-sort="ascending"] button::after{content:"▲";font-size:8px}
 .tab th[aria-sort="descending"] button::after{content:"▼";font-size:8px}
-.tab tr.inter td{background:var(--rosa);font-weight:700}
-.tab tr.z4 td:first-child{box-shadow:inset 3px 0 0 var(--colorado)}
+.tab tr.inter td{background:var(--rosa);font-weight:500;color:var(--vermelho)}
+.tab tr.z4 td:first-child{box-shadow:inset 3px 0 0 var(--vinho)}
 .donut-wrap{display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:center}
 .gols{display:grid;gap:6px;font-size:12px}
-.gols .b{height:10px;border-radius:5px;background:var(--papel);overflow:hidden;margin-top:3px}
-.gols .b span{display:block;height:100%;border-radius:5px}
-#tip{position:fixed;pointer-events:none;background:var(--tip-bg);color:var(--tip-tx);font-size:11px;padding:6px 8px;border-radius:8px;opacity:0;transition:opacity .1s;z-index:40;max-width:230px}
+.gols .b{height:6px;background:var(--rosa);overflow:hidden;margin-top:3px}
+.gols .b span{display:block;height:100%}
+#tip{position:fixed;pointer-events:none;background:var(--tinta);color:#fff;font-size:11px;padding:6px 8px;opacity:0;transition:opacity .1s;z-index:40;max-width:230px}
 
 /* Análise de IA */
-.ia{background:var(--superficie);border:2px solid var(--colorado);border-radius:16px;padding:12px;position:relative}
-.ia-label{display:inline-flex;align-items:center;gap:6px;min-height:28px;padding:0 12px;border-radius:999px;background:var(--colorado);color:#fff;font-size:12px;font-weight:800}
-.ia-head h3{font-family:var(--cond);font-size:22px;line-height:1.1;font-weight:800;margin:8px 0 2px}
-.ia-kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin:10px 0}
-.ia-kpi{background:var(--papel);border:1px solid var(--borda);border-radius:12px;padding:8px 10px}
-.ia-kpi .v{display:block;font-family:var(--cond);font-size:32px;line-height:1;font-weight:800;color:var(--colorado);font-variant-numeric:tabular-nums}
+.ia{border:2px solid var(--vermelho);padding:14px;background:var(--branco)}
+.ia-label{display:inline-flex;align-items:center;gap:6px;min-height:30px;padding:0 14px;border-radius:999px;background:var(--vermelho);color:#fff;font-size:12.5px;font-weight:500}
+.ia-head h3{font-size:24px;line-height:1.05;font-weight:400;color:var(--vermelho);margin:10px 0 4px;letter-spacing:-.01em}
+.ia-kpis{display:grid;grid-template-columns:repeat(2,1fr);border:1px solid var(--vermelho);margin:12px 0}
+.ia-kpi{padding:10px;border-right:1px solid var(--linha);border-bottom:1px solid var(--linha)}
+.ia-kpi .v{display:block;font-size:34px;line-height:1;color:var(--vermelho);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
 .ia-kpi .l{font-size:10.5px;color:var(--tinta2)}
-.ia-kpi.destaque{background:var(--rosa);border-color:var(--colorado-s)}
+.ia-kpi.destaque{background:var(--vermelho)}
+.ia-kpi.destaque .v,.ia-kpi.destaque .l{color:#fff}
 .ia-grid{display:grid;grid-template-columns:1fr;gap:8px}
-.ia-bloco{border:1px solid var(--borda);border-radius:12px;padding:10px;min-width:0}
-.ia-bloco h4{font-size:12.5px;margin:0 0 8px}
-.rbar{display:grid;grid-template-columns:88px 1fr 40px;align-items:center;gap:6px;margin:5px 0;font-size:12px;border-radius:6px}
-.rbar .trk{height:14px;background:var(--papel);border-radius:4px;overflow:hidden}
-.rbar .fill{display:block;height:100%;background:var(--colorado-s);border-radius:4px;transform-origin:left;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
-.rbar.inter .fill{background:var(--colorado)}
-.rbar.inter span:first-child{font-weight:700}
-.rbar b{text-align:right;font-variant-numeric:tabular-nums}
+.ia-bloco{border:1px solid var(--linha);padding:12px;min-width:0}
+.ia-bloco h4{font-size:12.5px;font-weight:500;color:var(--vermelho);margin:0 0 8px}
+.rbar{display:grid;grid-template-columns:88px 1fr 40px;align-items:center;gap:6px;margin:6px 0;font-size:12px}
+.rbar .trk{height:8px;background:var(--rosa);overflow:hidden}
+.rbar .fill{display:block;height:100%;background:var(--rosa-2);transform-origin:left;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.rbar.inter .fill{background:var(--vermelho)}
+.rbar.inter span:first-child{font-weight:500;color:var(--vermelho)}
+.rbar b{text-align:right;font-weight:500;font-variant-numeric:tabular-nums}
 .ia-tab{width:100%;border-collapse:collapse;font-size:12px;font-variant-numeric:tabular-nums}
-.ia-tab th{font-size:10.5px;color:var(--tinta2);text-align:left;padding:4px;border-bottom:1px solid var(--borda);font-weight:600}
-.ia-tab td{padding:6px 4px;border-bottom:1px solid var(--borda)}
-.r-alto{color:var(--colorado)}.r-medio{color:var(--ambar)}.r-baixo{color:var(--verde)}
-.jg{margin:0 0 9px}
-.jg .t{display:flex;justify-content:space-between;gap:6px;font-size:11.5px;font-weight:700}
-.jg .t span{font-weight:400;color:var(--tinta2);font-size:10.5px}
-.stack{display:flex;height:20px;border-radius:6px;overflow:hidden;margin-top:3px;font-size:10px;font-weight:700;color:#fff}
+.ia-tab th{font-size:10.5px;color:var(--tinta2);text-align:left;padding:4px;border-bottom:1px solid var(--vermelho);font-weight:500}
+.ia-tab td{padding:6px 4px;border-bottom:1px solid var(--linha)}
+.r-alto{color:var(--vermelho)}.r-medio{color:var(--ambar)}.r-baixo{color:var(--verde)}
+.jg{margin:0 0 10px}
+.jg .t{display:flex;justify-content:space-between;gap:6px;font-size:12px;font-weight:500}
+.jg .t span{font-weight:400;color:var(--tinta2);font-size:10.5px;font-family:var(--mono)}
+.stack{display:flex;height:20px;overflow:hidden;margin-top:4px;font-size:10px;font-weight:500;color:#fff;font-family:var(--mono)}
 .stack div{display:flex;align-items:center;justify-content:center;min-width:0}
-.stack .e{color:#40222A}
+.stack .e{color:var(--tinta)}
 .cen,.cd{list-style:none;margin:0;padding:0;font-size:12px}
-.cen li{display:flex;justify-content:space-between;gap:8px;padding:6px 0;border-bottom:1px solid var(--borda)}
-.cen li b{font-variant-numeric:tabular-nums}
-.cd li{padding:4px 0}
-.cd b{color:var(--colorado);margin-right:4px}
-.ia-veredito{margin-top:8px;background:var(--rosa);border-radius:12px;padding:10px;font-size:12px}
+.cen li{display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid var(--linha)}
+.cen li b{font-weight:500;font-variant-numeric:tabular-nums}
+.cd li{padding:5px 0;border-bottom:1px dashed var(--linha)}
+.cd b{color:var(--vermelho);font-family:var(--mono);font-weight:700;margin-right:6px;font-size:11px}
+.ia-veredito{margin-top:8px;background:var(--rosa);padding:12px;font-size:12.5px;line-height:1.45}
 .ia-veredito p{margin:0}.ia-veredito p+p{margin-top:6px}
+.ia-veredito b{color:var(--vermelho);font-weight:500}
 
 /* Simulador */
-.sim{margin-top:8px;border:1px dashed var(--colorado-s);border-radius:14px;padding:10px;background:var(--papel)}
-.sim h4{font-family:var(--cond);font-size:18px;font-weight:800;margin:0 0 2px}
-.sim-jogos{display:grid;gap:6px;margin:8px 0}
-.sj{display:grid;grid-template-columns:1fr auto;align-items:center;gap:8px;background:var(--superficie);border:1px solid var(--borda);border-radius:10px;padding:6px 8px}
-.sj b{font-size:12px}.sj small{display:block;font-size:10.5px;color:var(--tinta2)}
-.seg{display:flex;border:1px solid var(--borda);border-radius:10px;overflow:hidden}
-.seg button{width:44px;height:44px;border:0;background:var(--superficie);color:var(--tinta);font:800 14px var(--cond);cursor:pointer;border-left:1px solid var(--borda)}
+.sim{margin-top:8px;background:var(--vermelho);color:#fff;padding:14px}
+.sim h4{font-size:22px;line-height:1.05;font-weight:400;margin:0 0 4px}
+.sim h4 em{display:block;font-size:1.1em}
+.sim .nota{color:#FBD5DB}
+.sim-jogos{display:grid;margin:10px 0;border-top:1px solid rgba(255,255,255,.6)}
+.sj{display:grid;grid-template-columns:1fr auto;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.6)}
+.sj b{font-size:13px;font-weight:500}.sj small{display:block;font-size:10.5px;color:#FBD5DB;font-family:var(--mono)}
+.seg{display:flex;border:1px solid #fff;border-radius:999px;overflow:hidden}
+.seg button{width:44px;height:44px;border:0;background:transparent;color:#fff;font:700 13px var(--mono);cursor:pointer;border-left:1px solid rgba(255,255,255,.6)}
 .seg button:first-child{border-left:0}
-.seg button[aria-pressed="true"][data-r="v"]{background:#1F6B3A;color:#fff}
-.seg button[aria-pressed="true"][data-r="e"]{background:#8A767C;color:#fff}
-.seg button[aria-pressed="true"][data-r="d"]{background:#B82C42;color:#fff}
-.sim-out{display:grid;grid-template-columns:132px 1fr;gap:10px;align-items:center}
-.gauge text{font-family:var(--cond)}
-.sim-txt b.big{display:block;font-family:var(--cond);font-size:26px;line-height:1.05}
+.seg button[aria-pressed="true"]{background:#fff;color:var(--vermelho)}
+.sim-out{display:grid;grid-template-columns:132px 1fr;gap:10px;align-items:center;margin-top:10px}
+.sim-txt b.big{display:block;font-size:26px;line-height:1.05;font-weight:400}
+.sim-txt b.big em{font-size:1.1em}
 .presets{display:flex;flex-wrap:wrap;gap:6px}
-details.met{margin-top:8px;border:1px solid var(--borda);border-radius:12px;padding:0 10px}
+.presets .btn{border-color:#fff;color:#fff;background:transparent}
+.presets .btn:hover{background:#fff;color:var(--vermelho)}
+.sim :focus-visible{outline-color:#fff}
+details.met{margin-top:8px;border:1px solid var(--linha);padding:0 12px}
 details.met p{font-size:11px;color:var(--tinta2);margin:0 0 10px}
 
 /* Agenda */
-.agenda-wrap{background:var(--superficie);border:1px solid var(--borda);border-radius:12px;padding:11px}
+.agenda-wrap{border:1px solid var(--vermelho);padding:12px}
 .ag{width:100%;border-collapse:collapse}
 .ag caption{text-align:left;font-size:10.5px;color:var(--tinta2);padding-bottom:6px}
 .ag thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-.ag tbody tr{display:grid;grid-template-columns:78px 50px repeat(4,minmax(0,1fr));gap:6px;padding:9px 0;border-top:1px solid var(--borda)}
+.ag tbody tr{display:grid;grid-template-columns:78px 50px repeat(4,minmax(0,1fr));gap:6px;padding:10px 0;border-top:1px solid var(--linha)}
 .ag tbody tr:first-child{border-top:0}
-.ag tbody tr.prox-jogo{background:var(--rosa);border-radius:10px;padding:9px 6px;margin:0 -6px}
+.ag tbody tr.prox-jogo{background:var(--rosa);padding:10px 6px;margin:0 -6px}
 .ag td{display:block;padding:0;font-size:11.5px;overflow-wrap:anywhere}
-.ag td::before{content:attr(data-label);display:block;font-size:9.5px;font-weight:600;color:var(--tinta2);letter-spacing:.02em;white-space:nowrap}
-.ag td.c-data,.ag td.c-hora{font-family:var(--cond);font-size:14px;font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}
-.ag td.c-adv{grid-column:span 4;font-weight:700;font-size:12px}
+.ag td::before{content:attr(data-label);display:block;font-size:9.5px;color:var(--tinta2);white-space:nowrap}
+.ag td.c-data,.ag td.c-hora{font-family:var(--mono);font-size:14px;font-weight:700;color:var(--vermelho);white-space:nowrap}
+.ag td.c-adv{grid-column:span 4;font-weight:500;font-size:12px}
 .ag td.c-comp,.ag td.c-tv,.ag td.c-st{grid-column:span 2}
 .ag .det{display:block;font-weight:400;font-size:11px;color:var(--tinta2)}
-.ag .chip{white-space:nowrap;font-size:10px;padding:2px 6px;gap:3px}
+.ag .chip{font-size:10px;padding:2px 6px;gap:3px}
 .linha-tv{font-size:10.5px;color:var(--tinta2);margin:8px 0 0}
 
 /* Fontes e rodapé */
-details.fontes{background:var(--superficie);border:1px solid var(--borda);border-radius:12px;padding:0 11px}
-summary{min-height:44px;display:flex;align-items:center;cursor:pointer;font-weight:700;color:var(--colorado)}
+details.fontes{border:1px solid var(--linha);padding:0 12px}
+summary{min-height:44px;display:flex;align-items:center;cursor:pointer;color:var(--vermelho);font-family:var(--serif);font-style:italic;font-size:17px}
 details.fontes ol{margin:0 0 10px;padding-left:22px;font-size:11px}
 details.fontes li{margin:4px 0}
 details.fontes li:target{background:var(--rosa)}
-footer{padding:14px 0 24px;font-size:10.5px;color:var(--tinta2);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px}
-.topo{display:inline-flex;align-items:center;min-height:44px;font-weight:700}
-.toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:#40222A;color:#fff;padding:10px 14px;border-radius:10px;font-size:12px;z-index:50}
+footer{margin-top:26px;background:var(--vermelho);color:#fff}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;padding-top:14px;padding-bottom:20px;font-size:11px}
+footer a{color:#fff}
+.topo{display:inline-flex;align-items:center;min-height:44px;font-family:var(--serif);font-style:italic;font-size:17px}
+.toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:var(--vermelho);color:#fff;padding:10px 16px;border-radius:999px;font-size:12px;z-index:50}
 
-/* Movimento: um só momento, a chegada do Inter à escada */
-@keyframes chega{from{transform:translateY(46px);opacity:.3}to{transform:none;opacity:1}}
-.escada li.inter{animation:chega .9s cubic-bezier(.2,.8,.2,1) .2s both}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.refletor{animation:none;opacity:1}.escada li.inter{animation:none}.rbar .fill{transition:none}}
-
-
-/* Barra fixa */
-.barra{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--papel) 78%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid color-mix(in srgb,var(--borda) 70%,transparent)}
-.barra .wrap{display:flex;align-items:center;gap:10px;min-height:58px}
-.barra .marca b{font-family:var(--cond);font-size:17px;font-weight:800;color:var(--tinta)}
-.barra nav{flex:1;min-width:0;position:static;background:none;backdrop-filter:none;-webkit-backdrop-filter:none;border:0}
-.barra nav ul{padding:0;justify-content:flex-start}
-.barra .acoes .ic{background:transparent}
-@media (max-width:759px){
-  .barra .wrap{flex-wrap:wrap;gap:0 8px;padding-top:6px}
-  .barra .marca{flex:1}
-  .barra nav{order:3;flex-basis:100%}
-}
-
-/* Palco: o estádio à noite */
-.palco{position:relative;isolation:isolate;overflow:hidden;color:var(--hero-txt);min-height:560px;display:flex;align-items:flex-end}
-.palco .estadio{position:absolute;inset:0;width:100%;height:100%;z-index:-2}
-.palco::after{content:"";position:absolute;inset:0;z-index:-1;background:
-  linear-gradient(90deg,rgba(20,6,11,.92) 0%,rgba(20,6,11,.72) 42%,rgba(20,6,11,.15) 75%),
-  linear-gradient(0deg,var(--papel) 0%,rgba(26,10,16,0) 34%)}
-.palco-in{width:100%;padding:56px 10px 18px;display:grid;gap:14px;max-width:1120px;margin:0 auto}
-.palco .meta{font-size:11px;color:var(--hero-sub);margin:0}
-.palco h1{font-family:var(--cond);font-size:44px;line-height:.95;font-weight:800;letter-spacing:-.015em;margin:0;color:#FFF6F7;text-shadow:0 2px 24px rgba(0,0,0,.4)}
-.palco .hero-tit{font-family:var(--cond);font-size:22px;line-height:1.1;font-weight:700;margin:0;max-width:22ch;color:#FFF6F7}
-.palco .hero-sub{margin:0;color:var(--hero-sub);font-size:12.5px;max-width:52ch}
-.cta{display:flex;flex-wrap:wrap;gap:8px}
-.bt{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 18px;border-radius:12px;font-weight:700;font-size:13px;text-decoration:none}
-.bt-p{background:#E0384F;color:#fff;box-shadow:0 8px 28px rgba(224,56,79,.35)}
-.bt-p:hover{background:#C92D44}
-.bt-s{background:rgba(255,255,255,.12);color:#FFF6F7;border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-.bt-s:hover{background:rgba(255,255,255,.2)}
-.palco .forma{margin:0}
-.palco .forma span.t{color:var(--hero-sub)}
-.vidro{background:rgba(255,246,247,.1);border:1px solid rgba(255,246,247,.22);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:16px;padding:12px;color:#FFF6F7;max-width:380px}
-.vidro .q{margin:0;font-size:11px;color:var(--hero-sub)}
-.vidro .jogo{font-family:var(--cond);font-size:24px;font-weight:800;margin:2px 0;color:#FFF6F7}
-.vidro .relogio div{background:rgba(255,255,255,.1);border-radius:10px;padding:4px 8px;min-width:54px;text-align:center}
-.vidro .relogio b{color:#FFF6F7}
-.vidro .relogio small{color:var(--hero-sub)}
-.vidro .det{margin:0;font-size:11.5px;color:#FFE9EC}
-.vidro .chip.ok{background:rgba(76,201,133,.18);color:#8BE3B1}
-.trinca{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;border-top:1px solid rgba(255,255,255,.16);padding-top:12px}
-.trinca div b{display:block;font-family:var(--cond);font-size:34px;line-height:1;font-weight:800;color:#FFF6F7;font-variant-numeric:tabular-nums}
-.trinca div span{font-size:10.5px;color:var(--hero-sub)}
-.trinca div.alerta b{color:#FF8A9A}
-.refletor{opacity:0;animation:acende 1.4s ease-out forwards}
-.refletor.r2{animation-delay:.35s}
-@keyframes acende{0%{opacity:0}35%{opacity:.6}45%{opacity:.25}100%{opacity:1}}
-
-/* A linha */
-.linha-bloco{display:grid;gap:10px;align-items:start}
-.escada{background:var(--superficie);border:1px solid var(--borda);border-radius:16px;padding:8px;list-style:none;margin:0}
-.escada li{display:grid;grid-template-columns:30px 1fr 34px;align-items:center;gap:6px;min-height:28px;padding:0 8px;border-radius:8px;font-size:12.5px}
-.escada li .p{font-family:var(--cond);font-weight:800;font-size:16px;text-align:right;font-variant-numeric:tabular-nums}
-.escada li .o{font-family:var(--cond);color:var(--tinta2);font-size:13px}
-.escada li.z4{color:var(--tinta2);background:color-mix(in srgb,var(--z4) 16%,transparent)}
-.escada li.inter{animation:none;background:var(--colorado);color:#fff;font-weight:800;box-shadow:0 6px 22px color-mix(in srgb,var(--colorado) 45%,transparent)}
-.escada li.inter .o{color:#FFE3E7}
-.escada li.linha{min-height:22px;grid-template-columns:1fr auto 1fr;padding:0;background:none}
-.escada li.linha::before,.escada li.linha::after{content:"";border-top:2px dashed var(--colorado)}
-.escada li.linha span{font-size:10.5px;color:var(--colorado);padding:0 8px;font-weight:700}
-.linha-txt{font-size:12.5px;color:var(--tinta2)}
-.linha-txt b{color:var(--tinta)}
-
-/* Pôsteres da reta final */
-.rail{display:grid;grid-auto-flow:column;grid-auto-columns:72%;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 10px;scrollbar-width:thin}
-.poster{scroll-snap-align:start;position:relative;min-height:236px;gap:10px;border-radius:16px;overflow:hidden;padding:12px;display:flex;flex-direction:column;justify-content:space-between;color:#FFF6F7;border:1px solid rgba(255,255,255,.12);
-  background:radial-gradient(120% 70% at 50% 0%,rgba(255,240,220,.22),transparent 60%),linear-gradient(170deg,#3A1420 0%,#170810 100%)}
-.poster.casa{background:radial-gradient(120% 70% at 50% 0%,rgba(255,240,220,.25),transparent 60%),linear-gradient(170deg,#C8304A 0%,#5E1424 100%)}
-.poster::before{content:"";position:absolute;left:-10%;right:-10%;bottom:-20%;height:55%;border:2px solid rgba(255,255,255,.1);border-radius:50% 50% 0 0;pointer-events:none}
-.poster .topo-p{display:flex;justify-content:space-between;gap:6px;font-size:10.5px;color:#F3D6DB;position:relative}
-.poster .tag-p{background:#FFF6F7;color:#8E1F33;border-radius:999px;padding:2px 8px;font-weight:800}
-.poster .data-p{font-family:var(--cond);font-size:46px;line-height:.9;font-weight:800;position:relative}
-.poster .data-p small{display:block;font-size:15px;font-weight:600;color:#F3D6DB;margin-top:4px}
-.poster .conf{font-family:var(--cond);font-size:20px;font-weight:800;line-height:1.05;position:relative}
-.poster .local{font-size:10.5px;color:#F3D6DB;position:relative}
-.poster .chance{position:relative}
-.poster .chance .stack{height:16px;font-size:9.5px}
-.poster .chance p{margin:4px 0 0;font-size:10px;color:#F3D6DB;display:flex;justify-content:space-between;gap:6px}
-.poster .chip{font-size:10px}
-.poster .chip.ok{background:rgba(76,201,133,.22);color:#9BEBBE}
-.poster .chip.pend{background:rgba(242,193,78,.2);color:#FFD976}
+/* Um momento: o círculo central se forma */
+@keyframes traca{from{transform:translate(-50%,-50%) scale(.2);opacity:0}to{transform:translate(-50%,-50%) scale(1);opacity:1}}
+.pn .circ{animation:traca 1s cubic-bezier(.2,.8,.2,1) .2s both}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.pn .circ{animation:none}.rbar .fill{transition:none}}
 
 @media (min-width:760px){
-
-  .palco{min-height:620px}
-  .palco-in{padding:80px 22px 26px;grid-template-columns:1.7fr 1fr;grid-template-areas:"meta meta" "h1 vidro" "tit vidro" "sub vidro" "cta vidro" "forma vidro" "trinca trinca";column-gap:40px;row-gap:12px}
-  .palco .meta{grid-area:meta}.palco h1{grid-area:h1;font-size:68px}.palco .hero-tit{grid-area:tit;font-size:30px}.palco .hero-sub{grid-area:sub}.cta{grid-area:cta}.palco .forma{grid-area:forma}
-  .vidro{grid-area:vidro;align-self:end;justify-self:end;width:100%}
-  .trinca{grid-area:trinca;grid-template-columns:repeat(3,auto);justify-content:start;column-gap:56px}
-  .trinca div b{font-size:48px}
-  .linha-bloco{grid-template-columns:340px 1fr;gap:20px}
-  .poster{min-height:268px}
-  .rail{grid-auto-flow:row;grid-template-columns:repeat(4,1fr);overflow:visible}
   body{font-size:13px}
-  .wrap{padding:0 22px}
-  h1{font-size:36px}
-  .hero-tit{font-size:40px}
-  nav a{padding:0 14px}
-  .escada li{min-height:28px;font-size:13px}
-  .cards{grid-template-columns:repeat(6,1fr);gap:10px}
-  .card{grid-column:span 2;padding:14px}
+  .wrap{padding:0 12px}
+  .barra .wrap{grid-template-columns:1fr auto 1fr;min-height:56px}
+  .marca{grid-row:1;grid-column:1}
+  .barra nav{grid-row:1;grid-column:2}
+  .dir{grid-row:1;grid-column:3}
+  .marca svg{height:22px}
+  .abre{grid-template-columns:1fr 1fr 1fr;align-items:end;gap:20px;padding:34px 0 26px}
+  .ab{align-self:start}
+  h1{font-size:46px}
+  .pilula{justify-self:end;font-size:22px;min-height:52px;padding:0 32px}
+  .reta{grid-auto-flow:row;grid-template-columns:repeat(4,1fr);overflow:visible;gap:12px}
+  .pn{min-height:620px;padding:22px 22px 24px}
+  .pn .campo{min-height:330px}
+  .pn>div:last-child{min-height:172px}
+  .pn .circ{width:220px;height:220px}
+  .pn h3{font-size:30px}
+  .titulo{padding-top:16px}
+  h2{font-size:36px}
+  .cards{grid-template-columns:repeat(6,1fr);gap:12px}
+  .card{grid-column:span 2;padding:16px}
   .card.g{grid-column:span 3}
+  .kpi .v{font-size:44px}
   .manchete{font-size:28px}
-  .kpi .v{font-size:40px}
   .strip{grid-template-columns:repeat(5,1fr)}
-  .painel{grid-template-columns:repeat(6,1fr)}
+  .painel{grid-template-columns:repeat(6,1fr);gap:12px}
   .painel .full{grid-column:1/-1}
-  .painel .p3{grid-column:span 3}
-  .painel .p2{grid-column:span 2}
   .painel .p4{grid-column:span 4}
-  .ia{padding:18px}
-  .ia-head h3{font-size:28px}
+  .painel .p2{grid-column:span 2}
+  .ia{padding:22px}
+  .ia-head h3{font-size:34px}
   .ia-kpis{grid-template-columns:repeat(4,1fr)}
-  .ia-kpi .v{font-size:38px}
-  .ia-grid{grid-template-columns:1fr 1fr}
-  .sim-body{display:grid;grid-template-columns:1.2fr 1fr;gap:14px;align-items:center}
+  .ia-kpi .v{font-size:44px}
+  .ia-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .sim{padding:22px}
+  .sim-body{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:center}
+  .sim h4{font-size:30px}
   .ag thead{position:static;width:auto;height:auto;clip:auto;overflow:visible}
-  .ag thead th{text-align:left;font-size:10.5px;color:var(--tinta2);padding:6px;border-bottom:2px solid var(--borda);font-weight:600}
+  .ag thead th{text-align:left;font-size:10.5px;color:var(--tinta2);padding:6px;border-bottom:1px solid var(--vermelho);font-weight:500}
   .ag tbody tr{display:table-row}
   .ag tbody tr.prox-jogo{margin:0}
-  .ag td{display:table-cell;padding:9px 6px;border-top:1px solid var(--borda);vertical-align:top;font-size:12px}
+  .ag td{display:table-cell;padding:10px 6px;border-top:1px solid var(--linha);vertical-align:top;font-size:12.5px}
   .ag td::before{display:none}
 }
 </style>
 </head>
 <body>
 <a class="sr" href="#destaques">Pular para o conteúdo</a>
+
 <header class="barra">
   <div class="wrap">
-    <div class="marca">
-      <svg class="badge" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="#E0384F"/><circle cx="16" cy="16" r="10.5" fill="none" stroke="#FFF6F7" stroke-width="2"/><path d="M16 9.5l2 4.3 4.6.5-3.4 3.1 1 4.6-4.2-2.4-4.2 2.4 1-4.6-3.4-3.1 4.6-.5z" fill="#FFF6F7"/></svg>
-      <b>Boletim do Inter</b>
-    </div>
+    <a class="marca" href="#topo" aria-label="Boletim do Inter, voltar ao topo">
+      <svg viewBox="0 0 276 24" aria-hidden="true" fill="#CF1A31">
+        <path d="M0 0h11a6 6 0 0 1 0 11 6.5 6.5 0 0 1 0 13H0zM4 4v5h7a2.5 2.5 0 0 0 0-5zm0 9v7h7.5a3.5 3.5 0 0 0 0-7z"/>
+        <path fill-rule="evenodd" d="M28 0a8 12 0 1 1 0 24 8 12 0 1 1 0-24zm0 4a4 8 0 1 0 0 16 4 8 0 1 0 0-16z"/>
+        <path d="M41 0h4v20h10v4H41z"/>
+        <path d="M58 0h14v4H62v6h9v4h-9v6h10v4H58z"/>
+        <path d="M75 0h16v4h-6v20h-4V4h-6z"/>
+        <path d="M94 0h4v24h-4z"/>
+        <path d="M101 0h4l5 10 5-10h4v24h-4V9l-5 10-5-10v15h-4z"/>
+        <path fill-rule="evenodd" d="M128 0h6a9 12 0 0 1 0 24h-6zM132 4v16h2a5 8 0 0 0 0-16z"/>
+        <path fill-rule="evenodd" d="M155 0a8 12 0 1 1 0 24 8 12 0 1 1 0-24zm0 4a4 8 0 1 0 0 16 4 8 0 1 0 0-16z"/>
+        <g transform="translate(40 0)">
+        <path d="M132 0h4v24h-4z"/>
+        <path d="M139 0h4l10 16V0h4v24h-4L143 8v16h-4z"/>
+        <path d="M160 0h16v4h-6v20h-4V4h-6z"/>
+        <path d="M179 0h14v4h-10v6h9v4h-9v6h10v4h-14z"/>
+        <path d="M196 0h11a6.5 6.5 0 0 1 2 12.7L214 24h-4.4l-4.6-11H200v11h-4zM200 4v5h7a2.5 2.5 0 0 0 0-5z"/>
+        <path d="M226 4l2.6 5.4 5.9.8-4.3 4.1 1 5.9-5.2-2.8-5.2 2.8 1-5.9-4.3-4.1 5.9-.8z"/>
+        </g>
+      </svg>
+    </a>
     <nav aria-label="Seções"><ul>
       <li><a href="#destaques" class="ativo">Destaques</a></li>
       <li><a href="#numeros">Números</a></li>
@@ -372,117 +314,77 @@ footer{padding:14px 0 24px;font-size:10.5px;color:var(--tinta2);display:flex;fle
       <li><a href="#agenda">Agenda</a></li>
       <li><a href="#fontes">Fontes</a></li>
     </ul></nav>
-    <div class="acoes">
-      <button class="ic" type="button" id="btn-copiar" aria-label="Copiar resumo do boletim"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg></button>
-      <button class="ic" type="button" id="btn-tema" aria-label="Alternar tema claro ou escuro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+    <div class="dir">
+      <span class="edicao it">11 de novembro de 2026</span>
+      <button class="copiar" type="button" id="btn-copiar" aria-label="Copiar resumo do boletim"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11"/><path d="M5 15V5h10"/></svg></button>
     </div>
   </div>
 </header>
 
-<div class="palco" id="topo">
-<svg class="estadio" viewBox="0 0 1440 720" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
-  <defs>
-    <linearGradient id="ceu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0D0408"/><stop offset=".55" stop-color="#2A0B16"/><stop offset="1" stop-color="#4A1323"/></linearGradient>
-    <radialGradient id="brilho" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFF4DD" stop-opacity=".95"/><stop offset=".25" stop-color="#FFE3B8" stop-opacity=".45"/><stop offset="1" stop-color="#FFE3B8" stop-opacity="0"/></radialGradient>
-    <linearGradient id="cone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF1D6" stop-opacity=".32"/><stop offset="1" stop-color="#FFF1D6" stop-opacity="0"/></linearGradient>
-    <linearGradient id="grama" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2D7A4A"/><stop offset="1" stop-color="#123A23"/></linearGradient>
-    <linearGradient id="arqA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7A1A2C"/><stop offset="1" stop-color="#3A0D18"/></linearGradient>
-    <pattern id="torcida" width="9" height="7" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.3" fill="#FFD7DE" opacity=".35"/><circle cx="6.5" cy="5" r="1.1" fill="#FFFFFF" opacity=".18"/></pattern>
-    <pattern id="faixas" width="1440" height="26" patternUnits="userSpaceOnUse"><rect width="1440" height="13" fill="#B82C42" opacity=".55"/></pattern>
-  </defs>
-  <rect width="1440" height="720" fill="url(#ceu)"/>
-  <!-- arquibancada superior (anel) -->
-  <path d="M-40 430 C 200 250, 1240 250, 1480 430 L1480 520 C 1240 390, 200 390, -40 520 Z" fill="url(#arqA)"/>
-  <path d="M-40 430 C 200 250, 1240 250, 1480 430 L1480 520 C 1240 390, 200 390, -40 520 Z" fill="url(#faixas)" opacity=".5"/>
-  <path d="M-40 430 C 200 250, 1240 250, 1480 430 L1480 520 C 1240 390, 200 390, -40 520 Z" fill="url(#torcida)"/>
-  <!-- cobertura -->
-  <path d="M-60 415 C 190 225, 1250 225, 1500 415" fill="none" stroke="#F6D3D9" stroke-opacity=".35" stroke-width="3"/>
-  <path d="M-60 400 C 190 205, 1250 205, 1500 400" fill="none" stroke="#F6D3D9" stroke-opacity=".15" stroke-width="10"/>
-  <!-- arquibancada inferior -->
-  <path d="M-40 530 C 220 410, 1220 410, 1480 530 L1480 590 C 1220 480, 220 480, -40 590 Z" fill="#5A1324"/>
-  <path d="M-40 530 C 220 410, 1220 410, 1480 530 L1480 590 C 1220 480, 220 480, -40 590 Z" fill="url(#torcida)" opacity=".8"/>
-  <!-- gramado em perspectiva -->
-  <path d="M330 498 L1110 498 L1440 720 L0 720 Z" fill="url(#grama)"/>
-  <g fill="none" stroke="#E9F7EE" stroke-opacity=".55" stroke-width="2">
-    <path d="M360 506 L1080 506 L1390 712 L50 712 Z"/>
-    <path d="M720 506 L720 712"/>
-    <ellipse cx="720" cy="590" rx="120" ry="32"/>
-    <path d="M590 506 L585 530 L855 530 L850 506"/>
-  </g>
-  <g opacity=".22" fill="#0B2A17"><path d="M330 498 L460 498 L300 720 L0 720Z"/><path d="M720 498 L850 498 L960 720 L760 720Z"/></g>
-  <!-- torres de iluminação -->
-  <g stroke="#2A0B16" stroke-width="6"><path d="M150 470 L190 120"/><path d="M1290 470 L1250 120"/></g>
-  <g fill="#FFF6E8"><rect x="150" y="96" width="84" height="34" rx="4"/><rect x="1206" y="96" width="84" height="34" rx="4"/></g>
-  <g class="refletor">
-    <polygon points="160,130 230,130 760,720 120,720" fill="url(#cone)"/>
-    <circle cx="192" cy="113" r="150" fill="url(#brilho)"/>
-  </g>
-  <g class="refletor r2">
-    <polygon points="1210,130 1280,130 1320,720 680,720" fill="url(#cone)"/>
-    <circle cx="1248" cy="113" r="150" fill="url(#brilho)"/>
-  </g>
-</svg>
-
-  <div class="palco-in">
-    <p class="meta">Edição de quarta-feira, 11 de novembro de 2026. Consulta às 22h24 (Brasília)</p>
-    <h1>O Inter, em 5 pontos.</h1>
-    <p class="hero-tit">Faltam 4 rodadas. O Inter está 1 ponto acima da linha.</p>
-    <p class="hero-sub">16º com 38 pontos, depois de vencer o Coritiba por 1 x 0 em 03/11. Corinthians e Grêmio, com 37, abrem o Z4.</p>
-    <div class="cta">
-      <a class="bt bt-p" href="#analise">Ver a análise da IA</a>
-      <a class="bt bt-s" href="#agenda">Ver a agenda</a>
+<main class="wrap" id="topo">
+  <div class="abre">
+    <div class="ab" aria-label="De 38 pontos hoje para a meta de 45">
+      <b>38 pts</b><span class="seta" aria-hidden="true"></span><b>45 pts</b>
     </div>
-    <div class="forma" aria-label="Últimos cinco jogos no Brasileirão, do mais antigo ao mais recente: empate, derrota, vitória, derrota, vitória">
-      <span class="t">Últimos 5</span>
-      <span class="pill e" title="Grêmio 1 x 1 Inter, 11/10">E</span>
-      <span class="pill d" title="Mirassol 2 x 0 Inter, 16/10">D</span>
-      <span class="pill v" title="Inter 3 x 0 Botafogo, 24/10">V</span>
-      <span class="pill d" title="Fluminense 2 x 1 Inter, 28/10">D</span>
-      <span class="pill v" title="Inter 1 x 0 Coritiba, 03/11">V</span>
-    </div>
-    <div class="vidro cont">
-      <p class="q">Próximo jogo começa em</p>
-      <p class="jogo">Vasco x Inter</p>
-      <div class="relogio" id="relogio" aria-live="off">
-        <div><b id="r-d">–</b><small>dias</small></div>
-        <div><b id="r-h">–</b><small>horas</small></div>
-        <div><b id="r-m">–</b><small>min</small></div>
-      </div>
-      <p class="det" id="relogio-txt">Quinta 19/11, 19h30, em São Januário. 35ª rodada. <span class="chip ok">🟢 Confirmado</span> SporTV e Premiere.</p>
-    </div>
-    <div class="trinca">
-      <div><b>16º</b><span>posição</span></div>
-      <div><b>38</b><span>pontos em 34 jogos</span></div>
-      <div class="alerta"><b>34%</b><span>risco de queda (IA)</span></div>
-    </div>
-  </div>
-</div>
-
-<main class="wrap">
-<section id="destaques" aria-labelledby="h-linha">
-  <h2 id="h-linha">A linha do rebaixamento</h2>
-  <div class="linha-bloco">
-    <ol class="escada" aria-label="Classificação do 11º ao 20º, com a linha do rebaixamento entre o 16º e o 17º">
-      <li><span class="o">11º</span><span>Botafogo</span><span class="p">42</span></li>
-      <li><span class="o">12º</span><span>Coritiba</span><span class="p">42</span></li>
-      <li><span class="o">13º</span><span>Vasco</span><span class="p">41</span></li>
-      <li><span class="o">14º</span><span>Mirassol</span><span class="p">40</span></li>
-      <li><span class="o">15º</span><span>Vitória</span><span class="p">38</span></li>
-      <li class="inter"><span class="o">16º</span><span>Internacional</span><span class="p">38</span></li>
-      <li class="linha" aria-hidden="true"><span>linha do rebaixamento</span></li>
-      <li class="z4"><span class="o">17º</span><span>Corinthians</span><span class="p">37</span></li>
-      <li class="z4"><span class="o">18º</span><span>Grêmio</span><span class="p">37</span></li>
-      <li class="z4"><span class="o">19º</span><span>Remo</span><span class="p">29</span></li>
-      <li class="z4"><span class="o">20º</span><span>Chapecoense</span><span class="p">21</span></li>
-    </ol>
     <div>
-      <h3 style="font-family:var(--cond);font-size:18px;margin:0 0 8px">A reta final</h3>
-      <div class="rail" id="rail" aria-label="Os 4 jogos restantes do Inter"></div>
-      <p class="linha-txt">Dois jogos no Beira-Rio, dois fora. <b>Vencer Vitória e Bragantino</b> leva o Inter a 44 pontos e derruba o risco de queda para menos de 1% nas simulações.</p>
+      <h1>O Inter, em <em>5 pontos.</em></h1>
+      <p class="tag" style="margin-top:8px">Faltam 4 rodadas, e a reta final é <em>dura</em>. O Inter está 1 ponto acima da linha e segue <em>vivo</em>, com Corinthians e Grêmio logo abaixo. Consulta em 11/11/2026, às 22h24 (Brasília).</p>
     </div>
+    <a class="pilula" href="#simulador">Simule o final</a>
   </div>
 
-  <h2 id="h-dest" style="margin-top:18px">O que importa hoje</h2>
+  <div class="reta" aria-label="Os 4 jogos que faltam, em ordem">
+    <article class="pn fora" aria-labelledby="pn1">
+      <div class="num"><span>35</span><span>Qui 19/11, 19h30</span></div>
+      <div class="campo">
+        <span class="circ" aria-hidden="true"></span>
+        <p class="rel" id="relogio" aria-live="off">faltam <b id="r-d">–</b>d <b id="r-h">–</b>h <b id="r-m">–</b>min</p>
+        <div class="chance"><div class="barra-ch" aria-hidden="true"><i style="width:30%;background:#fff"></i><i style="width:26%;background:rgba(255,255,255,.5)"></i></div><p><span>V 30%</span><span>E 26%</span><span>D 44%</span></p></div>
+      </div>
+      <div>
+        <h3 id="pn1">Vasco x Inter <em>São Januário</em></h3>
+        <p class="txt" id="relogio-txt">O próximo jogo, fora de casa. Sem Maripán, suspenso. Se vencer, o risco de queda cai para 12%.</p>
+        <span class="tv">🟢 SporTV e Premiere, confirmado</span>
+      </div>
+    </article>
+    <article class="pn" aria-labelledby="pn2">
+      <div class="num"><span>36</span><span>Seg 23/11, 19h30</span></div>
+      <div class="campo">
+        <div class="chance"><div class="barra-ch" aria-hidden="true"><i style="width:51%;background:#fff"></i><i style="width:26%;background:rgba(255,255,255,.5)"></i></div><p><span>V 51%</span><span>E 26%</span><span>D 23%</span></p></div>
+      </div>
+      <div>
+        <h3 id="pn2">Inter x Vitória <em>Beira-Rio</em></h3>
+        <p class="txt">O jogo de seis pontos: o Vitória tem os mesmos 38 e está uma posição acima.</p>
+        <span class="tv">🟡 TV a confirmar</span>
+      </div>
+    </article>
+    <article class="pn" aria-labelledby="pn3">
+      <div class="num"><span>37</span><span>Dom 29/11, 18h30</span></div>
+      <div class="campo">
+        <div class="chance"><div class="barra-ch" aria-hidden="true"><i style="width:39%;background:#fff"></i><i style="width:28%;background:rgba(255,255,255,.5)"></i></div><p><span>V 39%</span><span>E 28%</span><span>D 32%</span></p></div>
+      </div>
+      <div>
+        <h3 id="pn3">Inter x Bragantino <em>Beira-Rio</em></h3>
+        <p class="txt">No mesmo dia, Corinthians x Grêmio obriga um rival a perder pontos.</p>
+        <span class="tv">🟡 TV a confirmar</span>
+      </div>
+    </article>
+    <article class="pn fora" aria-labelledby="pn4">
+      <div class="num"><span>38</span><span>Qua 02/12, 21h30</span></div>
+      <div class="campo">
+        <div class="chance"><div class="barra-ch" aria-hidden="true"><i style="width:23%;background:#fff"></i><i style="width:24%;background:rgba(255,255,255,.5)"></i></div><p><span>V 23%</span><span>E 24%</span><span>D 53%</span></p></div>
+      </div>
+      <div>
+        <h3 id="pn4">Cruzeiro x Inter <em>Mineirão</em></h3>
+        <p class="txt">Rodada final simultânea, com Grêmio, Vitória e Corinthians em campo no mesmo horário.</p>
+        <span class="tv">🟡 TV a confirmar</span>
+      </div>
+    </article>
+  </div>
+  <p class="nota">Números no topo: a rodada. Linha tracejada: a linha do rebaixamento. Faixa branca: chance de vitória e de empate do Inter na simulação de IA. Vermelho mais escuro: jogo fora de casa.</p>
+
+<section id="destaques" aria-labelledby="h-dest">
+  <div class="titulo"><h2 id="h-dest">O que importa <em>hoje</em></h2><p>Os cinco pontos do dia, com as fontes numeradas em cada card.</p></div>
   <div class="cards">
     <article class="card g" aria-labelledby="c1">
       <div class="card-top"><span class="n">01</span><h3 id="c1">Situação do Inter</h3>
@@ -507,7 +409,7 @@ footer{padding:14px 0 24px;font-size:10.5px;color:var(--tinta2);display:flex;fle
     <article class="card" aria-labelledby="c3">
       <div class="card-top"><span class="n">03</span><h3 id="c3">Elenco</h3>
         <span class="refs"><a class="ref" href="#f6" aria-label="Fonte 6">6</a><a class="ref" href="#f7" aria-label="Fonte 7">7</a><a class="ref" href="#f8" aria-label="Fonte 8">8</a></span></div>
-      <div class="faixa"><p class="manchete">Maripán fora</p><span class="chip pend">suspensão automática</span></div>
+      <div class="faixa"><p class="manchete">Maripán <em>fora</em></p><span class="chip pend">suspensão automática</span></div>
       <p>Expulso contra o Coritiba, desfalca o Inter em São Januário.</p>
       <p><b>Alan Patrick</b> (lesão na coxa direita) treinou com bola sem dor em 10/11; volta depende de liberação médica. <span class="chip proj">Projeção</span> deve atuar no jogo-treino de sábado (14/11), como Anthoni e Sanabria. Escalação ainda não confirmada.</p>
     </article>
@@ -515,7 +417,7 @@ footer{padding:14px 0 24px;font-size:10.5px;color:var(--tinta2);display:flex;fle
     <article class="card" aria-labelledby="c4">
       <div class="card-top"><span class="n">04</span><h3 id="c4">Contexto esportivo</h3>
         <span class="refs"><a class="ref" href="#f2" aria-label="Fonte 2">2</a><a class="ref" href="#f1" aria-label="Fonte 1">1</a></span></div>
-      <div class="faixa"><p class="manchete">9 de 9</p><span class="hora">em casa com Baptista</span></div>
+      <div class="faixa"><p class="manchete">9 de 9 <em>em casa</em></p><span class="hora">com Baptista</span></div>
       <p>Eduardo Baptista venceu Corinthians, Botafogo e Coritiba no Beira-Rio. Na 35ª, Corinthians x Botafogo e Grêmio x Bahia jogam antes (qua 18/11); Vitória x Bragantino é no mesmo horário do Inter.</p>
     </article>
 
@@ -533,13 +435,13 @@ footer{padding:14px 0 24px;font-size:10.5px;color:var(--tinta2);display:flex;fle
 </section>
 
 <section id="numeros" aria-labelledby="h-num">
-  <h2 id="h-num">Os números da briga</h2>
+  <div class="titulo"><h2 id="h-num">Os números <em>da briga</em></h2><p>Comparação com a rodada anterior, tabela de baixo e projeção até a 38ª.</p></div>
   <div class="strip" aria-label="Indicadores com comparação à rodada anterior">
-    <div class="st"><span class="l">Posição</span><span class="v">16º</span><span class="d up">▲ 2 (era 18º)</span></div>
-    <div class="st"><span class="l">Pontos</span><span class="v">38</span><span class="d up">+3 na rodada</span></div>
-    <div class="st"><span class="l">Margem para o Z4</span><span class="v">+1</span><span class="d up">era 2 pts abaixo</span></div>
-    <div class="st"><span class="l">Saldo de gols</span><span class="v">−4</span><span class="d up">era −5</span></div>
-    <div class="st"><span class="l">Aproveitamento</span><span class="v">37%</span><span class="d up">era 35%</span></div>
+    <div class="st"><span class="l">Posição</span><span class="v">16º</span><span class="d">▲ 2 (era 18º)</span></div>
+    <div class="st"><span class="l">Pontos</span><span class="v">38</span><span class="d">+3 na rodada</span></div>
+    <div class="st"><span class="l">Margem para o Z4</span><span class="v">+1</span><span class="d">era 2 pts abaixo</span></div>
+    <div class="st"><span class="l">Saldo de gols</span><span class="v">−4</span><span class="d">era −5</span></div>
+    <div class="st"><span class="l">Aproveitamento</span><span class="v">37%</span><span class="d">era 35%</span></div>
   </div>
 
   <div class="painel">
@@ -551,13 +453,13 @@ footer{padding:14px 0 24px;font-size:10.5px;color:var(--tinta2);display:flex;fle
         <button class="btn" type="button" data-faixa="z4" aria-pressed="false">Só Z4</button>
       </div>
       <div class="chart" id="chart-tabela" role="img" aria-label="Barras com os pontos dos clubes da parte de baixo da tabela"></div>
-      <div class="legenda"><span><i style="background:#B82C42"></i>Internacional</span><span><i style="background:var(--colorado-s)"></i>Fora do Z4</span><span><i style="background:#5B2B36"></i>Z4 (17º–20º)</span><span><i style="background:none;border-top:2px dashed var(--tinta2);height:0;width:14px;border-radius:0"></i>Linha do Inter (38)</span></div>
+      <div class="legenda"><span><i style="background:#CF1A31"></i>Internacional</span><span><i style="background:#F6C5CD"></i>Fora do Z4</span><span><i style="background:#5A0C18"></i>Z4 (17º–20º)</span><span><i style="background:none;border-top:1px dashed #CF1A31;height:0;width:14px"></i>Linha do Inter (38)</span></div>
     </div>
 
     <div class="bloco p4">
       <h3>Pontos do Inter rodada a rodada, com a projeção da IA</h3>
       <div class="chart" id="chart-pontos" role="img" aria-label="Pontos acumulados da 29ª à 34ª rodada (31, 32, 32, 35, 35 e 38) e projeção de 43,3 pontos ao fim, com faixa de 40 a 47"></div>
-      <div class="legenda"><span><i style="background:#B82C42"></i>Pontos reais</span><span><i style="background:var(--colorado-s)"></i>Faixa provável (80% das simulações)</span><span><i style="background:none;border-top:2px dashed #1F6B3A;height:0;width:14px;border-radius:0"></i>Linha típica do 16º (43)</span></div>
+      <div class="legenda"><span><i style="background:#CF1A31"></i>Pontos reais</span><span><i style="background:#F6C5CD"></i>Faixa provável (80% das simulações)</span><span><i style="background:none;border-top:1px dashed #1E7A45;height:0;width:14px"></i>Linha típica do 16º (43)</span></div>
     </div>
 
     <div class="bloco p2">
@@ -565,12 +467,12 @@ footer{padding:14px 0 24px;font-size:10.5px;color:var(--tinta2);display:flex;fle
       <div class="donut-wrap">
         <div class="chart" id="chart-donut" role="img" aria-label="9 vitórias, 11 empates e 14 derrotas; aproveitamento de 37%"></div>
         <div class="gols">
-          <div>Gols pró <b class="num-c" style="font-size:16px">38</b><div class="b"><span style="width:84%;background:#1F6B3A"></span></div></div>
-          <div>Gols contra <b class="num-c" style="font-size:16px">42</b><div class="b"><span style="width:93%;background:#B82C42"></span></div></div>
+          <div>Gols pró <b class="mono">38</b><div class="b"><span style="width:84%;background:#1E7A45"></span></div></div>
+          <div>Gols contra <b class="mono">42</b><div class="b"><span style="width:93%;background:#CF1A31"></span></div></div>
           <p class="nota" style="margin:0">Melhor saldo entre os 7 ameaçados.</p>
         </div>
       </div>
-      <div class="legenda"><span><i style="background:#1F6B3A"></i>9 V</span><span><i style="background:var(--neutro)"></i>11 E</span><span><i style="background:#B82C42"></i>14 D</span></div>
+      <div class="legenda"><span><i style="background:#1E7A45"></i>9 V</span><span><i style="background:#F6C5CD"></i>11 E</span><span><i style="background:#CF1A31"></i>14 D</span></div>
     </div>
 
     <div class="bloco full">
@@ -600,7 +502,7 @@ footer{padding:14px 0 24px;font-size:10.5px;color:var(--tinta2);display:flex;fle
   <article class="ia">
     <div class="ia-head">
       <span class="ia-label">✦ Análise proveniente de IA</span>
-      <h3 id="ia-t">Análise proveniente de IA com relação ao rebaixamento</h3>
+      <h3 id="ia-t">Análise proveniente de IA com relação ao <em>rebaixamento</em></h3>
       <p class="nota">Simulação feita pelo Claude: 200 mil campeonatos sorteados a partir da tabela real após a 34ª rodada e dos 41 jogos restantes, em 11/11/2026, às 22h40.</p>
     </div>
 
@@ -634,7 +536,7 @@ footer{padding:14px 0 24px;font-size:10.5px;color:var(--tinta2);display:flex;fle
       <div class="ia-bloco">
         <h4>Jogo a jogo: chances do Inter</h4>
         <div id="ia-jogos"></div>
-        <div class="legenda"><span><i style="background:#1F6B3A"></i>Vitória</span><span><i style="background:#C9B8BD"></i>Empate</span><span><i style="background:#B82C42"></i>Derrota</span></div>
+        <div class="legenda"><span><i style="background:#1E7A45"></i>Vitória</span><span><i style="background:#F6C5CD"></i>Empate</span><span><i style="background:#CF1A31"></i>Derrota</span></div>
       </div>
       <div class="ia-bloco">
         <h4>Cenários decisivos</h4>
@@ -653,8 +555,8 @@ footer{padding:14px 0 24px;font-size:10.5px;color:var(--tinta2);display:flex;fle
     <div class="sim" id="simulador">
       <div class="sim-body">
         <div>
-          <h4>Monte o seu final de campeonato</h4>
-          <p class="nota" style="margin-top:0">Escolha o resultado do Inter em cada jogo. O risco vem das simulações em que o Inter terminou com essa pontuação.</p>
+          <h4>Monte o seu <em>final de campeonato</em></h4>
+          <p class="nota" style="margin-top:4px">Escolha o resultado do Inter em cada jogo. O risco vem das simulações em que o Inter terminou com essa pontuação.</p>
           <div class="sim-jogos" id="sim-jogos"></div>
           <div class="presets" role="group" aria-label="Cenários prontos">
             <button class="btn" type="button" data-preset="vveev">Só vence em casa</button>
@@ -664,7 +566,7 @@ footer{padding:14px 0 24px;font-size:10.5px;color:var(--tinta2);display:flex;fle
           </div>
         </div>
         <div class="sim-out" aria-live="polite">
-          <div class="gauge" id="gauge"></div>
+          <div id="gauge"></div>
           <div class="sim-txt" id="sim-txt"><b class="big">Escolha os 4 resultados</b><span class="nota">Toque em V, E ou D em cada jogo para ver os pontos finais e o risco.</span></div>
         </div>
       </div>
@@ -673,10 +575,10 @@ footer{padding:14px 0 24px;font-size:10.5px;color:var(--tinta2);display:flex;fle
     <div class="ia-bloco" style="margin-top:8px">
       <h4>Confrontos diretos que podem decidir</h4>
       <ul class="cd">
-        <li><b>Qua 18/11</b> Corinthians x Botafogo e Grêmio x Bahia</li>
-        <li><b>Seg 23/11</b> Internacional x Vitória, o jogo de seis pontos do Inter</li>
-        <li><b>Dom 29/11</b> Corinthians x Grêmio: um dos dois rivais perde pontos</li>
-        <li><b>Qua 02/12</b> Grêmio x Mirassol, Vasco x Vitória, Remo x Corinthians e Cruzeiro x Internacional, todos às 21h30</li>
+        <li><b>18/11</b>Corinthians x Botafogo e Grêmio x Bahia</li>
+        <li><b>23/11</b>Internacional x Vitória, o jogo de seis pontos do Inter</li>
+        <li><b>29/11</b>Corinthians x Grêmio: um dos dois rivais perde pontos</li>
+        <li><b>02/12</b>Grêmio x Mirassol, Vasco x Vitória, Remo x Corinthians e Cruzeiro x Internacional, todos às 21h30</li>
       </ul>
     </div>
 
@@ -687,13 +589,13 @@ footer{padding:14px 0 24px;font-size:10.5px;color:var(--tinta2);display:flex;fle
 
     <details class="met">
       <summary>Como a simulação foi feita</summary>
-      <p>Modelo de Poisson: cada clube recebe uma força de ataque e de defesa calculada pelos gols pró e contra nos 34 jogos (com ajuste à média da liga), mais vantagem de mando. Cada um dos 41 jogos restantes, incluindo Chapecoense x Vasco (adiado, 14/11), é sorteado 200 mil vezes com variação aleatória na força dos times; o desempate segue pontos, vitórias, saldo e gols pró. O simulador acima usa o risco médio para cada pontuação final do Inter, sem fixar os resultados dos rivais. O modelo não considera lesões, suspensões, troca de técnico ou motivação. Como checagem, o modelo independente do ValorFinal 2.0 chega a 35,7% para o Inter, perto dos 34% daqui. É estimativa, não previsão garantida.</p>
+      <p>Modelo de Poisson: cada clube recebe uma força de ataque e de defesa calculada pelos gols pró e contra nos 34 jogos (com ajuste à média da liga), mais vantagem de mando. Cada um dos 41 jogos restantes, incluindo Chapecoense x Vasco (adiado, 14/11), é sorteado 200 mil vezes com variação aleatória na força dos times; o desempate segue pontos, vitórias, saldo e gols pró. O simulador usa o risco médio para cada pontuação final do Inter, sem fixar os resultados dos rivais. O modelo não considera lesões, suspensões, troca de técnico ou motivação. Como checagem, o modelo independente do ValorFinal 2.0 chega a 35,7% para o Inter, perto dos 34% daqui. É estimativa, não previsão garantida.</p>
     </details>
   </article>
 </section>
 
 <section id="agenda" aria-labelledby="h-ag">
-  <h2 id="h-ag">Agenda rápida 2026</h2>
+  <div class="titulo"><h2 id="h-ag">Agenda <em>rápida 2026</em></h2><p>Horários de Brasília. O status refere-se à transmissão.</p></div>
   <div class="agenda-wrap">
     <div class="filtros" role="group" aria-label="Filtrar jogos">
       <button class="btn" type="button" data-tv="todos" aria-pressed="true">Todos os jogos</button>
@@ -765,9 +667,11 @@ footer{padding:14px 0 24px;font-size:10.5px;color:var(--tinta2);display:flex;fle
 </section>
 </main>
 
-<footer class="wrap">
-  <p>Este arquivo é um retrato da consulta de 11/11/2026, às 22h24 (Brasília), e não se atualiza sozinho.</p>
-  <a class="topo" href="#topo">Voltar ao topo</a>
+<footer>
+  <div class="wrap">
+    <p style="margin:0">Este arquivo é um retrato da consulta de 11/11/2026, às 22h24 (Brasília), e não se atualiza sozinho.</p>
+    <a class="topo" href="#topo">Voltar ao topo</a>
+  </div>
 </footer>
 <div id="tip" role="tooltip"></div>
 <div class="toast" id="toast" role="status" hidden></div>
@@ -776,8 +680,8 @@ footer{padding:14px 0 24px;font-size:10.5px;color:var(--tinta2);display:flex;fle
 (function(){
   "use strict";
   var NS="http://www.w3.org/2000/svg";
+  var C={verm:"#CF1A31",rosa:"#F6C5CD",vinho:"#5A0C18",tinta:"#2B0A10",tinta2:"#7A4A52",linha:"#F1C9CF",verde:"#1E7A45"};
   var tip=document.getElementById("tip");
-  function cssv(n){return getComputedStyle(document.documentElement).getPropertyValue(n).trim();}
   function el(n,a,txt){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;return e;}
   function dica(alvo,texto){
     function mostra(e){tip.textContent=texto;tip.style.opacity=1;var r=alvo.getBoundingClientRect();var x=(e.clientX||r.left+r.width/2)+10,y=(e.clientY||r.top)-36;tip.style.left=Math.max(6,Math.min(x,innerWidth-240))+"px";tip.style.top=Math.max(6,y)+"px";}
@@ -785,23 +689,14 @@ footer{padding:14px 0 24px;font-size:10.5px;color:var(--tinta2);display:flex;fle
     alvo.addEventListener("mousemove",mostra);alvo.addEventListener("focus",mostra);alvo.addEventListener("mouseleave",esconde);alvo.addEventListener("blur",esconde);
   }
 
-  /* Tema */
-  var raiz=document.documentElement;
-  try{var t=localStorage.getItem("boletim-tema");if(t)raiz.setAttribute("data-theme",t);}catch(e){}
-  document.getElementById("btn-tema").addEventListener("click",function(){
-    var escuro=raiz.getAttribute("data-theme")!=="light";
-    var novo=escuro?"light":"dark";raiz.setAttribute("data-theme",novo);
-    try{localStorage.setItem("boletim-tema",novo);}catch(e){}
-    redesenha();
-  });
-
-  /* Contagem regressiva */
+  /* Contagem regressiva no painel da 35ª */
   var alvoJogo=new Date("2026-11-19T19:30:00-03:00").getTime();
   function relogio(){
     var ms=alvoJogo-Date.now();
-    if(ms<=0){document.getElementById("relogio").hidden=true;document.querySelector(".vidro .q").textContent="Horário do jogo já passou";document.getElementById("relogio-txt").textContent="Este boletim é de 11/11 e não traz o placar. Consulte uma edição mais recente.";return;}
-    var d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5),m=Math.floor(ms%36e5/6e4);
-    document.getElementById("r-d").textContent=d;document.getElementById("r-h").textContent=h;document.getElementById("r-m").textContent=m;
+    if(ms<=0){document.getElementById("relogio").textContent="o horário do jogo já passou";document.getElementById("relogio-txt").textContent="Este boletim é de 11/11 e não traz o placar. Consulte uma edição mais recente.";return;}
+    document.getElementById("r-d").textContent=Math.floor(ms/864e5);
+    document.getElementById("r-h").textContent=Math.floor(ms%864e5/36e5);
+    document.getElementById("r-m").textContent=Math.floor(ms%36e5/6e4);
   }
   relogio();setInterval(relogio,30000);
 
@@ -815,28 +710,11 @@ footer{padding:14px 0 24px;font-size:10.5px;color:var(--tinta2);display:flex;fle
   });
 
   /* Navegação ativa */
-  var links=[].slice.call(document.querySelectorAll("nav a"));
+  var links=[].slice.call(document.querySelectorAll(".barra nav a"));
   if("IntersectionObserver" in window){
     var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle("ativo",a.getAttribute("href")==="#"+e.target.id);});}});},{rootMargin:"-40% 0px -55% 0px"});
     ["destaques","numeros","analise","agenda","fontes"].forEach(function(id){obs.observe(document.getElementById(id));});
   }
-
-
-  /* Pôsteres da reta final */
-  var posters=[
-    {d:"19/11",s:"Qui, 19h30",c:"Vasco x Inter",l:"São Januário, Rio de Janeiro",r:"35ª rodada",casa:false,tv:["ok","🟢 SporTV e Premiere"],ch:[30,26,44],prox:true},
-    {d:"23/11",s:"Seg, 19h30",c:"Inter x Vitória",l:"Beira-Rio, Porto Alegre",r:"36ª rodada",casa:true,tv:["pend","🟡 TV a confirmar"],ch:[51,26,23]},
-    {d:"29/11",s:"Dom, 18h30",c:"Inter x Bragantino",l:"Beira-Rio, Porto Alegre",r:"37ª rodada",casa:true,tv:["pend","🟡 TV a confirmar"],ch:[39,28,32]},
-    {d:"02/12",s:"Qua, 21h30",c:"Cruzeiro x Inter",l:"Mineirão, Belo Horizonte",r:"38ª rodada",casa:false,tv:["pend","🟡 TV a confirmar"],ch:[23,24,53]}
-  ];
-  var rail=document.getElementById("rail");
-  posters.forEach(function(p){var a=document.createElement("article");a.className="poster"+(p.casa?" casa":"");a.tabIndex=0;
-    a.setAttribute("aria-label",p.c+", "+p.d+", "+p.s+", "+p.l+". Chances do Inter: vitória "+p.ch[0]+"%, empate "+p.ch[1]+"%, derrota "+p.ch[2]+"%.");
-    a.innerHTML="<div class='topo-p'><span>"+p.r+"</span>"+(p.prox?"<span class='tag-p'>Próximo</span>":"<span>"+(p.casa?"Em casa":"Fora")+"</span>")+"</div>"+
-      "<div class='data-p'>"+p.d+"<small>"+p.s+"</small></div>"+
-      "<div><div class='conf'>"+p.c+"</div><div class='local'>"+p.l+"</div></div>"+
-      "<div class='chance'><span class='chip "+p.tv[0]+"'>"+p.tv[1]+"</span><div class='stack' style='margin-top:6px' aria-hidden='true'><div style='width:"+p.ch[0]+"%;background:#1F8A4C'>"+p.ch[0]+"%</div><div class='e' style='width:"+p.ch[1]+"%;background:#C9B8BD'>"+p.ch[1]+"%</div><div style='width:"+p.ch[2]+"%;background:#FFF6F7;color:#2A0F17'>"+p.ch[2]+"%</div></div><p><span>V / E / D do Inter</span><span>IA</span></p></div>";
-    rail.appendChild(a);});
 
   /* Dados */
   var dados=[
@@ -864,61 +742,58 @@ footer{padding:14px 0 24px;font-size:10.5px;color:var(--tinta2);display:flex;fle
     var ds=filtrados();
     if(!ds.length){box.innerHTML='<div class="vazio">Nenhum clube nesta combinação de faixa e busca.</div>';return;}
     var W=Math.max(300,box.clientWidth||640),rowH=28,top=6,left=112,right=34,H=top+ds.length*rowH+20,max=45;
-    var tinta=cssv("--tinta"),tinta2=cssv("--tinta2"),borda=cssv("--borda"),suave=cssv("--colorado-s");
     var s=el("svg",{viewBox:"0 0 "+W+" "+H,"aria-hidden":"true"});
     var esc=function(v){return left+(W-left-right)*v/max;};
-    [0,15,30,45].forEach(function(t){s.appendChild(el("line",{x1:esc(t),x2:esc(t),y1:top,y2:H-18,stroke:borda}));s.appendChild(el("text",{x:esc(t),y:H-4,"font-size":"11","text-anchor":"middle",fill:tinta2},t));});
+    [0,15,30,45].forEach(function(t){s.appendChild(el("line",{x1:esc(t),x2:esc(t),y1:top,y2:H-18,stroke:C.linha}));s.appendChild(el("text",{x:esc(t),y:H-4,"font-size":"11","text-anchor":"middle",fill:C.tinta2},t));});
     ds.forEach(function(d,i){
       var y=top+i*rowH,w=esc(d.p)-left,inter=d.clube==="Internacional";
-      var cor=inter?cssv("--colorado"):(d.pos>=17?cssv("--z4"):cssv("--barra"));
-      s.appendChild(el("text",{x:left-8,y:y+rowH/2+4,"font-size":"12","text-anchor":"end",fill:tinta,"font-weight":inter?"700":"400"},d.pos+"º "+d.clube));
-      var r=el("rect",{x:left,y:y+5,width:Math.max(2,w),height:rowH-10,rx:5,fill:cor,tabindex:"0","aria-label":d.clube+", "+d.p+" pontos"});
+      var cor=inter?C.verm:(d.pos>=17?C.vinho:C.rosa);
+      s.appendChild(el("text",{x:left-8,y:y+rowH/2+4,"font-size":"12","text-anchor":"end",fill:inter?C.verm:C.tinta,"font-weight":inter?"500":"400"},d.pos+"º "+d.clube));
+      var r=el("rect",{x:left,y:y+7,width:Math.max(2,w),height:rowH-14,fill:cor,tabindex:"0","aria-label":d.clube+", "+d.p+" pontos"});
       dica(r,d.pos+"º "+d.clube+": "+d.p+" pts em "+d.j+" jogos, "+d.v+" vitórias, saldo "+(d.sg>0?"+":"")+d.sg);
       s.appendChild(r);
-      s.appendChild(el("text",{x:left+w+6,y:y+rowH/2+4,"font-size":"12","font-weight":"700",fill:tinta},d.p));
+      s.appendChild(el("text",{x:left+w+6,y:y+rowH/2+4,"font-size":"12","font-weight":"500",fill:C.tinta},d.p));
     });
-    var xl=esc(38);s.appendChild(el("line",{x1:xl,x2:xl,y1:top,y2:H-18,stroke:tinta2,"stroke-dasharray":"4 4","stroke-width":"1.5"}));
+    var xl=esc(38);s.appendChild(el("line",{x1:xl,x2:xl,y1:top,y2:H-18,stroke:C.verm,"stroke-dasharray":"4 4"}));
     box.appendChild(s);
   }
 
   function linha(){
     var box=document.getElementById("chart-pontos");box.innerHTML="";
     var W=Math.max(300,box.clientWidth||600),H=200,l=30,r=56,t=18,b=28,min=28,max=50;
-    var tinta=cssv("--tinta"),tinta2=cssv("--tinta2"),borda=cssv("--borda"),suave=cssv("--colorado-s");
     var s=el("svg",{viewBox:"0 0 "+W+" "+H,"aria-hidden":"true"});
-    var n=pontos.length,passos=n+3; // 6 rodadas reais + 4 futuras (35 a 38) = 10 posições
-    var X=function(i){return l+(W-l-r)*i/(passos);},Y=function(v){return t+(H-t-b)*(1-(v-min)/(max-min));};
-    [30,35,40,45,50].forEach(function(v){s.appendChild(el("line",{x1:l,x2:W-r+30,y1:Y(v),y2:Y(v),stroke:borda}));s.appendChild(el("text",{x:l-6,y:Y(v)+4,"font-size":"10","text-anchor":"end",fill:tinta2},v));});
-    // faixa projetada 34ª -> 38ª
+    var n=pontos.length,passos=n+3;
+    var X=function(i){return l+(W-l-r)*i/passos;},Y=function(v){return t+(H-t-b)*(1-(v-min)/(max-min));};
+    [30,35,40,45,50].forEach(function(v){s.appendChild(el("line",{x1:l,x2:W-r+30,y1:Y(v),y2:Y(v),stroke:C.linha}));s.appendChild(el("text",{x:l-6,y:Y(v)+4,"font-size":"10","text-anchor":"end",fill:C.tinta2},v));});
     var x0=X(n-1),x1=X(passos);
-    s.appendChild(el("path",{d:"M"+x0+" "+Y(38)+" L"+x1+" "+Y(47)+" L"+x1+" "+Y(40)+" Z",fill:suave,opacity:".55"}));
-    s.appendChild(el("line",{x1:x0,y1:Y(38),x2:x1,y2:Y(43.3),stroke:"#B82C42","stroke-width":"2","stroke-dasharray":"5 4"}));
-    s.appendChild(el("line",{x1:l,x2:W-r+30,y1:Y(43),y2:Y(43),stroke:"#1F6B3A","stroke-width":"1.5","stroke-dasharray":"3 4"}));
-    s.appendChild(el("text",{x:W-r+30,y:Y(43)-5,"font-size":"10","text-anchor":"end",fill:"#1F6B3A"},"16º típico: 43"));
-    var pc=el("circle",{cx:x1,cy:Y(43.3),r:7,fill:"#fff",stroke:"#B82C42","stroke-width":"2.5",tabindex:"0","stroke-dasharray":"3 2"});
+    s.appendChild(el("path",{d:"M"+x0+" "+Y(38)+" L"+x1+" "+Y(47)+" L"+x1+" "+Y(40)+" Z",fill:C.rosa,opacity:".7"}));
+    s.appendChild(el("line",{x1:x0,y1:Y(38),x2:x1,y2:Y(43.3),stroke:C.verm,"stroke-width":"1.5","stroke-dasharray":"5 4"}));
+    s.appendChild(el("line",{x1:l,x2:W-r+30,y1:Y(43),y2:Y(43),stroke:C.verde,"stroke-width":"1","stroke-dasharray":"3 4"}));
+    s.appendChild(el("text",{x:W-r+30,y:Y(43)-5,"font-size":"10","text-anchor":"end",fill:C.verde},"16º típico: 43"));
+    var pc=el("circle",{cx:x1,cy:Y(43.3),r:7,fill:"#fff",stroke:C.verm,"stroke-width":"1.5",tabindex:"0"});
     dica(pc,"Projeção ao fim da 38ª: 43,3 pts (80% das simulações entre 40 e 47)");s.appendChild(pc);
-    s.appendChild(el("text",{x:x1+10,y:Y(43.3)+4,"font-size":"12","font-weight":"700",fill:tinta},"43,3"));
-    s.appendChild(el("text",{x:x1,y:H-8,"font-size":"10","text-anchor":"middle",fill:tinta2},"38ª"));
+    s.appendChild(el("text",{x:x1+10,y:Y(43.3)+4,"font-size":"12","font-weight":"500",fill:C.verm},"43,3"));
+    s.appendChild(el("text",{x:x1,y:H-8,"font-size":"10","text-anchor":"middle",fill:C.tinta2},"38ª"));
     var pts=pontos.map(function(d,i){return [X(i),Y(d.p)];});
-    s.appendChild(el("polyline",{points:pts.map(function(p){return p.join(",");}).join(" "),fill:"none",stroke:"#B82C42","stroke-width":"3","stroke-linejoin":"round"}));
+    s.appendChild(el("polyline",{points:pts.map(function(p){return p.join(",");}).join(" "),fill:"none",stroke:C.verm,"stroke-width":"2"}));
     pontos.forEach(function(d,i){
-      var c=el("circle",{cx:pts[i][0],cy:pts[i][1],r:6,fill:cssv("--superficie"),stroke:"#B82C42","stroke-width":"2.5",tabindex:"0"});
+      var c=el("circle",{cx:pts[i][0],cy:pts[i][1],r:5,fill:"#fff",stroke:C.verm,"stroke-width":"2",tabindex:"0"});
       dica(c,d.r+" rodada: "+d.p+" pts ("+d.res+")");s.appendChild(c);
-      s.appendChild(el("text",{x:pts[i][0],y:pts[i][1]-11,"font-size":"11","text-anchor":"middle","font-weight":"700",fill:tinta},d.p));
-      if(i%1===0)s.appendChild(el("text",{x:pts[i][0],y:H-8,"font-size":"10","text-anchor":"middle",fill:tinta2},d.r));
+      s.appendChild(el("text",{x:pts[i][0],y:pts[i][1]-11,"font-size":"11","text-anchor":"middle","font-weight":"500",fill:C.tinta},d.p));
+      s.appendChild(el("text",{x:pts[i][0],y:H-8,"font-size":"10","text-anchor":"middle",fill:C.tinta2},d.r));
     });
     box.appendChild(s);
   }
 
   function donut(){
     var box=document.getElementById("chart-donut");box.innerHTML="";
-    var parts=[[9,"#1F6B3A","vitórias"],[11,cssv("--neutro"),"empates"],[14,"#B82C42","derrotas"]],tot=34,R=46,C=2*Math.PI*R,acc=0;
+    var parts=[[9,C.verde,"vitórias"],[11,C.rosa,"empates"],[14,C.verm,"derrotas"]],tot=34,R=46,Cc=2*Math.PI*R,acc=0;
     var s=el("svg",{viewBox:"0 0 120 120","aria-hidden":"true"});
     parts.forEach(function(p){
-      var len=C*p[0]/tot;var c=el("circle",{cx:60,cy:60,r:R,fill:"none",stroke:p[1],"stroke-width":"16","stroke-dasharray":(len-2)+" "+(C-len+2),"stroke-dashoffset":-acc,transform:"rotate(-90 60 60)",tabindex:"0"});
+      var len=Cc*p[0]/tot;var c=el("circle",{cx:60,cy:60,r:R,fill:"none",stroke:p[1],"stroke-width":"12","stroke-dasharray":(len-2)+" "+(Cc-len+2),"stroke-dashoffset":-acc,transform:"rotate(-90 60 60)",tabindex:"0"});
       dica(c,p[0]+" "+p[2]+" ("+Math.round(p[0]/tot*100)+"%)");s.appendChild(c);acc+=len;});
-    s.appendChild(el("text",{x:60,y:62,"text-anchor":"middle","font-size":"26","font-weight":"800",fill:cssv("--tinta"),"font-family":"Avenir Next Condensed,Bahnschrift,Roboto Condensed,Arial Narrow,sans-serif"},"37%"));
-    s.appendChild(el("text",{x:60,y:78,"text-anchor":"middle","font-size":"9.5",fill:cssv("--tinta2")},"aproveitamento"));
+    s.appendChild(el("text",{x:60,y:64,"text-anchor":"middle","font-size":"26",fill:C.verm},"37%"));
+    s.appendChild(el("text",{x:60,y:80,"text-anchor":"middle","font-size":"9.5",fill:C.tinta2},"aproveitamento"));
     box.appendChild(s);
   }
 
@@ -964,7 +839,7 @@ footer{padding:14px 0 24px;font-size:10.5px;color:var(--tinta2);display:flex;fle
   var jb=document.getElementById("ia-jogos");
   jogos.forEach(function(j){var d=document.createElement("div");d.className="jg";d.tabIndex=0;
     var txt=j[0]+": vitória do Inter "+j[2]+"%, empate "+j[3]+"%, derrota "+j[4]+"%";d.setAttribute("aria-label",txt);
-    d.innerHTML="<div class='t'>"+j[0]+"<span>"+j[1]+"</span></div><div class='stack' aria-hidden='true'><div style='width:"+j[2]+"%;background:#1F6B3A'>"+j[2]+"%</div><div class='e' style='width:"+j[3]+"%;background:#C9B8BD'>"+j[3]+"%</div><div style='width:"+j[4]+"%;background:#B82C42'>"+j[4]+"%</div></div>";
+    d.innerHTML="<div class='t'>"+j[0]+"<span>"+j[1]+"</span></div><div class='stack' aria-hidden='true'><div style='width:"+j[2]+"%;background:"+C.verde+"'>"+j[2]+"%</div><div class='e' style='width:"+j[3]+"%;background:"+C.rosa+"'>"+j[3]+"%</div><div style='width:"+j[4]+"%;background:"+C.verm+"'>"+j[4]+"%</div></div>";
     dica(d,txt);jb.appendChild(d);});
 
   /* Simulador */
@@ -977,15 +852,14 @@ footer{padding:14px 0 24px;font-size:10.5px;color:var(--tinta2);display:flex;fle
     sj.appendChild(row);});
   function gauge(p){
     var box=document.getElementById("gauge");box.innerHTML="";
-    var s=el("svg",{viewBox:"0 0 132 84",class:"gauge","aria-hidden":"true"});
+    var s=el("svg",{viewBox:"0 0 132 84","aria-hidden":"true"});
     var R=54,cx=66,cy=72,len=Math.PI*R;
     var arc="M"+(cx-R)+" "+cy+" A"+R+" "+R+" 0 0 1 "+(cx+R)+" "+cy;
-    s.appendChild(el("path",{d:arc,fill:"none",stroke:cssv("--borda"),"stroke-width":"14","stroke-linecap":"round"}));
-    if(p!=null){var cor=p>=40?"#B82C42":(p>=10?"#C48A00":"#1F6B3A");
-      var a=el("path",{d:arc,fill:"none",stroke:cor,"stroke-width":"14","stroke-linecap":"round","stroke-dasharray":len,"stroke-dashoffset":len*(1-Math.max(p,1.5)/100)});
+    s.appendChild(el("path",{d:arc,fill:"none",stroke:"rgba(255,255,255,.45)","stroke-width":"1.5","stroke-dasharray":"4 4"}));
+    if(p!=null){var a=el("path",{d:arc,fill:"none",stroke:"#fff","stroke-width":"6","stroke-dasharray":len,"stroke-dashoffset":len*(1-Math.max(p,1.5)/100)});
       a.style.transition="stroke-dashoffset .6s ease";s.appendChild(a);}
-    s.appendChild(el("text",{x:cx,y:cy-6,"text-anchor":"middle","font-size":"26","font-weight":"800",fill:cssv("--tinta")},p==null?"–":(p<1?"<1%":(p>=99.5?">99%":Math.round(p)+"%"))));
-    s.appendChild(el("text",{x:cx,y:cy+10,"text-anchor":"middle","font-size":"9.5",fill:cssv("--tinta2"),"font-family":"system-ui,sans-serif"},"risco de queda"));
+    s.appendChild(el("text",{x:cx,y:cy-6,"text-anchor":"middle","font-size":"26",fill:"#fff","font-family":"Roboto,Helvetica Neue,Arial,sans-serif"},p==null?"–":(p<1?"<1%":(p>=99.5?">99%":Math.round(p)+"%"))));
+    s.appendChild(el("text",{x:cx,y:cy+10,"text-anchor":"middle","font-size":"9.5",fill:"#FBD5DB","font-family":"Roboto,Helvetica Neue,Arial,sans-serif"},"risco de queda"));
     box.appendChild(s);}
   function simula(){
     var ks=Object.keys(esc),out=document.getElementById("sim-txt");
@@ -994,7 +868,7 @@ footer{padding:14px 0 24px;font-size:10.5px;color:var(--tinta2);display:flex;fle
     var pts=38;ks.forEach(function(k){pts+=({v:3,e:1,d:0})[esc[k]];});
     var p=riscoPorPts[pts];gauge(p);
     var leitura=p>=90?"Rebaixamento quase certo.":p>=40?"Fica na zona de perigo e depende dos rivais.":p>=10?"Escapa na maioria dos cenários, mas sem folga.":p>=1?"Permanência muito provável.":"Permanência praticamente assegurada nas simulações, sem garantia matemática.";
-    out.innerHTML="<b class='big'>"+pts+" pontos</b><span>"+leitura+"</span><span class='nota' style='display:block'>Risco estimado: "+(p<1?"menos de 1%":(p>=99.5?"acima de 99%":p.toFixed(1).replace(".",",")+"%"))+".</span>";
+    out.innerHTML="<b class='big'>"+pts+" <em>pontos</em></b><span>"+leitura+"</span><span class='nota' style='display:block'>Risco estimado: "+(p<1?"menos de 1%":(p>=99.5?"acima de 99%":p.toFixed(1).replace(".",",")+"%"))+".</span>";
   }
   sj.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;var i=b.dataset.i;esc[i]=esc[i]===b.dataset.r?undefined:b.dataset.r;if(!esc[i])delete esc[i];simula();});
   document.querySelectorAll("[data-preset]").forEach(function(b){b.addEventListener("click",function(){
@@ -1004,7 +878,6 @@ footer{padding:14px 0 24px;font-size:10.5px;color:var(--tinta2);display:flex;fle
     else if(v==="dedd"){esc={0:"d",1:"e",2:"d",3:"d"};}
     simula();});});
 
-  function redesenha(){barras();linha();donut();simula();}
   var rz;window.addEventListener("resize",function(){clearTimeout(rz);rz=setTimeout(function(){barras();linha();},150);});
   linha();donut();atualiza();simula();
 })();
