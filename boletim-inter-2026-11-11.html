@@ -8,29 +8,25 @@
 <meta name="description" content="Situação do Internacional no Brasileirão 2026 após a 34ª rodada: tabela, próximo jogo, elenco, simulação de rebaixamento e agenda.">
 <style>
 :root{
-  --papel:#FFFAFB; --rosa:#FCECEF; --borda:#EFD9DE; --colorado:#B82C42; --colorado-f:#8E1F33; --colorado-s:#E7A9B4;
-  --tinta:#40222A; --tinta2:#795B63; --branco:#FFFFFF; --superficie:#FFFFFF;
-  --verde:#1F6B3A; --verde-bg:#E3F1E7; --ambar:#7A5A00; --ambar-bg:#FFF2C9; --neutro:#C9B8BD;
-  --hero-txt:#FFF6F7; --hero-sub:#F6D3D9;
+  --papel:#1A0A10; --rosa:#2E1219; --borda:#43202B; --colorado:#E0384F; --colorado-f:#B82C42; --colorado-s:#7E3341;
+  --tinta:#FFF1E6; --tinta2:#C9A9B0; --branco:#24111A; --superficie:#24111A; --elev:#2C1520;
+  --verde:#4CC985; --verde-bg:#143322; --ambar:#F2C14E; --ambar-bg:#3A2D0E; --neutro:#6E5960;
+  --barra:#6A4A53; --z4:#9E2A3F; --tip-bg:#FFF1E6; --tip-tx:#2A0F17;
+  --hero-txt:#FFF6F7; --hero-sub:#E9C9CF;
   --cond:"Avenir Next Condensed","Bahnschrift SemiCondensed","Bahnschrift","Roboto Condensed","Arial Narrow",sans-serif-condensed,system-ui,sans-serif;
   --corpo:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  color-scheme:dark;
 }
-:root[data-theme="dark"]{
-  --papel:#1E1015; --rosa:#2C161E; --borda:#47262F; --colorado:#E2566C; --colorado-f:#B82C42; --colorado-s:#7A3442;
-  --tinta:#F6E9EC; --tinta2:#C7A9B1; --superficie:#271419; --branco:#271419;
-  --verde:#6FCB8D; --verde-bg:#17301F; --ambar:#F2CB5B; --ambar-bg:#3A2E0C; --neutro:#6E5960;
-  --hero-txt:#FFF6F7; --hero-sub:#F6D3D9;
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --papel:#1E1015; --rosa:#2C161E; --borda:#47262F; --colorado:#E2566C; --colorado-f:#B82C42; --colorado-s:#7A3442;
-    --tinta:#F6E9EC; --tinta2:#C7A9B1; --superficie:#271419; --branco:#271419;
-    --verde:#6FCB8D; --verde-bg:#17301F; --ambar:#F2CB5B; --ambar-bg:#3A2E0C; --neutro:#6E5960;
-  }
+:root[data-theme="light"]{
+  --papel:#FFFAFB; --rosa:#FCECEF; --borda:#EFD9DE; --colorado:#B82C42; --colorado-f:#8E1F33; --colorado-s:#E7A9B4;
+  --tinta:#40222A; --tinta2:#795B63; --branco:#FFFFFF; --superficie:#FFFFFF; --elev:#FFFFFF;
+  --verde:#1F6B3A; --verde-bg:#E3F1E7; --ambar:#7A5A00; --ambar-bg:#FFF2C9; --neutro:#C9B8BD;
+  --barra:#E7A9B4; --z4:#5B2B36; --tip-bg:#40222A; --tip-tx:#FFFFFF;
+  color-scheme:light;
 }
 *{box-sizing:border-box}
 [hidden]{display:none!important}
-html{scroll-behavior:smooth;scroll-padding-top:64px}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
 body{margin:0;background:var(--papel);color:var(--tinta);font:12px/1.4 var(--corpo);-webkit-text-size-adjust:100%}
 a{color:var(--colorado)}
 :focus-visible{outline:3px solid var(--colorado);outline-offset:2px;border-radius:6px}
@@ -53,7 +49,7 @@ h1{font-family:var(--cond);font-size:28px;line-height:1.05;font-weight:800;margi
 /* Navegação */
 nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--papel) 92%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--borda)}
 nav ul{display:flex;gap:6px;list-style:none;margin:0;padding:6px 0;overflow-x:auto;scrollbar-width:none}
-nav a{display:flex;align-items:center;min-height:44px;padding:0 11px;border-radius:999px;color:var(--tinta);text-decoration:none;font-weight:600;font-size:12.5px;white-space:nowrap;border:1px solid transparent}
+nav a{display:flex;align-items:center;min-height:44px;padding:0 9px;border-radius:999px;color:var(--tinta);text-decoration:none;font-weight:600;font-size:12.5px;white-space:nowrap;border:1px solid transparent}
 nav a.ativo{background:var(--colorado);color:#fff}
 nav a:not(.ativo):hover{border-color:var(--borda)}
 
@@ -146,7 +142,7 @@ h3,h4{margin:0}
 .gols{display:grid;gap:6px;font-size:12px}
 .gols .b{height:10px;border-radius:5px;background:var(--papel);overflow:hidden;margin-top:3px}
 .gols .b span{display:block;height:100%;border-radius:5px}
-#tip{position:fixed;pointer-events:none;background:#40222A;color:#fff;font-size:11px;padding:6px 8px;border-radius:8px;opacity:0;transition:opacity .1s;z-index:40;max-width:230px}
+#tip{position:fixed;pointer-events:none;background:var(--tip-bg);color:var(--tip-tx);font-size:11px;padding:6px 8px;border-radius:8px;opacity:0;transition:opacity .1s;z-index:40;max-width:230px}
 
 /* Análise de IA */
 .ia{background:var(--superficie);border:2px solid var(--colorado);border-radius:16px;padding:12px;position:relative}
@@ -233,14 +229,105 @@ footer{padding:14px 0 24px;font-size:10.5px;color:var(--tinta2);display:flex;fle
 /* Movimento: um só momento, a chegada do Inter à escada */
 @keyframes chega{from{transform:translateY(46px);opacity:.3}to{transform:none;opacity:1}}
 .escada li.inter{animation:chega .9s cubic-bezier(.2,.8,.2,1) .2s both}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.escada li.inter{animation:none}.rbar .fill{transition:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.refletor{animation:none;opacity:1}.escada li.inter{animation:none}.rbar .fill{transition:none}}
+
+
+/* Barra fixa */
+.barra{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--papel) 78%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid color-mix(in srgb,var(--borda) 70%,transparent)}
+.barra .wrap{display:flex;align-items:center;gap:10px;min-height:58px}
+.barra .marca b{font-family:var(--cond);font-size:17px;font-weight:800;color:var(--tinta)}
+.barra nav{flex:1;min-width:0;position:static;background:none;backdrop-filter:none;-webkit-backdrop-filter:none;border:0}
+.barra nav ul{padding:0;justify-content:flex-start}
+.barra .acoes .ic{background:transparent}
+@media (max-width:759px){
+  .barra .wrap{flex-wrap:wrap;gap:0 8px;padding-top:6px}
+  .barra .marca{flex:1}
+  .barra nav{order:3;flex-basis:100%}
+}
+
+/* Palco: o estádio à noite */
+.palco{position:relative;isolation:isolate;overflow:hidden;color:var(--hero-txt);min-height:560px;display:flex;align-items:flex-end}
+.palco .estadio{position:absolute;inset:0;width:100%;height:100%;z-index:-2}
+.palco::after{content:"";position:absolute;inset:0;z-index:-1;background:
+  linear-gradient(90deg,rgba(20,6,11,.92) 0%,rgba(20,6,11,.72) 42%,rgba(20,6,11,.15) 75%),
+  linear-gradient(0deg,var(--papel) 0%,rgba(26,10,16,0) 34%)}
+.palco-in{width:100%;padding:56px 10px 18px;display:grid;gap:14px;max-width:1120px;margin:0 auto}
+.palco .meta{font-size:11px;color:var(--hero-sub);margin:0}
+.palco h1{font-family:var(--cond);font-size:44px;line-height:.95;font-weight:800;letter-spacing:-.015em;margin:0;color:#FFF6F7;text-shadow:0 2px 24px rgba(0,0,0,.4)}
+.palco .hero-tit{font-family:var(--cond);font-size:22px;line-height:1.1;font-weight:700;margin:0;max-width:22ch;color:#FFF6F7}
+.palco .hero-sub{margin:0;color:var(--hero-sub);font-size:12.5px;max-width:52ch}
+.cta{display:flex;flex-wrap:wrap;gap:8px}
+.bt{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 18px;border-radius:12px;font-weight:700;font-size:13px;text-decoration:none}
+.bt-p{background:#E0384F;color:#fff;box-shadow:0 8px 28px rgba(224,56,79,.35)}
+.bt-p:hover{background:#C92D44}
+.bt-s{background:rgba(255,255,255,.12);color:#FFF6F7;border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.bt-s:hover{background:rgba(255,255,255,.2)}
+.palco .forma{margin:0}
+.palco .forma span.t{color:var(--hero-sub)}
+.vidro{background:rgba(255,246,247,.1);border:1px solid rgba(255,246,247,.22);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:16px;padding:12px;color:#FFF6F7;max-width:380px}
+.vidro .q{margin:0;font-size:11px;color:var(--hero-sub)}
+.vidro .jogo{font-family:var(--cond);font-size:24px;font-weight:800;margin:2px 0;color:#FFF6F7}
+.vidro .relogio div{background:rgba(255,255,255,.1);border-radius:10px;padding:4px 8px;min-width:54px;text-align:center}
+.vidro .relogio b{color:#FFF6F7}
+.vidro .relogio small{color:var(--hero-sub)}
+.vidro .det{margin:0;font-size:11.5px;color:#FFE9EC}
+.vidro .chip.ok{background:rgba(76,201,133,.18);color:#8BE3B1}
+.trinca{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;border-top:1px solid rgba(255,255,255,.16);padding-top:12px}
+.trinca div b{display:block;font-family:var(--cond);font-size:34px;line-height:1;font-weight:800;color:#FFF6F7;font-variant-numeric:tabular-nums}
+.trinca div span{font-size:10.5px;color:var(--hero-sub)}
+.trinca div.alerta b{color:#FF8A9A}
+.refletor{opacity:0;animation:acende 1.4s ease-out forwards}
+.refletor.r2{animation-delay:.35s}
+@keyframes acende{0%{opacity:0}35%{opacity:.6}45%{opacity:.25}100%{opacity:1}}
+
+/* A linha */
+.linha-bloco{display:grid;gap:10px;align-items:start}
+.escada{background:var(--superficie);border:1px solid var(--borda);border-radius:16px;padding:8px;list-style:none;margin:0}
+.escada li{display:grid;grid-template-columns:30px 1fr 34px;align-items:center;gap:6px;min-height:28px;padding:0 8px;border-radius:8px;font-size:12.5px}
+.escada li .p{font-family:var(--cond);font-weight:800;font-size:16px;text-align:right;font-variant-numeric:tabular-nums}
+.escada li .o{font-family:var(--cond);color:var(--tinta2);font-size:13px}
+.escada li.z4{color:var(--tinta2);background:color-mix(in srgb,var(--z4) 16%,transparent)}
+.escada li.inter{animation:none;background:var(--colorado);color:#fff;font-weight:800;box-shadow:0 6px 22px color-mix(in srgb,var(--colorado) 45%,transparent)}
+.escada li.inter .o{color:#FFE3E7}
+.escada li.linha{min-height:22px;grid-template-columns:1fr auto 1fr;padding:0;background:none}
+.escada li.linha::before,.escada li.linha::after{content:"";border-top:2px dashed var(--colorado)}
+.escada li.linha span{font-size:10.5px;color:var(--colorado);padding:0 8px;font-weight:700}
+.linha-txt{font-size:12.5px;color:var(--tinta2)}
+.linha-txt b{color:var(--tinta)}
+
+/* Pôsteres da reta final */
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:72%;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 10px;scrollbar-width:thin}
+.poster{scroll-snap-align:start;position:relative;min-height:236px;gap:10px;border-radius:16px;overflow:hidden;padding:12px;display:flex;flex-direction:column;justify-content:space-between;color:#FFF6F7;border:1px solid rgba(255,255,255,.12);
+  background:radial-gradient(120% 70% at 50% 0%,rgba(255,240,220,.22),transparent 60%),linear-gradient(170deg,#3A1420 0%,#170810 100%)}
+.poster.casa{background:radial-gradient(120% 70% at 50% 0%,rgba(255,240,220,.25),transparent 60%),linear-gradient(170deg,#C8304A 0%,#5E1424 100%)}
+.poster::before{content:"";position:absolute;left:-10%;right:-10%;bottom:-20%;height:55%;border:2px solid rgba(255,255,255,.1);border-radius:50% 50% 0 0;pointer-events:none}
+.poster .topo-p{display:flex;justify-content:space-between;gap:6px;font-size:10.5px;color:#F3D6DB;position:relative}
+.poster .tag-p{background:#FFF6F7;color:#8E1F33;border-radius:999px;padding:2px 8px;font-weight:800}
+.poster .data-p{font-family:var(--cond);font-size:46px;line-height:.9;font-weight:800;position:relative}
+.poster .data-p small{display:block;font-size:15px;font-weight:600;color:#F3D6DB;margin-top:4px}
+.poster .conf{font-family:var(--cond);font-size:20px;font-weight:800;line-height:1.05;position:relative}
+.poster .local{font-size:10.5px;color:#F3D6DB;position:relative}
+.poster .chance{position:relative}
+.poster .chance .stack{height:16px;font-size:9.5px}
+.poster .chance p{margin:4px 0 0;font-size:10px;color:#F3D6DB;display:flex;justify-content:space-between;gap:6px}
+.poster .chip{font-size:10px}
+.poster .chip.ok{background:rgba(76,201,133,.22);color:#9BEBBE}
+.poster .chip.pend{background:rgba(242,193,78,.2);color:#FFD976}
 
 @media (min-width:760px){
+
+  .palco{min-height:620px}
+  .palco-in{padding:80px 22px 26px;grid-template-columns:1.7fr 1fr;grid-template-areas:"meta meta" "h1 vidro" "tit vidro" "sub vidro" "cta vidro" "forma vidro" "trinca trinca";column-gap:40px;row-gap:12px}
+  .palco .meta{grid-area:meta}.palco h1{grid-area:h1;font-size:68px}.palco .hero-tit{grid-area:tit;font-size:30px}.palco .hero-sub{grid-area:sub}.cta{grid-area:cta}.palco .forma{grid-area:forma}
+  .vidro{grid-area:vidro;align-self:end;justify-self:end;width:100%}
+  .trinca{grid-area:trinca;grid-template-columns:repeat(3,auto);justify-content:start;column-gap:56px}
+  .trinca div b{font-size:48px}
+  .linha-bloco{grid-template-columns:340px 1fr;gap:20px}
+  .poster{min-height:268px}
+  .rail{grid-auto-flow:row;grid-template-columns:repeat(4,1fr);overflow:visible}
   body{font-size:13px}
   .wrap{padding:0 22px}
   h1{font-size:36px}
-  .hero{grid-template-columns:1.25fr 1fr;grid-template-areas:"tit esc" "cont esc";padding:22px;gap:16px 22px}
-  .hero-a{grid-area:tit}.escada{grid-area:esc;align-self:start}.cont{grid-area:cont;align-self:end}
   .hero-tit{font-size:40px}
   nav a{padding:0 14px}
   .escada li{min-height:28px;font-size:13px}
@@ -272,43 +359,109 @@ footer{padding:14px 0 24px;font-size:10.5px;color:var(--tinta2);display:flex;fle
 </head>
 <body>
 <a class="sr" href="#destaques">Pular para o conteúdo</a>
-<div class="wrap" id="topo">
-  <header class="mast">
+<header class="barra">
+  <div class="wrap">
     <div class="marca">
-      <svg class="badge" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="#B82C42"/><circle cx="16" cy="16" r="10.5" fill="none" stroke="#FFFAFB" stroke-width="2"/><path d="M16 9.5l2 4.3 4.6.5-3.4 3.1 1 4.6-4.2-2.4-4.2 2.4 1-4.6-3.4-3.1 4.6-.5z" fill="#FFFAFB"/></svg>
-      <div><b>Boletim do Inter</b><small>Quarta-feira, 11 de novembro de 2026. Consulta às 22h24 (Brasília)</small></div>
+      <svg class="badge" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="#E0384F"/><circle cx="16" cy="16" r="10.5" fill="none" stroke="#FFF6F7" stroke-width="2"/><path d="M16 9.5l2 4.3 4.6.5-3.4 3.1 1 4.6-4.2-2.4-4.2 2.4 1-4.6-3.4-3.1 4.6-.5z" fill="#FFF6F7"/></svg>
+      <b>Boletim do Inter</b>
     </div>
+    <nav aria-label="Seções"><ul>
+      <li><a href="#destaques" class="ativo">Destaques</a></li>
+      <li><a href="#numeros">Números</a></li>
+      <li><a href="#analise">Análise IA</a></li>
+      <li><a href="#agenda">Agenda</a></li>
+      <li><a href="#fontes">Fontes</a></li>
+    </ul></nav>
     <div class="acoes">
       <button class="ic" type="button" id="btn-copiar" aria-label="Copiar resumo do boletim"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg></button>
-      <button class="ic" type="button" id="btn-tema" aria-label="Alternar tema claro ou escuro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+      <button class="ic" type="button" id="btn-tema" aria-label="Alternar tema claro ou escuro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
     </div>
-  </header>
-  <h1>O Inter, em 5 pontos.</h1>
+  </div>
+</header>
+
+<div class="palco" id="topo">
+<svg class="estadio" viewBox="0 0 1440 720" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="ceu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0D0408"/><stop offset=".55" stop-color="#2A0B16"/><stop offset="1" stop-color="#4A1323"/></linearGradient>
+    <radialGradient id="brilho" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFF4DD" stop-opacity=".95"/><stop offset=".25" stop-color="#FFE3B8" stop-opacity=".45"/><stop offset="1" stop-color="#FFE3B8" stop-opacity="0"/></radialGradient>
+    <linearGradient id="cone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF1D6" stop-opacity=".32"/><stop offset="1" stop-color="#FFF1D6" stop-opacity="0"/></linearGradient>
+    <linearGradient id="grama" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2D7A4A"/><stop offset="1" stop-color="#123A23"/></linearGradient>
+    <linearGradient id="arqA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7A1A2C"/><stop offset="1" stop-color="#3A0D18"/></linearGradient>
+    <pattern id="torcida" width="9" height="7" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.3" fill="#FFD7DE" opacity=".35"/><circle cx="6.5" cy="5" r="1.1" fill="#FFFFFF" opacity=".18"/></pattern>
+    <pattern id="faixas" width="1440" height="26" patternUnits="userSpaceOnUse"><rect width="1440" height="13" fill="#B82C42" opacity=".55"/></pattern>
+  </defs>
+  <rect width="1440" height="720" fill="url(#ceu)"/>
+  <!-- arquibancada superior (anel) -->
+  <path d="M-40 430 C 200 250, 1240 250, 1480 430 L1480 520 C 1240 390, 200 390, -40 520 Z" fill="url(#arqA)"/>
+  <path d="M-40 430 C 200 250, 1240 250, 1480 430 L1480 520 C 1240 390, 200 390, -40 520 Z" fill="url(#faixas)" opacity=".5"/>
+  <path d="M-40 430 C 200 250, 1240 250, 1480 430 L1480 520 C 1240 390, 200 390, -40 520 Z" fill="url(#torcida)"/>
+  <!-- cobertura -->
+  <path d="M-60 415 C 190 225, 1250 225, 1500 415" fill="none" stroke="#F6D3D9" stroke-opacity=".35" stroke-width="3"/>
+  <path d="M-60 400 C 190 205, 1250 205, 1500 400" fill="none" stroke="#F6D3D9" stroke-opacity=".15" stroke-width="10"/>
+  <!-- arquibancada inferior -->
+  <path d="M-40 530 C 220 410, 1220 410, 1480 530 L1480 590 C 1220 480, 220 480, -40 590 Z" fill="#5A1324"/>
+  <path d="M-40 530 C 220 410, 1220 410, 1480 530 L1480 590 C 1220 480, 220 480, -40 590 Z" fill="url(#torcida)" opacity=".8"/>
+  <!-- gramado em perspectiva -->
+  <path d="M330 498 L1110 498 L1440 720 L0 720 Z" fill="url(#grama)"/>
+  <g fill="none" stroke="#E9F7EE" stroke-opacity=".55" stroke-width="2">
+    <path d="M360 506 L1080 506 L1390 712 L50 712 Z"/>
+    <path d="M720 506 L720 712"/>
+    <ellipse cx="720" cy="590" rx="120" ry="32"/>
+    <path d="M590 506 L585 530 L855 530 L850 506"/>
+  </g>
+  <g opacity=".22" fill="#0B2A17"><path d="M330 498 L460 498 L300 720 L0 720Z"/><path d="M720 498 L850 498 L960 720 L760 720Z"/></g>
+  <!-- torres de iluminação -->
+  <g stroke="#2A0B16" stroke-width="6"><path d="M150 470 L190 120"/><path d="M1290 470 L1250 120"/></g>
+  <g fill="#FFF6E8"><rect x="150" y="96" width="84" height="34" rx="4"/><rect x="1206" y="96" width="84" height="34" rx="4"/></g>
+  <g class="refletor">
+    <polygon points="160,130 230,130 760,720 120,720" fill="url(#cone)"/>
+    <circle cx="192" cy="113" r="150" fill="url(#brilho)"/>
+  </g>
+  <g class="refletor r2">
+    <polygon points="1210,130 1280,130 1320,720 680,720" fill="url(#cone)"/>
+    <circle cx="1248" cy="113" r="150" fill="url(#brilho)"/>
+  </g>
+</svg>
+
+  <div class="palco-in">
+    <p class="meta">Edição de quarta-feira, 11 de novembro de 2026. Consulta às 22h24 (Brasília)</p>
+    <h1>O Inter, em 5 pontos.</h1>
+    <p class="hero-tit">Faltam 4 rodadas. O Inter está 1 ponto acima da linha.</p>
+    <p class="hero-sub">16º com 38 pontos, depois de vencer o Coritiba por 1 x 0 em 03/11. Corinthians e Grêmio, com 37, abrem o Z4.</p>
+    <div class="cta">
+      <a class="bt bt-p" href="#analise">Ver a análise da IA</a>
+      <a class="bt bt-s" href="#agenda">Ver a agenda</a>
+    </div>
+    <div class="forma" aria-label="Últimos cinco jogos no Brasileirão, do mais antigo ao mais recente: empate, derrota, vitória, derrota, vitória">
+      <span class="t">Últimos 5</span>
+      <span class="pill e" title="Grêmio 1 x 1 Inter, 11/10">E</span>
+      <span class="pill d" title="Mirassol 2 x 0 Inter, 16/10">D</span>
+      <span class="pill v" title="Inter 3 x 0 Botafogo, 24/10">V</span>
+      <span class="pill d" title="Fluminense 2 x 1 Inter, 28/10">D</span>
+      <span class="pill v" title="Inter 1 x 0 Coritiba, 03/11">V</span>
+    </div>
+    <div class="vidro cont">
+      <p class="q">Próximo jogo começa em</p>
+      <p class="jogo">Vasco x Inter</p>
+      <div class="relogio" id="relogio" aria-live="off">
+        <div><b id="r-d">–</b><small>dias</small></div>
+        <div><b id="r-h">–</b><small>horas</small></div>
+        <div><b id="r-m">–</b><small>min</small></div>
+      </div>
+      <p class="det" id="relogio-txt">Quinta 19/11, 19h30, em São Januário. 35ª rodada. <span class="chip ok">🟢 Confirmado</span> SporTV e Premiere.</p>
+    </div>
+    <div class="trinca">
+      <div><b>16º</b><span>posição</span></div>
+      <div><b>38</b><span>pontos em 34 jogos</span></div>
+      <div class="alerta"><b>34%</b><span>risco de queda (IA)</span></div>
+    </div>
+  </div>
 </div>
 
-<nav aria-label="Seções"><div class="wrap"><ul>
-  <li><a href="#destaques" class="ativo">Destaques</a></li>
-  <li><a href="#numeros">Números</a></li>
-  <li><a href="#analise">Análise IA</a></li>
-  <li><a href="#agenda">Agenda</a></li>
-  <li><a href="#fontes">Fontes</a></li>
-</ul></div></nav>
-
 <main class="wrap">
-<section id="destaques" aria-labelledby="h-dest">
-  <div class="hero" aria-label="Resumo da situação">
-    <div class="hero-a">
-      <p class="hero-tit">Faltam 4 rodadas. O Inter está 1 ponto acima da linha.</p>
-      <p class="hero-sub">16º com 38 pontos, após vencer o Coritiba por 1 x 0 em 03/11. Corinthians e Grêmio, com 37, abrem o Z4.</p>
-      <div class="forma" aria-label="Últimos cinco jogos no Brasileirão, do mais antigo ao mais recente: empate, derrota, vitória, derrota, vitória">
-        <span class="t">Últimos 5</span>
-        <span class="pill e" title="Grêmio 1 x 1 Inter, 11/10">E</span>
-        <span class="pill d" title="Mirassol 2 x 0 Inter, 16/10">D</span>
-        <span class="pill v" title="Inter 3 x 0 Botafogo, 24/10">V</span>
-        <span class="pill d" title="Fluminense 2 x 1 Inter, 28/10">D</span>
-        <span class="pill v" title="Inter 1 x 0 Coritiba, 03/11">V</span>
-      </div>
-    </div>
+<section id="destaques" aria-labelledby="h-linha">
+  <h2 id="h-linha">A linha do rebaixamento</h2>
+  <div class="linha-bloco">
     <ol class="escada" aria-label="Classificação do 11º ao 20º, com a linha do rebaixamento entre o 16º e o 17º">
       <li><span class="o">11º</span><span>Botafogo</span><span class="p">42</span></li>
       <li><span class="o">12º</span><span>Coritiba</span><span class="p">42</span></li>
@@ -322,19 +475,14 @@ footer{padding:14px 0 24px;font-size:10.5px;color:var(--tinta2);display:flex;fle
       <li class="z4"><span class="o">19º</span><span>Remo</span><span class="p">29</span></li>
       <li class="z4"><span class="o">20º</span><span>Chapecoense</span><span class="p">21</span></li>
     </ol>
-    <div class="cont">
-      <p class="q">Próximo jogo começa em</p>
-      <p class="jogo">Vasco x Inter</p>
-      <div class="relogio" id="relogio" aria-live="off">
-        <div><b id="r-d">–</b><small>dias</small></div>
-        <div><b id="r-h">–</b><small>horas</small></div>
-        <div><b id="r-m">–</b><small>min</small></div>
-      </div>
-      <p class="det" id="relogio-txt">Quinta 19/11, 19h30, em São Januário. 35ª rodada. <span class="chip ok">🟢 Confirmado</span> SporTV e Premiere.</p>
+    <div>
+      <h3 style="font-family:var(--cond);font-size:18px;margin:0 0 8px">A reta final</h3>
+      <div class="rail" id="rail" aria-label="Os 4 jogos restantes do Inter"></div>
+      <p class="linha-txt">Dois jogos no Beira-Rio, dois fora. <b>Vencer Vitória e Bragantino</b> leva o Inter a 44 pontos e derruba o risco de queda para menos de 1% nas simulações.</p>
     </div>
   </div>
 
-  <h2 id="h-dest" style="margin-top:16px">O que importa hoje</h2>
+  <h2 id="h-dest" style="margin-top:18px">O que importa hoje</h2>
   <div class="cards">
     <article class="card g" aria-labelledby="c1">
       <div class="card-top"><span class="n">01</span><h3 id="c1">Situação do Inter</h3>
@@ -641,7 +789,7 @@ footer{padding:14px 0 24px;font-size:10.5px;color:var(--tinta2);display:flex;fle
   var raiz=document.documentElement;
   try{var t=localStorage.getItem("boletim-tema");if(t)raiz.setAttribute("data-theme",t);}catch(e){}
   document.getElementById("btn-tema").addEventListener("click",function(){
-    var escuro=raiz.getAttribute("data-theme")?raiz.getAttribute("data-theme")==="dark":matchMedia("(prefers-color-scheme: dark)").matches;
+    var escuro=raiz.getAttribute("data-theme")!=="light";
     var novo=escuro?"light":"dark";raiz.setAttribute("data-theme",novo);
     try{localStorage.setItem("boletim-tema",novo);}catch(e){}
     redesenha();
@@ -651,7 +799,7 @@ footer{padding:14px 0 24px;font-size:10.5px;color:var(--tinta2);display:flex;fle
   var alvoJogo=new Date("2026-11-19T19:30:00-03:00").getTime();
   function relogio(){
     var ms=alvoJogo-Date.now();
-    if(ms<=0){document.getElementById("relogio").hidden=true;document.querySelector(".cont .q").textContent="Horário do jogo já passou";document.getElementById("relogio-txt").textContent="Este boletim é de 11/11 e não traz o placar. Consulte uma edição mais recente.";return;}
+    if(ms<=0){document.getElementById("relogio").hidden=true;document.querySelector(".vidro .q").textContent="Horário do jogo já passou";document.getElementById("relogio-txt").textContent="Este boletim é de 11/11 e não traz o placar. Consulte uma edição mais recente.";return;}
     var d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5),m=Math.floor(ms%36e5/6e4);
     document.getElementById("r-d").textContent=d;document.getElementById("r-h").textContent=h;document.getElementById("r-m").textContent=m;
   }
@@ -672,6 +820,23 @@ footer{padding:14px 0 24px;font-size:10.5px;color:var(--tinta2);display:flex;fle
     var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle("ativo",a.getAttribute("href")==="#"+e.target.id);});}});},{rootMargin:"-40% 0px -55% 0px"});
     ["destaques","numeros","analise","agenda","fontes"].forEach(function(id){obs.observe(document.getElementById(id));});
   }
+
+
+  /* Pôsteres da reta final */
+  var posters=[
+    {d:"19/11",s:"Qui, 19h30",c:"Vasco x Inter",l:"São Januário, Rio de Janeiro",r:"35ª rodada",casa:false,tv:["ok","🟢 SporTV e Premiere"],ch:[30,26,44],prox:true},
+    {d:"23/11",s:"Seg, 19h30",c:"Inter x Vitória",l:"Beira-Rio, Porto Alegre",r:"36ª rodada",casa:true,tv:["pend","🟡 TV a confirmar"],ch:[51,26,23]},
+    {d:"29/11",s:"Dom, 18h30",c:"Inter x Bragantino",l:"Beira-Rio, Porto Alegre",r:"37ª rodada",casa:true,tv:["pend","🟡 TV a confirmar"],ch:[39,28,32]},
+    {d:"02/12",s:"Qua, 21h30",c:"Cruzeiro x Inter",l:"Mineirão, Belo Horizonte",r:"38ª rodada",casa:false,tv:["pend","🟡 TV a confirmar"],ch:[23,24,53]}
+  ];
+  var rail=document.getElementById("rail");
+  posters.forEach(function(p){var a=document.createElement("article");a.className="poster"+(p.casa?" casa":"");a.tabIndex=0;
+    a.setAttribute("aria-label",p.c+", "+p.d+", "+p.s+", "+p.l+". Chances do Inter: vitória "+p.ch[0]+"%, empate "+p.ch[1]+"%, derrota "+p.ch[2]+"%.");
+    a.innerHTML="<div class='topo-p'><span>"+p.r+"</span>"+(p.prox?"<span class='tag-p'>Próximo</span>":"<span>"+(p.casa?"Em casa":"Fora")+"</span>")+"</div>"+
+      "<div class='data-p'>"+p.d+"<small>"+p.s+"</small></div>"+
+      "<div><div class='conf'>"+p.c+"</div><div class='local'>"+p.l+"</div></div>"+
+      "<div class='chance'><span class='chip "+p.tv[0]+"'>"+p.tv[1]+"</span><div class='stack' style='margin-top:6px' aria-hidden='true'><div style='width:"+p.ch[0]+"%;background:#1F8A4C'>"+p.ch[0]+"%</div><div class='e' style='width:"+p.ch[1]+"%;background:#C9B8BD'>"+p.ch[1]+"%</div><div style='width:"+p.ch[2]+"%;background:#FFF6F7;color:#2A0F17'>"+p.ch[2]+"%</div></div><p><span>V / E / D do Inter</span><span>IA</span></p></div>";
+    rail.appendChild(a);});
 
   /* Dados */
   var dados=[
@@ -705,7 +870,7 @@ footer{padding:14px 0 24px;font-size:10.5px;color:var(--tinta2);display:flex;fle
     [0,15,30,45].forEach(function(t){s.appendChild(el("line",{x1:esc(t),x2:esc(t),y1:top,y2:H-18,stroke:borda}));s.appendChild(el("text",{x:esc(t),y:H-4,"font-size":"11","text-anchor":"middle",fill:tinta2},t));});
     ds.forEach(function(d,i){
       var y=top+i*rowH,w=esc(d.p)-left,inter=d.clube==="Internacional";
-      var cor=inter?"#B82C42":(d.pos>=17?"#5B2B36":suave);
+      var cor=inter?cssv("--colorado"):(d.pos>=17?cssv("--z4"):cssv("--barra"));
       s.appendChild(el("text",{x:left-8,y:y+rowH/2+4,"font-size":"12","text-anchor":"end",fill:tinta,"font-weight":inter?"700":"400"},d.pos+"º "+d.clube));
       var r=el("rect",{x:left,y:y+5,width:Math.max(2,w),height:rowH-10,rx:5,fill:cor,tabindex:"0","aria-label":d.clube+", "+d.p+" pontos"});
       dica(r,d.pos+"º "+d.clube+": "+d.p+" pts em "+d.j+" jogos, "+d.v+" vitórias, saldo "+(d.sg>0?"+":"")+d.sg);
