@@ -49,8 +49,6 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing
 h1{font-size:30px;line-height:1.02;font-weight:400;color:var(--vermelho);margin:0;letter-spacing:-.015em}
 h1 em{display:block;font-size:1.12em;line-height:.95}
 .tag{color:var(--vermelho);font-size:13.5px;line-height:1.35;margin:0;max-width:40ch}
-.pilula{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 26px;border:1px solid var(--vermelho);border-radius:50%;color:var(--vermelho);text-decoration:none;font-family:var(--serif);font-style:italic;font-size:19px;justify-self:start}
-.pilula:hover{background:var(--vermelho);color:var(--branco)}
 
 /* Os 4 painéis: a reta final */
 .reta{display:grid;grid-auto-flow:column;grid-auto-columns:84%;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;scrollbar-width:thin}
@@ -242,10 +240,9 @@ footer a{color:#fff}
   .barra nav{grid-row:1;grid-column:2}
   .dir{grid-row:1;grid-column:3}
   .marca svg{height:22px}
-  .abre{grid-template-columns:1fr 1fr 1fr;align-items:end;gap:20px;padding:34px 0 26px}
+  .abre{grid-template-columns:1fr 1fr;align-items:end;gap:20px;padding:34px 0 26px}
   .ab{align-self:start}
   h1{font-size:46px}
-  .pilula{justify-self:end;font-size:22px;min-height:52px;padding:0 32px}
   .reta{grid-auto-flow:row;grid-template-columns:repeat(4,1fr);overflow:visible;gap:12px}
   .pn{min-height:620px;padding:22px 22px 24px}
   .pn .campo{min-height:330px}
@@ -315,7 +312,7 @@ footer a{color:#fff}
       <li><a href="#fontes">Fontes</a></li>
     </ul></nav>
     <div class="dir">
-      <span class="edicao it">11 de novembro de 2026</span>
+      <span class="edicao it">17 de novembro de 2026</span>
       <button class="copiar" type="button" id="btn-copiar" aria-label="Copiar resumo do boletim"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11"/><path d="M5 15V5h10"/></svg></button>
     </div>
   </div>
@@ -330,7 +327,6 @@ footer a{color:#fff}
       <h1>O Inter, em <em>5 pontos.</em></h1>
       <p class="tag" style="margin-top:8px">Faltam 4 rodadas, e a reta final é <em>dura</em>. O Inter está 1 ponto acima da linha e segue <em>vivo</em>, com Corinthians e Grêmio logo abaixo. Consulta em 17/11/2026, às 22h35 (Brasília). A Data Fifa termina com o jogo de quinta.</p>
     </div>
-    <a class="pilula" href="#simulador">Simule o final</a>
   </div>
 
   <div class="reta" aria-label="Os 4 jogos que faltam, em ordem">
