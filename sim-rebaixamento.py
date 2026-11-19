@@ -1,22 +1,22 @@
 import numpy as np, json, collections
-rng=np.random.default_rng(20261118)
-T={ # P,J,V,GP,GC
-"Flamengo":(76,34,23,71,29),"Palmeiras":(73,34,21,62,23),"Cruzeiro":(60,34,18,55,48),"Fluminense":(57,34,16,55,42),
-"Athletico-PR":(54,34,15,51,43),"Bahia":(53,34,14,50,45),"Atlético-MG":(51,35,14,44,40),"Bragantino":(47,34,13,44,39),
-"Santos":(47,34,12,50,49),"São Paulo":(44,34,12,39,39),"Botafogo":(42,34,11,46,53),"Coritiba":(42,34,11,40,51),
+rng=np.random.default_rng(20261119)
+T={ # P,J,V,GP,GC  (tabela CBF/SóFutebol, atualizada 18/11/2026 23h36, após os jogos da quarta; jogos de 19/11 ainda por disputar)
+"Flamengo":(79,35,24,73,30),"Palmeiras":(73,35,21,63,25),"Cruzeiro":(63,35,19,57,49),"Fluminense":(57,34,16,55,42),
+"Athletico-PR":(54,35,15,52,45),"Bahia":(54,35,14,50,45),"Atlético-MG":(51,35,14,44,40),"Bragantino":(47,34,13,44,39),
+"Santos":(50,35,13,51,49),"São Paulo":(44,34,12,39,39),"Botafogo":(42,35,11,46,57),"Coritiba":(42,35,11,40,52),
 "Vasco":(44,34,12,45,50),"Mirassol":(41,35,10,39,48),"Vitória":(38,34,10,35,51),"Internacional":(38,34,9,38,42),
-"Corinthians":(37,34,9,36,42),"Grêmio":(37,34,9,38,47),"Remo":(29,34,6,37,57),"Chapecoense":(21,34,4,33,70)}
+"Corinthians":(40,35,10,40,42),"Grêmio":(38,35,9,38,47),"Remo":(32,35,7,39,57),"Chapecoense":(21,35,4,33,72)}
 gp=sum(v[3] for v in T.values());gc=sum(v[4] for v in T.values());J=sum(v[1] for v in T.values())
 assert gp==gc,(gp,gc)
 avg=gp/J  # gols por time por jogo
 K=8
 att={t:((v[3]+K*avg)/(v[1]+K))/avg for t,v in T.items()}
 dfn={t:((v[4]+K*avg)/(v[1]+K))/avg for t,v in T.items()}
-F=[("Coritiba","Santos"),("Remo","Chapecoense"),("Flamengo","Athletico-PR"),("Cruzeiro","Palmeiras"),("Corinthians","Botafogo"),("Grêmio","Bahia"),("Vasco","Internacional"),("Vitória","Bragantino"),("São Paulo","Fluminense"),
+F=[("Vasco","Internacional"),("Vitória","Bragantino"),("São Paulo","Fluminense"),
 ("Palmeiras","Flamengo"),("Bahia","Coritiba"),("Chapecoense","Cruzeiro"),("Athletico-PR","Remo"),("Fluminense","Mirassol"),("Bragantino","Vasco"),("Internacional","Vitória"),("Botafogo","São Paulo"),("Santos","Grêmio"),("Atlético-MG","Corinthians"),
 ("Chapecoense","Palmeiras"),("São Paulo","Remo"),("Fluminense","Cruzeiro"),("Botafogo","Bahia"),("Coritiba","Flamengo"),("Vitória","Santos"),("Corinthians","Grêmio"),("Mirassol","Athletico-PR"),("Internacional","Bragantino"),("Atlético-MG","Vasco"),
 ("Flamengo","Chapecoense"),("Vasco","Vitória"),("Santos","Botafogo"),("Palmeiras","Coritiba"),("Bragantino","Fluminense"),("Cruzeiro","Internacional"),("Grêmio","Mirassol"),("Athletico-PR","São Paulo"),("Bahia","Atlético-MG"),("Remo","Corinthians")]
-assert len(F)==39
+assert len(F)==33
 cnt=collections.Counter(); 
 for h,a in F: cnt[h]+=1;cnt[a]+=1
 for t,v in T.items(): assert v[1]+cnt[t]==38,(t,v[1],cnt[t])
@@ -67,3 +67,11 @@ for t in ["Coritiba","Vasco","Mirassol","Vitória","Internacional","Corinthians"
   k=idx[t];print(t,"media",round(float(P[:,k].mean()),1),"p10-p90",np.percentile(P[:,k],[10,90]).tolist(),"Z4",round(float(z4[:,k].mean())*100,1))
 # 45 pts: chance Inter chega e risco
 print("P(Inter>=45)",float((ip>=45).mean()),"P(Inter>=44)",float((ip>=44).mean()))
+
+print("--- PROJECAO")
+for t in sorted(teams,key=lambda t:-P[:,idx[t]].mean()):
+  k=idx[t];print(t,round(float(P[:,k].mean()),1),np.percentile(P[:,k],[10,90]).tolist(),"Z4",round(float(z4[:,k].mean())*100,1))
+print("rank mais provavel Inter",max(out["pos_final_inter"].items(),key=lambda x:x[1]))
+print("P(Inter 16o ou melhor)",float((rank[:,inter]<=16).mean()))
+print("risco_por_pts",{k:round(v*100,1) for k,v in out["risco_por_pts"].items()})
+print("dist pts",{k:round(v*100,1) for k,v in out["inter_pts_dist"].items()})
