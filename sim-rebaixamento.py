@@ -1,11 +1,11 @@
 import numpy as np, json, collections
-rng=np.random.default_rng(20261123)
-T={ # P,J,V,GP,GC  (tabela CBF/Lance/ValorFinal, 23/11/2026, antes dos jogos de hoje; round 36 com 6 de 10 jogados)
-"Flamengo":(80,36,24,74,31),"Palmeiras":(74,36,21,64,26),"Cruzeiro":(66,36,20,59,50),"Fluminense":(63,36,18,57,42),
+rng=np.random.default_rng(20261125)
+T={ # P,J,V,GP,GC  (tabela valorfinal.com.br atualizada 25/11/2026 00:00, apos 36a rodada + Chapecoense 3x0 Palmeiras da 37a; Atletico-MG x Corinthians pendente 25/11 20h)
+"Flamengo":(80,36,24,74,31),"Palmeiras":(74,37,21,64,29),"Cruzeiro":(66,36,20,59,50),"Fluminense":(63,36,18,57,42),
 "Athletico-PR":(57,36,16,56,47),"Bahia":(54,36,14,50,46),"Atlético-MG":(51,35,14,44,40),"Bragantino":(50,36,14,46,41),
-"Santos":(50,35,13,51,49),"São Paulo":(44,35,12,39,40),"Botafogo":(42,35,11,46,57),"Coritiba":(45,36,12,41,52),
-"Vasco":(47,36,13,47,52),"Mirassol":(41,36,10,39,49),"Vitória":(41,35,11,37,52),"Internacional":(38,35,9,39,44),
-"Corinthians":(40,35,10,40,42),"Grêmio":(38,35,9,38,47),"Remo":(32,36,7,41,61),"Chapecoense":(21,36,4,34,74)}
+"Santos":(50,36,13,51,51),"São Paulo":(45,36,12,40,41),"Botafogo":(43,36,11,47,58),"Coritiba":(45,36,12,41,52),
+"Vasco":(47,36,13,47,52),"Mirassol":(41,36,10,39,49),"Vitória":(44,36,12,42,54),"Internacional":(38,36,9,41,49),
+"Corinthians":(40,35,10,40,42),"Grêmio":(41,36,10,40,47),"Remo":(32,36,7,41,61),"Chapecoense":(24,37,5,37,74)}
 gp=sum(v[3] for v in T.values());gc=sum(v[4] for v in T.values());J=sum(v[1] for v in T.values())
 assert gp==gc,(gp,gc)
 avg=gp/J  # gols por time por jogo
@@ -13,10 +13,10 @@ K=8
 att={t:((v[3]+K*avg)/(v[1]+K))/avg for t,v in T.items()}
 dfn={t:((v[4]+K*avg)/(v[1]+K))/avg for t,v in T.items()}
 F=[
-("Internacional","Vitória"),("Botafogo","São Paulo"),("Santos","Grêmio"),("Atlético-MG","Corinthians"),
-("Chapecoense","Palmeiras"),("São Paulo","Remo"),("Fluminense","Cruzeiro"),("Botafogo","Bahia"),("Coritiba","Flamengo"),("Vitória","Santos"),("Corinthians","Grêmio"),("Mirassol","Athletico-PR"),("Internacional","Bragantino"),("Atlético-MG","Vasco"),
+("Atlético-MG","Corinthians"),
+("São Paulo","Remo"),("Fluminense","Cruzeiro"),("Botafogo","Bahia"),("Coritiba","Flamengo"),("Vitória","Santos"),("Corinthians","Grêmio"),("Internacional","Bragantino"),("Mirassol","Athletico-PR"),("Atlético-MG","Vasco"),
 ("Flamengo","Chapecoense"),("Vasco","Vitória"),("Santos","Botafogo"),("Palmeiras","Coritiba"),("Bragantino","Fluminense"),("Cruzeiro","Internacional"),("Grêmio","Mirassol"),("Athletico-PR","São Paulo"),("Bahia","Atlético-MG"),("Remo","Corinthians")]
-assert len(F)==24
+assert len(F)==20
 cnt=collections.Counter(); 
 for h,a in F: cnt[h]+=1;cnt[a]+=1
 for t,v in T.items(): assert v[1]+cnt[t]==38,(t,v[1],cnt[t])
@@ -42,19 +42,20 @@ z4=(rank>=17)
 out={"avg":avg}
 out["risco"]={t:float(z4[:,idx[t]].mean()) for t in teams if T[t][0]<=47}
 ip=P[:,inter]
-out["inter_pts_media"]=float(ip.mean());out["inter_pts_dist"]={int(k):float((ip==k).mean()) for k in range(38,51)}
-out["risco_por_pts"]={int(k):float(z4[ip==k,inter].mean()) for k in range(38,51) if (ip==k).sum()>200}
+out["inter_pts_media"]=float(ip.mean());out["inter_pts_dist"]={int(k):float((ip==k).mean()) for k in range(38,47)}
+out["risco_por_pts"]={int(k):float(z4[ip==k,inter].mean()) for k in range(38,47) if (ip==k).sum()>200}
 s16=np.sort(P,axis=1)[:,-16]  # pts do 16º
 out["pts16_mediana"]=float(np.median(s16));out["pts16_p10_p90"]=[float(np.percentile(s16,10)),float(np.percentile(s16,90))]
 out["pts17_mediana"]=float(np.median(np.sort(P,axis=1)[:,-17]))
 out["inter_jogos"]=[(h,a,round(w,3),round(d,3),round(l,3)) for h,a,w,d,l,_,_ in interres]
-# cenarios: pontos nos dois jogos em casa (Vitória e Bragantino)
-hh=[r for r in interres if r[0]=="Internacional"]
-hw=(hh[0][5]>hh[0][6]).astype(int)+(hh[1][5]>hh[1][6]).astype(int)
-out["risco_se_vence_2_casa"]=float(z4[hw==2,inter].mean());out["risco_se_vence_1_casa"]=float(z4[hw==1,inter].mean());out["risco_se_vence_0_casa"]=float(z4[hw==0,inter].mean())
-# risco conforme resultado do proximo jogo (Inter x Vitória)
-v=interres[0];vw=v[5]>v[6];vd=v[5]==v[6]
-out["risco_se_vence_proximo"]=float(z4[vw,inter].mean());out["risco_se_empata_proximo"]=float(z4[vd,inter].mean());out["risco_se_perde_proximo"]=float(z4[~vw&~vd,inter].mean())
+# cenarios: dois jogos restantes (Bragantino em casa, Cruzeiro fora)
+pr=[(r[5]>r[6]).astype(int)*3+(r[5]==r[6]).astype(int) for r in interres]
+tot=pr[0]+pr[1]
+out["risco_por_pts_dois_jogos"]={int(k):float(z4[tot==k,inter].mean()) for k in range(0,7) if (tot==k).sum()>0}
+out["risco_se_vence_proximo"]=float(z4[pr[0]==3,inter].mean());out["risco_se_empata_proximo"]=float(z4[pr[0]==1,inter].mean());out["risco_se_perde_proximo"]=float(z4[pr[0]==0,inter].mean())
+for nm,ix in (("vence",pr[0]==3),("empata",pr[0]==1),("perde",pr[0]==0)):
+  for nm2,iy in (("vence",pr[1]==3),("empata",pr[1]==1),("perde",pr[1]==0)):
+    out["risco_%s_bragantino_%s_cruzeiro"%(nm,nm2)]=float(z4[ix&iy,inter].mean())
 out["pos_final_inter"]={int(k):float((rank[:,inter]==k).mean()) for k in range(9,21)}
 # Z4 mais provável (combinação 17-20 excluindo Chape/Remo)
 combos=collections.Counter()
@@ -62,10 +63,10 @@ z=np.argsort(-key,axis=1)[:,16:20]
 for row in z[:50000]: combos[tuple(sorted(teams[x] for x in row))]+=1
 out["z4_combos"]=[(list(c),k/50000) for c,k in combos.most_common(5)]
 print(json.dumps(out,ensure_ascii=False,indent=1))
-for t in ["Coritiba","Vasco","Mirassol","Vitória","Internacional","Corinthians","Grêmio"]:
+for t in ["Coritiba","Vasco","Mirassol","Vitória","Internacional","Corinthians","Grêmio","Botafogo"]:
   k=idx[t];print(t,"media",round(float(P[:,k].mean()),1),"p10-p90",np.percentile(P[:,k],[10,90]).tolist(),"Z4",round(float(z4[:,k].mean())*100,1))
 # 45 pts: chance Inter chega e risco
-print("P(Inter>=45)",float((ip>=45).mean()),"P(Inter>=44)",float((ip>=44).mean()))
+print("P(Inter>=44)",float((ip>=44).mean()))
 
 print("--- PROJECAO")
 for t in sorted(teams,key=lambda t:-P[:,idx[t]].mean()):

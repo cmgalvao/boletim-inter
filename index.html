@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Boletim do Inter — 23/11/2026</title>
-<meta name="description" content="Situação do Internacional no Brasileirão 2026 (atualizado em 23/11, dia do jogo contra o Vitória): a reta final, os 5 pontos do dia, simulação de rebaixamento e agenda.">
+<title>Boletim do Inter — 25/11/2026</title>
+<meta name="description" content="Situação do Internacional no Brasileirão 2026 (atualizado em 25/11, após o 2 x 5 contra o Vitória): a reta final, os 5 pontos do dia, simulação de rebaixamento e agenda.">
 <style>
 :root{
   --branco:#FFFFFF; --vermelho:#CF1A31; --vermelho-f:#A8132A; --rosa:#FCE8EB; --rosa-2:#F6C5CD;
@@ -243,7 +243,7 @@ footer a{color:#fff}
   .abre{grid-template-columns:1fr 1fr;align-items:end;gap:20px;padding:34px 0 26px}
   .ab{align-self:start}
   h1{font-size:46px}
-  .reta{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);overflow:visible;gap:12px}
+  .reta{grid-auto-flow:row;grid-template-columns:repeat(2,1fr);overflow:visible;gap:12px}
   .pn{min-height:620px;padding:22px 22px 24px}
   .pn .campo{min-height:330px}
   .pn>div:last-child{min-height:172px}
@@ -312,7 +312,7 @@ footer a{color:#fff}
       <li><a href="#fontes">Fontes</a></li>
     </ul></nav>
     <div class="dir">
-      <span class="edicao it">23 de novembro de 2026</span>
+      <span class="edicao it">25 de novembro de 2026</span>
       <button class="copiar" type="button" id="btn-copiar" aria-label="Copiar resumo do boletim"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11"/><path d="M5 15V5h10"/></svg></button>
     </div>
   </div>
@@ -320,48 +320,37 @@ footer a{color:#fff}
 
 <main class="wrap" id="topo">
   <div class="abre">
-    <div class="ab" aria-label="De 38 pontos hoje para a meta de 45">
-      <b>38 pts</b><span class="seta" aria-hidden="true"></span><b>45 pts</b>
+    <div class="ab" aria-label="De 38 pontos hoje para o máximo possível de 44">
+      <b>38 pts</b><span class="seta" aria-hidden="true"></span><b>44 pts máx.</b>
     </div>
     <div>
       <h1>O Inter, em <em>5 pontos.</em></h1>
-      <p class="tag" style="margin-top:8px">Faltam 3 rodadas, e hoje é dia de <em>decisão</em>. O Inter segue 17º, no Z4, dois pontos atrás do 16º, e joga hoje, às 19h30, contra o Vitória no Beira-Rio. Consulta em 23/11/2026, às 07h54 (Brasília).</p>
+      <p class="tag" style="margin-top:8px">Faltam 2 rodadas e o Inter segue no <em>Z4</em>. Caiu para 18º, com 38 pontos, três atrás do 16º (Mirassol, 41), depois do 2 x 5 para o Vitória. A meta clássica de 45 pontos já não é alcançável: o máximo é 44. Consulta em 25/11/2026, às 07h49 (Brasília).</p>
     </div>
   </div>
 
-  <div class="reta" aria-label="Os 3 jogos que faltam, em ordem">
+  <div class="reta" aria-label="Os 2 jogos que faltam, em ordem">
     <article class="pn" aria-labelledby="pn1">
-      <div class="num"><span>36</span><span>Seg 23/11, 19h30</span></div>
+      <div class="num"><span>37</span><span>Dom 29/11, 18h30</span></div>
       <div class="campo">
         <span class="circ" aria-hidden="true"></span>
         <p class="rel" id="relogio" aria-live="off">faltam <b id="r-d">–</b>d <b id="r-h">–</b>h <b id="r-m">–</b>min</p>
-        <div class="chance"><div class="barra-ch" aria-hidden="true"><i style="width:50%;background:#fff"></i><i style="width:26%;background:rgba(255,255,255,.5)"></i></div><p><span>V 50%</span><span>E 26%</span><span>D 24%</span></p></div>
+        <div class="chance"><div class="barra-ch" aria-hidden="true"><i style="width:38%;background:#fff"></i><i style="width:28%;background:rgba(255,255,255,.5)"></i></div><p><span>V 38%</span><span>E 28%</span><span>D 34%</span></p></div>
       </div>
       <div>
-        <h3 id="pn1">Inter x Vitória <em>Beira-Rio</em></h3>
-        <p class="txt" id="relogio-txt">O jogo de seis pontos, hoje: o Vitória tem 41 e o Inter, 38. Sem Alan Patrick, suspenso (notícias de 19 a 21/11). Se vencer, o risco de queda cai para 33%.</p>
+        <h3 id="pn1">Inter x Bragantino <em>Beira-Rio</em></h3>
+        <p class="txt" id="relogio-txt">Última partida em casa. O Bragantino tem 50 pontos (8º) e está longe do Z4. Sem Alerrandro, suspenso. Se vencer, o risco de queda cai de 91% para 79%.</p>
         <span class="tv">🟡 TV a confirmar</span>
       </div>
     </article>
-    <article class="pn" aria-labelledby="pn2">
-      <div class="num"><span>37</span><span>Dom 29/11, 18h30</span></div>
-      <div class="campo">
-        <div class="chance"><div class="barra-ch" aria-hidden="true"><i style="width:39%;background:#fff"></i><i style="width:28%;background:rgba(255,255,255,.5)"></i></div><p><span>V 39%</span><span>E 28%</span><span>D 33%</span></p></div>
-      </div>
-      <div>
-        <h3 id="pn2">Inter x Bragantino <em>Beira-Rio</em></h3>
-        <p class="txt">Última partida em casa. O Bragantino tem 50 pontos (8º) e já está longe do Z4. Em 29/11, o Inter tem 11 jogadores pendurados, segundo site de torcedores (21/11).</p>
-        <span class="tv">🟢 Premiere</span>
-      </div>
-    </article>
-    <article class="pn fora" aria-labelledby="pn3">
+    <article class="pn fora" aria-labelledby="pn2">
       <div class="num"><span>38</span><span>Qua 02/12, 21h30</span></div>
       <div class="campo">
-        <div class="chance"><div class="barra-ch" aria-hidden="true"><i style="width:23%;background:#fff"></i><i style="width:23%;background:rgba(255,255,255,.5)"></i></div><p><span>V 23%</span><span>E 23%</span><span>D 54%</span></p></div>
+        <div class="chance"><div class="barra-ch" aria-hidden="true"><i style="width:21%;background:#fff"></i><i style="width:22%;background:rgba(255,255,255,.5)"></i></div><p><span>V 21%</span><span>E 22%</span><span>D 57%</span></p></div>
       </div>
       <div>
-        <h3 id="pn3">Cruzeiro x Inter <em>Mineirão</em></h3>
-        <p class="txt">Rodada final, com todos os jogos no mesmo horário (21h30).</p>
+        <h3 id="pn2">Cruzeiro x Inter <em>Mineirão</em></h3>
+        <p class="txt">Rodada final, com todos os jogos no mesmo horário (21h30). O Cruzeiro tem 66 pontos (3º).</p>
         <span class="tv">🟡 TV a confirmar</span>
       </div>
     </article>
@@ -373,48 +362,48 @@ footer a{color:#fff}
   <div class="cards">
     <article class="card g" aria-labelledby="c1">
       <div class="card-top"><span class="n">01</span><h3 id="c1">Situação do Inter</h3>
-        <span class="refs"><a class="ref" href="#f1" aria-label="Fonte 1">1</a><a class="ref" href="#f2" aria-label="Fonte 2">2</a><a class="ref" href="#f3" aria-label="Fonte 3">3</a></span></div>
+        <span class="refs"><a class="ref" href="#f1" aria-label="Fonte 1">1</a><a class="ref" href="#f2" aria-label="Fonte 2">2</a><a class="ref" href="#f3" aria-label="Fonte 3">3</a><a class="ref" href="#f4" aria-label="Fonte 4">4</a></span></div>
       <div class="kpis">
-        <div class="kpi"><span class="v">17º</span><span class="l">posição</span></div>
+        <div class="kpi"><span class="v">18º</span><span class="l">posição</span></div>
         <div class="kpi"><span class="v">38</span><span class="l">pontos</span></div>
-        <div class="kpi"><span class="v">35</span><span class="l">jogos</span></div>
+        <div class="kpi"><span class="v">36</span><span class="l">jogos</span></div>
       </div>
-      <span class="delta">▬ mesma posição e mesmos pontos da edição de sexta (20/11); o Inter não jogou no fim de semana</span>
-      <p>Último jogo: Vasco 2 x 1 Inter, quinta 19/11, em São Januário (35ª). O Vitória (14º, 41) abriu 3; o Corinthians (16º, 40) está 2 acima. O Grêmio (18º) tem os mesmos 38, com saldo pior. Campanha: 9V, 11E, 15D; saldo −5.</p>
+      <span class="delta" style="color:var(--vermelho);background:var(--rosa)">▼ caiu do 17º para o 18º; mesmos 38 pontos da edição de 23/11</span>
+      <p>Último jogo: Inter 2 x 5 Vitória, seg 23/11, no Beira-Rio (36ª). Vitinho e Alerrandro marcaram. O Vitória subiu ao 13º (44), o Grêmio passou o Inter (41) e o Corinthians (17º, 40) tem um jogo a menos. Campanha: 9V, 11E, 16D; saldo −8.</p>
     </article>
 
     <article class="card g prox" aria-labelledby="c2">
       <div class="card-top"><span class="n">02</span><h3 id="c2">Próximo jogo</h3>
-        <span class="refs"><a class="ref" href="#f4" aria-label="Fonte 4">4</a><a class="ref" href="#f7" aria-label="Fonte 7">7</a><a class="ref" href="#f8" aria-label="Fonte 8">8</a></span></div>
-      <div class="faixa"><p class="manchete">Inter x Vitória</p><span class="hora">Seg 23/11, 19h30</span></div>
-      <p>Beira-Rio, Porto Alegre. Brasileirão, 36ª rodada, em casa.</p>
-      <p><span class="chip pend">🟡 A confirmar</span> Só uma fonte cita Premiere; sem confirmação cruzada. Vitória: 14º, 41 pts em 35 jogos, com 11 vitórias contra 9 do Inter.</p>
+        <span class="refs"><a class="ref" href="#f5" aria-label="Fonte 5">5</a><a class="ref" href="#f7" aria-label="Fonte 7">7</a></span></div>
+      <div class="faixa"><p class="manchete">Inter x Bragantino</p><span class="hora">Dom 29/11, 18h30</span></div>
+      <p>Beira-Rio, Porto Alegre. Brasileirão, 37ª rodada, em casa.</p>
+      <p><span class="chip pend">🟡 A confirmar</span> Premiere aparece em fontes de 18/11, sem nova checagem cruzada hoje. Bragantino: 8º, 50 pts, 14 vitórias contra 9 do Inter; venceu o Vasco por 1 x 0.</p>
     </article>
 
     <article class="card" aria-labelledby="c3">
       <div class="card-top"><span class="n">03</span><h3 id="c3">Elenco</h3>
-        <span class="refs"><a class="ref" href="#f5" aria-label="Fonte 5">5</a><a class="ref" href="#f9" aria-label="Fonte 9">9</a><a class="ref" href="#f11" aria-label="Fonte 11">11</a><a class="ref" href="#f12" aria-label="Fonte 12">12</a></span></div>
-      <div class="faixa"><p class="manchete">Alan Patrick <em>fora</em></p><span class="chip pend">3º amarelo</span></div>
-      <p>Levou o terceiro amarelo contra o Vasco e cumpre suspensão diante do Vitória (notícias de 19/11); título de 21/11 confirma o técnico sem ele. Carbonero deve ocupar a vaga.</p>
-      <p>Matheus Bahia (edema na panturrilha) era dúvida e Bernabei (entorse no joelho) deveria ficar fora, segundo notícias de 19/11, sem atualização oficial nesta consulta. Um título de 22/11 fala em reforços, sem detalhes verificados. <span class="chip proj">Projeção</span> escalação oficial ainda não confirmada.</p>
+        <span class="refs"><a class="ref" href="#f2" aria-label="Fonte 2">2</a><a class="ref" href="#f5" aria-label="Fonte 5">5</a></span></div>
+      <div class="faixa"><p class="manchete">Alerrandro <em>fora</em></p><span class="chip pend">acúmulo de amarelos</span></div>
+      <p>Levou amarelo contra o Vitória e desfalca o jogo com o Bragantino (relato do VAVEL, 23/11, sem confirmação oficial nesta consulta). Thiago Maia voltou de lesão no intervalo do 2 x 5; Matheus Bahia recebeu atendimento após falta.</p>
+      <p>O técnico Eduardo Baptista segue no cargo, sem notícia de mudança. <span class="chip proj">Projeção</span> escalação oficial ainda não confirmada.</p>
     </article>
 
     <article class="card" aria-labelledby="c4">
       <div class="card-top"><span class="n">04</span><h3 id="c4">Contexto esportivo</h3>
-        <span class="refs"><a class="ref" href="#f1" aria-label="Fonte 1">1</a><a class="ref" href="#f2" aria-label="Fonte 2">2</a></span></div>
-      <div class="faixa"><p class="manchete">Bragantino <em>1 x 0</em></p><span class="hora">Vasco, domingo 22/11</span></div>
-      <p>Fim de semana na parte de baixo: Coritiba 1 x 0 Bahia (sáb), Fluminense 1 x 0 Mirassol e Bragantino 1 x 0 Vasco (dom). Hoje também jogam Botafogo x São Paulo (20h) e Santos x Grêmio (21h).</p>
+        <span class="refs"><a class="ref" href="#f1" aria-label="Fonte 1">1</a></span></div>
+      <div class="faixa"><p class="manchete">Vitória <em>5 x 2</em></p><span class="hora">Inter, segunda 23/11</span></div>
+      <p>Na rodada, Santos 0 x 2 Grêmio e Botafogo 1 x 1 São Paulo. Chapecoense 3 x 0 Palmeiras já consta na tabela (sem data na fonte). Hoje, às 20h, Atlético-MG x Corinthians, rival direto do Inter.</p>
     </article>
 
     <article class="card" aria-labelledby="c5">
       <div class="card-top"><span class="n">05</span><h3 id="c5">Perspectiva</h3>
-        <span class="refs"><a class="ref" href="#f1" aria-label="Fonte 1">1</a><a class="ref" href="#f10" aria-label="Fonte 10">10</a></span></div>
+        <span class="refs"><a class="ref" href="#f1" aria-label="Fonte 1">1</a><a class="ref" href="#f6" aria-label="Fonte 6">6</a></span></div>
       <div class="kpis">
-        <div class="kpi"><span class="v">9</span><span class="l">pts em disputa</span></div>
-        <div class="kpi"><span class="v">47</span><span class="l">máximo possível</span></div>
-        <div class="kpi"><span class="v">7</span><span class="l">pts para chegar a 45</span></div>
+        <div class="kpi"><span class="v">6</span><span class="l">pts em disputa</span></div>
+        <div class="kpi"><span class="v">44</span><span class="l">máximo possível</span></div>
+        <div class="kpi"><span class="v">3</span><span class="l">pts atrás do 16º</span></div>
       </div>
-      <p>Restam 3 jogos (2 em casa). Duas vitórias no Beira-Rio levam a 44. No modelo de IA, o 16º termina com 43 pts na mediana (42–44): referência, não garantia de permanência.</p>
+      <p>Restam 2 jogos (1 em casa). A meta de 45 não é mais possível. No modelo de IA, o 16º termina com 44 pts na mediana (42–44): referência, não garantia de permanência.</p>
     </article>
   </div>
 </section>
@@ -422,16 +411,16 @@ footer a{color:#fff}
 <section id="numeros" aria-labelledby="h-num">
   <div class="titulo"><h2 id="h-num">Os números <em>da briga</em></h2><p>Comparação com a rodada anterior, tabela de baixo e projeção até a 38ª.</p></div>
   <div class="strip" aria-label="Indicadores com comparação à rodada anterior">
-    <div class="st"><span class="l">Posição</span><span class="v">17º</span><span class="d">igual (era 17º)</span></div>
+    <div class="st"><span class="l">Posição</span><span class="v">18º</span><span class="d" style="color:var(--vermelho)">▼ 1 (era 17º)</span></div>
     <div class="st"><span class="l">Pontos</span><span class="v">38</span><span class="d">0 na rodada (derrota)</span></div>
-    <div class="st"><span class="l">Margem para o 16º</span><span class="v">−2</span><span class="d">Corinthians tem 40</span></div>
-    <div class="st"><span class="l">Saldo de gols</span><span class="v">−5</span><span class="d">▼ 1 (era −4)</span></div>
-    <div class="st"><span class="l">Aproveitamento</span><span class="v">36%</span><span class="d">▼ 1 p.p. (era 37%)</span></div>
+    <div class="st"><span class="l">Margem para o 16º</span><span class="v">−3</span><span class="d">Mirassol tem 41</span></div>
+    <div class="st"><span class="l">Saldo de gols</span><span class="v">−8</span><span class="d" style="color:var(--vermelho)">▼ 3 (era −5)</span></div>
+    <div class="st"><span class="l">Aproveitamento</span><span class="v">35%</span><span class="d" style="color:var(--vermelho)">▼ 1 p.p. (era 36%)</span></div>
   </div>
 
   <div class="painel">
     <div class="bloco full">
-      <h3>Parte de baixo da tabela, em 23/11 (6 dos 10 jogos da 36ª rodada já disputados)</h3>
+      <h3>Parte de baixo da tabela, em 25/11 (antes de Atlético-MG x Corinthians, hoje às 20h)</h3>
       <div class="filtros" role="group" aria-label="Filtrar faixa da tabela">
         <button class="btn" type="button" data-faixa="todos" aria-pressed="true">11º ao 20º</button>
         <button class="btn" type="button" data-faixa="briga" aria-pressed="false">Briga direta (14º–18º)</button>
@@ -443,21 +432,21 @@ footer a{color:#fff}
 
     <div class="bloco p4">
       <h3>Pontos do Inter rodada a rodada, com a projeção da IA</h3>
-      <div class="chart" id="chart-pontos" role="img" aria-label="Pontos acumulados da 29ª à 35ª rodada (31, 32, 32, 35, 35, 38 e 38) e projeção de 42,1 pontos ao fim, com faixa de 39 a 45"></div>
-      <div class="legenda"><span><i style="background:#CF1A31"></i>Pontos reais</span><span><i style="background:#F6C5CD"></i>Faixa provável (80% das simulações)</span><span><i style="background:none;border-top:1px dashed #1E7A45;height:0;width:14px"></i>Linha típica do 16º (43)</span></div>
+      <div class="chart" id="chart-pontos" role="img" aria-label="Pontos acumulados da 29ª à 36ª rodada (31, 32, 32, 35, 35, 38, 38 e 38) e projeção de 40,3 pontos ao fim, com faixa de 38 a 42"></div>
+      <div class="legenda"><span><i style="background:#CF1A31"></i>Pontos reais</span><span><i style="background:#F6C5CD"></i>Faixa provável (80% das simulações)</span><span><i style="background:none;border-top:1px dashed #1E7A45;height:0;width:14px"></i>Linha típica do 16º (44)</span></div>
     </div>
 
     <div class="bloco p2">
-      <h3>Campanha em 35 jogos</h3>
+      <h3>Campanha em 36 jogos</h3>
       <div class="donut-wrap">
-        <div class="chart" id="chart-donut" role="img" aria-label="9 vitórias, 11 empates e 15 derrotas; aproveitamento de 36%"></div>
+        <div class="chart" id="chart-donut" role="img" aria-label="9 vitórias, 11 empates e 16 derrotas; aproveitamento de 35%"></div>
         <div class="gols">
-          <div>Gols pró <b class="mono">39</b><div class="b"><span style="width:87%;background:#1E7A45"></span></div></div>
-          <div>Gols contra <b class="mono">44</b><div class="b"><span style="width:98%;background:#CF1A31"></span></div></div>
-          <p class="nota" style="margin:0">Segundo melhor saldo entre os ameaçados, atrás do Corinthians (−2).</p>
+          <div>Gols pró <b class="mono">41</b><div class="b"><span style="width:82%;background:#1E7A45"></span></div></div>
+          <div>Gols contra <b class="mono">49</b><div class="b"><span style="width:98%;background:#CF1A31"></span></div></div>
+          <p class="nota" style="margin:0">Saldo −8: pior que o do Grêmio (−7) e o do Corinthians (−2), melhor que o do Mirassol (−10).</p>
         </div>
       </div>
-      <div class="legenda"><span><i style="background:#1E7A45"></i>9 V</span><span><i style="background:#F6C5CD"></i>11 E</span><span><i style="background:#CF1A31"></i>15 D</span></div>
+      <div class="legenda"><span><i style="background:#1E7A45"></i>9 V</span><span><i style="background:#F6C5CD"></i>11 E</span><span><i style="background:#CF1A31"></i>16 D</span></div>
     </div>
 
     <div class="bloco full">
@@ -478,7 +467,7 @@ footer a{color:#fff}
         <tbody></tbody>
       </table>
       <div class="vazio" id="tab-vazio" hidden>Nenhum clube com esse nome nesta faixa. Limpe a busca ou escolha outra faixa.</div>
-      <p class="nota">Desempate: pontos, depois vitórias, depois saldo. O Vitória (11 vitórias) fica à frente do Mirassol (10) com os mesmos 41; o Inter passa o Grêmio no saldo (−5 a −9). Risco IA: simulação da seção seguinte.</p>
+      <p class="nota">Desempate: pontos, depois vitórias, depois saldo. O Grêmio (15º) fica à frente do Mirassol (16º) com os mesmos 41 pontos e 10 vitórias, pelo saldo (−7 a −10); o Corinthians tem um jogo a menos. Risco IA: simulação da seção seguinte.</p>
     </div>
   </div>
 </section>
@@ -488,36 +477,34 @@ footer a{color:#fff}
     <div class="ia-head">
       <span class="ia-label">✦ Análise proveniente de IA</span>
       <h3 id="ia-t">Análise proveniente de IA com relação ao <em>rebaixamento</em></h3>
-      <p class="nota">Simulação feita pelo Claude em 23/11/2026, às 07h47 (Brasília): 200 mil campeonatos sorteados a partir da tabela real (35 ou 36 jogos por clube) e dos 24 jogos restantes. Já inclui os seis jogos de 21 e 22/11.</p>
+      <p class="nota">Simulação feita pelo Claude em 25/11/2026, às 07h47 (Brasília): 200 mil campeonatos sorteados a partir da tabela real (35, 36 ou 37 jogos por clube) e dos 20 jogos restantes. Já inclui o 2 x 5 de 23/11; Atlético-MG x Corinthians (hoje) entra como jogo a disputar.</p>
     </div>
 
     <div class="ia-kpis">
-      <div class="ia-kpi destaque"><span class="v">55,8%</span><span class="l">risco de queda do Inter</span></div>
-      <div class="ia-kpi"><span class="v">42,1</span><span class="l">pts esperados no fim (faixa 39–45)</span></div>
-      <div class="ia-kpi"><span class="v">17º</span><span class="l">posição mais provável (30% das simulações)</span></div>
-      <div class="ia-kpi"><span class="v">3</span><span class="l">jogos restantes (2 em casa)</span></div>
+      <div class="ia-kpi destaque"><span class="v">91,1%</span><span class="l">risco de queda do Inter</span></div>
+      <div class="ia-kpi"><span class="v">40,3</span><span class="l">pts esperados no fim (faixa 38–42)</span></div>
+      <div class="ia-kpi"><span class="v">18º</span><span class="l">posição mais provável (71% das simulações)</span></div>
+      <div class="ia-kpi"><span class="v">2</span><span class="l">jogos restantes (1 em casa)</span></div>
     </div>
 
     <div class="ia-grid">
       <div class="ia-bloco">
         <h4>Risco de rebaixamento por clube</h4>
         <div id="ia-risco"></div>
-        <p class="nota">Remo (100%) e Chapecoense (100%) fora do gráfico. Sobram duas vagas no Z4 para seis clubes.</p>
+        <p class="nota">Remo (100%) e Chapecoense (100%) fora do gráfico. Sobram duas vagas no Z4 para cinco clubes.</p>
       </div>
       <div class="ia-bloco">
         <h4>Pontuação final do Inter e risco</h4>
         <table class="ia-tab">
           <thead><tr><th scope="col">Termina com</th><th scope="col">Chance de chegar</th><th scope="col">Risco de queda</th></tr></thead>
           <tbody>
-            <tr><td>40 pts ou menos</td><td>22%</td><td><b class="r-alto">100%</b></td></tr>
-            <tr><td>41 pts</td><td>17%</td><td><b class="r-alto">94%</b></td></tr>
-            <tr><td>42 pts</td><td>22%</td><td><b class="r-alto">60%</b></td></tr>
-            <tr><td>43 pts</td><td>7%</td><td><b class="r-medio">36%</b></td></tr>
-            <tr><td>44 pts</td><td>16%</td><td><b class="r-baixo">8%</b></td></tr>
-            <tr><td>45+ pts</td><td>15%</td><td><b class="r-baixo">&lt;1%</b></td></tr>
+            <tr><td>40 pts ou menos</td><td>49%</td><td><b class="r-alto">100%</b></td></tr>
+            <tr><td>41 pts</td><td>28%</td><td><b class="r-alto">99%</b></td></tr>
+            <tr><td>42 pts</td><td>14%</td><td><b class="r-alto">87%</b></td></tr>
+            <tr><td>44 pts (máximo)</td><td>8%</td><td><b class="r-medio">18%</b></td></tr>
           </tbody>
         </table>
-        <p class="nota">45 pts quase eliminam o risco nesta simulação, mas não são garantia matemática.</p>
+        <p class="nota">43 e 45 pts não são possíveis: o máximo do Inter é 44. Nem 44 elimina o risco.</p>
       </div>
       <div class="ia-bloco">
         <h4>Jogo a jogo: chances do Inter</h4>
@@ -527,12 +514,13 @@ footer a{color:#fff}
       <div class="ia-bloco">
         <h4>Cenários decisivos</h4>
         <ul class="cen">
-          <li><span>Vence o Vitória (23/11)</span><b class="r-medio">33%</b></li>
-          <li><span>Empata com o Vitória</span><b class="r-alto">73%</b></li>
-          <li><span>Perde para o Vitória</span><b class="r-alto">86%</b></li>
-          <li><span>Vence Vitória e Bragantino no Beira-Rio</span><b class="r-baixo">4%</b></li>
-          <li><span>Vence só um dos dois em casa</span><b class="r-alto">54%</b></li>
-          <li><span>Não vence nenhum em casa</span><b class="r-alto">93%</b></li>
+          <li><span>Vence o Bragantino (29/11)</span><b class="r-alto">79%</b></li>
+          <li><span>Empata com o Bragantino</span><b class="r-alto">97%</b></li>
+          <li><span>Perde para o Bragantino</span><b class="r-alto">99,8%</b></li>
+          <li><span>Vence Bragantino e Cruzeiro</span><b class="r-medio">18%</b></li>
+          <li><span>Vence um e empata o outro</span><b class="r-alto">87%</b></li>
+          <li><span>Vence um e perde o outro</span><b class="r-alto">99%</b></li>
+          <li><span>Nenhuma vitória</span><b class="r-alto">100%</b></li>
         </ul>
         <p class="nota">Risco final de queda em cada cenário.</p>
       </div>
@@ -541,16 +529,16 @@ footer a{color:#fff}
         <table class="ia-tab">
           <thead><tr><th scope="col">Clube</th><th scope="col">Média</th><th scope="col">Faixa (p10–p90)</th></tr></thead>
           <tbody>
-            <tr><td>Coritiba</td><td>46,3</td><td>45–48</td></tr>
-            <tr><td>Botafogo</td><td>45,8</td><td>43–49</td></tr>
-            <tr><td>Vitória</td><td>44,3</td><td>41–47</td></tr>
+            <tr><td>Vitória</td><td>46,5</td><td>44–50</td></tr>
+            <tr><td>Coritiba</td><td>46,4</td><td>45–48</td></tr>
+            <tr><td>Botafogo</td><td>45,4</td><td>43–47</td></tr>
             <tr><td>Corinthians</td><td>44,1</td><td>41–47</td></tr>
-            <tr><td>Mirassol</td><td>43,4</td><td>41–47</td></tr>
-            <tr><td><b>Internacional</b></td><td><b>42,1</b></td><td><b>39–45</b></td></tr>
-            <tr><td>Grêmio</td><td>41,6</td><td>39–45</td></tr>
+            <tr><td>Grêmio</td><td>43,7</td><td>41–47</td></tr>
+            <tr><td>Mirassol</td><td>43,4</td><td>41–45</td></tr>
+            <tr><td><b>Internacional</b></td><td><b>40,3</b></td><td><b>38–42</b></td></tr>
           </tbody>
         </table>
-        <p class="nota">Remo (34,2) e Chapecoense (21,8) ficam abaixo da faixa. Faixa: 80% das simulações.</p>
+        <p class="nota">Remo (34,2) e Chapecoense (24,2) ficam abaixo da faixa. Faixa: 80% das simulações.</p>
       </div>
     </div>
 
@@ -561,15 +549,15 @@ footer a{color:#fff}
           <p class="nota" style="margin-top:4px">Escolha o resultado do Inter em cada jogo. O risco vem das simulações em que o Inter terminou com essa pontuação.</p>
           <div class="sim-jogos" id="sim-jogos"></div>
           <div class="presets" role="group" aria-label="Cenários prontos">
-            <button class="btn" type="button" data-preset="vveev">Só vence em casa</button>
-            <button class="btn" type="button" data-preset="evve">Embalado</button>
-            <button class="btn" type="button" data-preset="dedd">Pessimista</button>
+            <button class="btn" type="button" data-preset="vv">Vence os dois</button>
+            <button class="btn" type="button" data-preset="ve">Vence em casa, empata fora</button>
+            <button class="btn" type="button" data-preset="dd">Pessimista</button>
             <button class="btn" type="button" data-preset="limpar">Limpar</button>
           </div>
         </div>
         <div class="sim-out" aria-live="polite">
           <div id="gauge"></div>
-          <div class="sim-txt" id="sim-txt"><b class="big">Escolha os 3 resultados</b><span class="nota">Toque em V, E ou D em cada jogo para ver os pontos finais e o risco.</span></div>
+          <div class="sim-txt" id="sim-txt"><b class="big">Escolha os 2 resultados</b><span class="nota">Toque em V, E ou D em cada jogo para ver os pontos finais e o risco.</span></div>
         </div>
       </div>
     </div>
@@ -577,21 +565,20 @@ footer a{color:#fff}
     <div class="ia-bloco" style="margin-top:8px">
       <h4>Confrontos diretos que podem decidir</h4>
       <ul class="cd">
-        <li><b>23/11</b>Internacional x Vitória, o jogo de seis pontos do Inter; no mesmo dia, Botafogo x São Paulo e Santos x Grêmio</li>
-        <li><b>25/11</b>Atlético-MG x Corinthians</li>
-        <li><b>37ª rodada</b>Corinthians x Grêmio: um dos dois rivais perde pontos</li>
+        <li><b>25/11</b>Atlético-MG x Corinthians, às 20h: o Corinthians (17º, 40) tem um jogo a menos que o Inter</li>
+        <li><b>29/11</b>Corinthians x Grêmio, às 18h30, no mesmo horário de Inter x Bragantino: um dos dois rivais perde pontos</li>
         <li><b>02/12</b>Grêmio x Mirassol, Vasco x Vitória, Remo x Corinthians e Cruzeiro x Internacional, todos às 21h30</li>
       </ul>
     </div>
 
     <div class="ia-veredito">
-      <p><b>Leitura da IA:</b> a tabela não mudou para o Inter, mas o fim de semana ajudou os rivais diretos: Coritiba (45) e Bragantino ampliaram vantagem, e o Mirassol perdeu e subiu o risco para 39%. O Inter cai em 56% das simulações. A posição final mais frequente é o 17º (30%), seguida do 18º (26%); o 16º, primeiro lugar seguro, vem em 18%. A favor, o saldo de gols (−5), melhor que o dos outros ameaçados, exceto o Corinthians, e dois jogos em casa. Contra: Alan Patrick suspenso hoje e a última rodada fora, contra o Cruzeiro. Grêmio (67%), Inter (56%) e Mirassol (39%) correm mais risco hoje.</p>
-      <p><b>Meta objetiva:</b> 6 pontos no Beira-Rio. Com Vitória e Bragantino vencidos, o risco cai para 4%; sem nenhuma vitória em casa, sobe para 93%.</p>
+      <p><b>Leitura da IA:</b> o 2 x 5 em casa mudou o quadro: o risco do Inter foi de 56% para 91%. A posição final mais frequente é o 18º (71%); o 17º aparece em 20% e o 16º, primeiro lugar seguro, ou melhor, em apenas 9%. Mirassol (46%), Grêmio (32%) e Corinthians (23%) disputam com o Inter as duas vagas restantes no Z4, já que Remo e Chapecoense estão praticamente rebaixados. Contra o Inter: três pontos de desvantagem para o 16º, saldo −8 e a última rodada fora, contra o Cruzeiro (3º).</p>
+      <p><b>Meta objetiva:</b> 6 pontos em 2 jogos. Vencer Bragantino e Cruzeiro leva a 44 e reduz o risco a 18%; qualquer outro resultado deixa o risco em 87% ou mais, e sem vitória chega a 100%.</p>
     </div>
 
     <details class="met">
       <summary>Como a simulação foi feita</summary>
-      <p>Modelo de Poisson: cada clube recebe uma força de ataque e de defesa calculada pelos gols pró e contra nos 35 ou 36 jogos disputados (com ajuste à média da liga), mais vantagem de mando. Cada um dos 24 jogos restantes é sorteado 200 mil vezes com variação aleatória na força dos times; o desempate segue pontos, vitórias, saldo e gols pró. O simulador usa o risco médio para cada pontuação final do Inter, sem fixar os resultados dos rivais. O modelo não considera lesões, suspensões, troca de técnico ou motivação. Parâmetros: Monte Carlo com gols de Poisson, 200.000 simulações, encolhimento à média K = 8, mando 1,16 em casa e 0,86 fora, ruído log-normal de força 0,12; script sim-rebaixamento.py no repositório. É estimativa, não previsão garantida.</p>
+      <p>Modelo de Poisson: cada clube recebe uma força de ataque e de defesa calculada pelos gols pró e contra nos 35, 36 ou 37 jogos disputados (com ajuste à média da liga), mais vantagem de mando. Cada um dos 20 jogos restantes é sorteado 200 mil vezes com variação aleatória na força dos times; o desempate segue pontos, vitórias, saldo e gols pró. O simulador usa o risco médio para cada pontuação final do Inter, sem fixar os resultados dos rivais. O modelo não considera lesões, suspensões, troca de técnico ou motivação. Parâmetros: Monte Carlo com gols de Poisson, 200.000 simulações, encolhimento à média K = 8, mando 1,16 em casa e 0,86 fora, ruído log-normal de força 0,12; script sim-rebaixamento.py no repositório. É estimativa, não previsão garantida.</p>
     </details>
   </article>
 </section>
@@ -608,20 +595,12 @@ footer a{color:#fff}
       <thead><tr><th scope="col">Data</th><th scope="col">Horário</th><th scope="col">Adversário</th><th scope="col">Competição</th><th scope="col">Onde assistir</th><th scope="col">Status</th></tr></thead>
       <tbody>
         <tr data-st="pend" class="prox-jogo">
-          <td class="c-data" data-label="Data">Seg 23/11</td>
-          <td class="c-hora" data-label="Horário">19h30</td>
-          <td class="c-adv" data-label="Adversário">Internacional x Vitória <span class="det">Casa, no Beira-Rio (Porto Alegre)</span></td>
-          <td class="c-comp" data-label="Competição">Brasileirão, 36ª rodada</td>
-          <td class="c-tv" data-label="Onde assistir">A confirmar</td>
-          <td class="c-st" data-label="Status"><span class="chip pend">🟡 A confirmar</span></td>
-        </tr>
-        <tr data-st="conf">
           <td class="c-data" data-label="Data">Dom 29/11</td>
           <td class="c-hora" data-label="Horário">18h30</td>
           <td class="c-adv" data-label="Adversário">Internacional x RB Bragantino <span class="det">Casa, no Beira-Rio (Porto Alegre)</span></td>
           <td class="c-comp" data-label="Competição">Brasileirão, 37ª rodada</td>
-          <td class="c-tv" data-label="Onde assistir">Premiere (pay-per-view)</td>
-          <td class="c-st" data-label="Status"><span class="chip ok">🟢 Confirmado</span></td>
+          <td class="c-tv" data-label="Onde assistir">A confirmar</td>
+          <td class="c-st" data-label="Status"><span class="chip pend">🟡 A confirmar</span></td>
         </tr>
         <tr data-st="pend">
           <td class="c-data" data-label="Data">Qua 02/12</td>
@@ -633,7 +612,7 @@ footer a{color:#fff}
         </tr>
       </tbody>
     </table>
-    <div class="vazio" id="ag-vazio" hidden>Nenhum jogo com transmissão confirmada ainda. Volte para "Todos os jogos" para ver a agenda completa.</div>
+    <div class="vazio" id="ag-vazio" hidden>Nenhum jogo com transmissão confirmada ainda (todas as transmissões seguem a confirmar). Volte para "Todos os jogos" para ver a agenda completa.</div>
     <p class="linha-tv">Transmissões checadas; pendências sinalizadas em amarelo.</p>
   </div>
 </section>
@@ -641,20 +620,15 @@ footer a{color:#fff}
 <section id="fontes" aria-labelledby="h-f">
   <h2 id="h-f" class="sr">Fontes</h2>
   <details class="fontes">
-    <summary>Fontes consultadas (12)</summary>
+    <summary>Fontes consultadas (7)</summary>
     <ol>
-      <li id="f1"><a href="https://www.lance.com.br/tabela/brasileirao">Lance: tabela e resultados da 36ª rodada (21 e 22/11)</a>, consulta em 23/11/2026, sem data de atualização na página</li>
-      <li id="f2"><a href="https://valorfinal.com.br/tabela-brasileirao-serie-a">Valor Final: tabela do Brasileirão</a>, atualizada em 23/11/2026, 00h00</li>
-      <li id="f3"><a href="https://www.cbf.com.br/futebol-brasileiro/tabelas/campeonato-brasileiro/serie-a/2026?documento=IMT">CBF: tabela da Série A 2026</a>, consulta em 23/11/2026, sem data na página</li>
-      <li id="f4"><a href="https://internacional.com.br/jogos/masculino/brasileirao-2026/23-11-2026-brasileirao-2026-internacional-x-vitoria">Internacional, site oficial: Inter x Vitória, 23/11 às 19h30, Beira-Rio</a></li>
-      <li id="f5"><a href="https://internacional.com.br/noticias/masculino/inter-esta-pronto-para-encarar-o-vitoria-no-gigante">Internacional, site oficial: Inter está pronto para encarar o Vitória</a>, 22/11/2026</li>
-      <li id="f6"><a href="https://internacional.com.br/noticias/masculino/servico-de-jogo-internacional-x-vitoria-36-rodada-brasileirao-2026">Internacional, site oficial: serviço de jogo de Inter x Vitória</a>, 15/11/2026</li>
-      <li id="f7"><a href="https://www.quandoointerjoga.com.br/proximos-jogos/">Quando o Inter joga?: próximos jogos e transmissão</a>, consulta em 23/11/2026, sem data na página</li>
-      <li id="f8"><a href="https://maquinadoesporte.com.br/onde-assistir/internacional-x-red-bull-bragantino-onde-assistir-ao-jogo-da-37a-rodada-do-brasileirao/">Máquina do Esporte: onde assistir a Inter x Bragantino</a>, 18/11/2026</li>
-      <li id="f9"><a href="https://somoscolorados.com/cbf-confirma-datas-e-horarios-dos-ultimos-jogos-do-inter-no-brasileirao">Somos Colorados (site não oficial): datas e horários das rodadas 37 e 38, títulos de 21 e 22/11</a>, 07/11/2026</li>
-      <li id="f10"><a href="https://www.itatiaia.com.br/esportes/futebol/futebol-nacional/futebol-do-sul/internacional/internacional-no-brasileirao-datas-e-horarios-dos-jogos-das-rodadas-37-e-38/">Itatiaia: Inter nas rodadas 37 e 38</a>, 06/11/2026</li>
-      <li id="f11"><a href="https://zonamista.com.br/inter-perde-para-o-vasco-segue-no-z4-e-tera-desfalque-em-confronto-direto/">Zona Mista: Inter perde para o Vasco e terá desfalque</a>, 19/11/2026 (edição de 20/11, não relida)</li>
-      <li id="f12"><a href="https://tmc.com.br/esporte/internacional-perde-titular-para-decisao-do-brasileirao-contra-o-vitoria/">TMC: Inter perde titular para o jogo contra o Vitória</a>, 19/11/2026 (edição de 20/11, não relida)</li>
+      <li id="f1"><a href="https://valorfinal.com.br/tabela-brasileirao-serie-a">Valor Final: tabela do Brasileirão</a>, atualizada em 25/11/2026, 00h00 (inclui a 36ª rodada e Chapecoense 3 x 0 Palmeiras)</li>
+      <li id="f2"><a href="https://www.vavel.com/br/futebol/2026/11/23/1280411-internacional-x-vitoria-ao-vivo-36-rodada-do-brasileirao-serie-a-2026.html">VAVEL: Internacional x Vitória ao vivo, 36ª rodada</a>, 23/11/2026, atualizado às 21h53</li>
+      <li id="f3"><a href="https://soumaispop.com.br/2026/11/24/em-casa-internacional-leva-surra-do-vitoria-e-mantem-no-z4-do-brasileirao-2026/">Sou Mais Pop: Inter leva surra do Vitória e segue no Z4</a>, 24/11/2026</li>
+      <li id="f4"><a href="https://www.brasil247.com/esporte/internacional-2-x-5-vitoria-baianos-vencem-no-beira-rio/">Brasil 247: Internacional 2 x 5 Vitória</a>, 23/11/2026 (22h14)</li>
+      <li id="f5"><a href="https://www.vavel.com/br/data/sc-internacional/calendario/">VAVEL: calendário do Internacional (Bragantino, 29/11, 18h30; Cruzeiro, 02/12, 21h30)</a>, consulta em 25/11/2026, sem data na página</li>
+      <li id="f6"><a href="https://www.itatiaia.com.br/esportes/futebol/futebol-nacional/futebol-do-sul/internacional/internacional-no-brasileirao-datas-e-horarios-dos-jogos-das-rodadas-37-e-38/">Itatiaia: Inter nas rodadas 37 e 38</a>, 06/11/2026 (não relida nesta consulta)</li>
+      <li id="f7"><a href="https://maquinadoesporte.com.br/onde-assistir/internacional-x-red-bull-bragantino-onde-assistir-ao-jogo-da-37a-rodada-do-brasileirao/">Máquina do Esporte: onde assistir a Inter x Bragantino</a>, 18/11/2026 (não relida; sem confirmação cruzada nova)</li>
     </ol>
   </details>
 </section>
@@ -662,7 +636,7 @@ footer a{color:#fff}
 
 <footer>
   <div class="wrap">
-    <p style="margin:0">Este arquivo é um retrato da consulta de 23/11/2026, às 07h54 (Brasília), e não se atualiza sozinho.</p>
+    <p style="margin:0">Este arquivo é um retrato da consulta de 25/11/2026, às 07h49 (Brasília), e não se atualiza sozinho.</p>
     <a class="topo" href="#topo">Voltar ao topo</a>
   </div>
 </footer>
@@ -682,11 +656,11 @@ footer a{color:#fff}
     alvo.addEventListener("mousemove",mostra);alvo.addEventListener("focus",mostra);alvo.addEventListener("mouseleave",esconde);alvo.addEventListener("blur",esconde);
   }
 
-  /* Contagem regressiva no painel da 35ª */
-  var alvoJogo=new Date("2026-11-23T19:30:00-03:00").getTime();
+  /* Contagem regressiva no painel da 37ª */
+  var alvoJogo=new Date("2026-11-29T18:30:00-03:00").getTime();
   function relogio(){
     var ms=alvoJogo-Date.now();
-    if(ms<=0){document.getElementById("relogio").textContent="o horário do jogo já passou";document.getElementById("relogio-txt").textContent="Este boletim é de 23/11 e não traz o placar. Consulte uma edição mais recente.";return;}
+    if(ms<=0){document.getElementById("relogio").textContent="o horário do jogo já passou";document.getElementById("relogio-txt").textContent="Este boletim é de 25/11 e não traz o placar. Consulte uma edição mais recente.";return;}
     document.getElementById("r-d").textContent=Math.floor(ms/864e5);
     document.getElementById("r-h").textContent=Math.floor(ms%864e5/36e5);
     document.getElementById("r-m").textContent=Math.floor(ms%36e5/6e4);
@@ -697,7 +671,7 @@ footer a{color:#fff}
   var toast=document.getElementById("toast");
   function aviso(t){toast.textContent=t;toast.hidden=false;clearTimeout(aviso.t);aviso.t=setTimeout(function(){toast.hidden=true;},2400);}
   document.getElementById("btn-copiar").addEventListener("click",function(){
-    var txt="Boletim do Inter, 23/11/2026\n• 17º, 38 pts em 35 jogos, no Z4; joga hoje (23/11), 19h30, contra o Vitória no Beira-Rio (TV a confirmar)\n• Alan Patrick suspenso; escalação não confirmada\n• Simulação de IA: 55,8% de risco de queda; meta: vencer Vitória e Bragantino no Beira-Rio\nhttps://cmgalvao.github.io/boletim-inter/";
+    var txt="Boletim do Inter, 25/11/2026\n• 18º, 38 pts em 36 jogos, no Z4, após o 2 x 5 para o Vitória; próximo jogo: Bragantino, dom 29/11, 18h30, no Beira-Rio (TV a confirmar)\n• Alerrandro suspenso; escalação não confirmada\n• Simulação de IA: 91,1% de risco de queda; máximo possível: 44 pts\nhttps://cmgalvao.github.io/boletim-inter/";
     function fallback(){var a=document.createElement("textarea");a.value=txt;document.body.appendChild(a);a.select();try{document.execCommand("copy");aviso("Resumo copiado");}catch(e){aviso("Não foi possível copiar. Selecione o texto manualmente.");}a.remove();}
     if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(function(){aviso("Resumo copiado");},fallback);}else fallback();
   });
@@ -711,18 +685,18 @@ footer a{color:#fff}
 
   /* Dados */
   var dados=[
-    {pos:11,clube:"Coritiba",p:45,j:36,v:12,sg:-11,risco:0.006},
-    {pos:12,clube:"São Paulo",p:44,j:35,v:12,sg:-1,risco:0.02},
-    {pos:13,clube:"Botafogo",p:42,j:35,v:11,sg:-11,risco:3.6},
-    {pos:14,clube:"Vitória",p:41,j:35,v:11,sg:-15,risco:15.4},
-    {pos:15,clube:"Mirassol",p:41,j:36,v:10,sg:-10,risco:38.6},
-    {pos:16,clube:"Corinthians",p:40,j:35,v:10,sg:-2,risco:19.9},
-    {pos:17,clube:"Internacional",p:38,j:35,v:9,sg:-5,risco:55.8},
-    {pos:18,clube:"Grêmio",p:38,j:35,v:9,sg:-9,risco:66.6},
+    {pos:11,clube:"São Paulo",p:45,j:36,v:12,sg:-1,risco:0},
+    {pos:12,clube:"Coritiba",p:45,j:36,v:12,sg:-11,risco:0},
+    {pos:13,clube:"Vitória",p:44,j:36,v:12,sg:-12,risco:0.03},
+    {pos:14,clube:"Botafogo",p:43,j:36,v:11,sg:-11,risco:7.4},
+    {pos:15,clube:"Grêmio",p:41,j:36,v:10,sg:-7,risco:32.2},
+    {pos:16,clube:"Mirassol",p:41,j:36,v:10,sg:-10,risco:46.3},
+    {pos:17,clube:"Corinthians",p:40,j:35,v:10,sg:-2,risco:23.0},
+    {pos:18,clube:"Internacional",p:38,j:36,v:9,sg:-8,risco:91.1},
     {pos:19,clube:"Remo",p:32,j:36,v:7,sg:-20,risco:100},
-    {pos:20,clube:"Chapecoense",p:21,j:36,v:4,sg:-40,risco:100}
+    {pos:20,clube:"Chapecoense",p:24,j:37,v:5,sg:-37,risco:100}
   ];
-  var pontos=[{r:"29ª",p:31,res:"V 2x1 Corinthians"},{r:"30ª",p:32,res:"E 1x1 Grêmio"},{r:"31ª",p:32,res:"D 0x2 Mirassol"},{r:"32ª",p:35,res:"V 3x0 Botafogo"},{r:"33ª",p:35,res:"D 1x2 Fluminense"},{r:"34ª",p:38,res:"V 1x0 Coritiba"},{r:"35ª",p:38,res:"D 1x2 Vasco"}];
+  var pontos=[{r:"29ª",p:31,res:"V 2x1 Corinthians"},{r:"30ª",p:32,res:"E 1x1 Grêmio"},{r:"31ª",p:32,res:"D 0x2 Mirassol"},{r:"32ª",p:35,res:"V 3x0 Botafogo"},{r:"33ª",p:35,res:"D 1x2 Fluminense"},{r:"34ª",p:38,res:"V 1x0 Coritiba"},{r:"35ª",p:38,res:"D 1x2 Vasco"},{r:"36ª",p:38,res:"D 2x5 Vitória"}];
   var faixa="todos",busca="",ord={k:"pos",asc:true};
   function semAcento(s){return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");}
   function filtrados(){return dados.filter(function(d){
@@ -755,17 +729,17 @@ footer a{color:#fff}
     var box=document.getElementById("chart-pontos");box.innerHTML="";
     var W=Math.max(300,box.clientWidth||600),H=200,l=30,r=56,t=18,b=28,min=28,max=50;
     var s=el("svg",{viewBox:"0 0 "+W+" "+H,"aria-hidden":"true"});
-    var n=pontos.length,passos=n+2;
+    var n=pontos.length,passos=n+1;
     var X=function(i){return l+(W-l-r)*i/passos;},Y=function(v){return t+(H-t-b)*(1-(v-min)/(max-min));};
     [30,35,40,45,50].forEach(function(v){s.appendChild(el("line",{x1:l,x2:W-r+30,y1:Y(v),y2:Y(v),stroke:C.linha}));s.appendChild(el("text",{x:l-6,y:Y(v)+4,"font-size":"10","text-anchor":"end",fill:C.tinta2},v));});
     var x0=X(n-1),x1=X(passos);
-    s.appendChild(el("path",{d:"M"+x0+" "+Y(38)+" L"+x1+" "+Y(45)+" L"+x1+" "+Y(39)+" Z",fill:C.rosa,opacity:".7"}));
-    s.appendChild(el("line",{x1:x0,y1:Y(38),x2:x1,y2:Y(42.1),stroke:C.verm,"stroke-width":"1.5","stroke-dasharray":"5 4"}));
-    s.appendChild(el("line",{x1:l,x2:W-r+30,y1:Y(43),y2:Y(43),stroke:C.verde,"stroke-width":"1","stroke-dasharray":"3 4"}));
-    s.appendChild(el("text",{x:W-r+30,y:Y(43)-5,"font-size":"10","text-anchor":"end",fill:C.verde},"16º típico: 43"));
-    var pc=el("circle",{cx:x1,cy:Y(42.1),r:7,fill:"#fff",stroke:C.verm,"stroke-width":"1.5",tabindex:"0"});
-    dica(pc,"Projeção ao fim da 38ª: 42,1 pts (80% das simulações entre 39 e 45)");s.appendChild(pc);
-    s.appendChild(el("text",{x:x1+10,y:Y(42.1)+4,"font-size":"12","font-weight":"500",fill:C.verm},"42,1"));
+    s.appendChild(el("path",{d:"M"+x0+" "+Y(38)+" L"+x1+" "+Y(42)+" L"+x1+" "+Y(38)+" Z",fill:C.rosa,opacity:".7"}));
+    s.appendChild(el("line",{x1:x0,y1:Y(38),x2:x1,y2:Y(40.3),stroke:C.verm,"stroke-width":"1.5","stroke-dasharray":"5 4"}));
+    s.appendChild(el("line",{x1:l,x2:W-r+30,y1:Y(44),y2:Y(44),stroke:C.verde,"stroke-width":"1","stroke-dasharray":"3 4"}));
+    s.appendChild(el("text",{x:W-r+30,y:Y(44)-5,"font-size":"10","text-anchor":"end",fill:C.verde},"16º típico: 44"));
+    var pc=el("circle",{cx:x1,cy:Y(40.3),r:7,fill:"#fff",stroke:C.verm,"stroke-width":"1.5",tabindex:"0"});
+    dica(pc,"Projeção ao fim da 38ª: 40,3 pts (80% das simulações entre 38 e 42)");s.appendChild(pc);
+    s.appendChild(el("text",{x:x1+10,y:Y(40.3)+4,"font-size":"12","font-weight":"500",fill:C.verm},"40,3"));
     s.appendChild(el("text",{x:x1,y:H-8,"font-size":"10","text-anchor":"middle",fill:C.tinta2},"38ª"));
     var pts=pontos.map(function(d,i){return [X(i),Y(d.p)];});
     s.appendChild(el("polyline",{points:pts.map(function(p){return p.join(",");}).join(" "),fill:"none",stroke:C.verm,"stroke-width":"2"}));
@@ -780,12 +754,12 @@ footer a{color:#fff}
 
   function donut(){
     var box=document.getElementById("chart-donut");box.innerHTML="";
-    var parts=[[9,C.verde,"vitórias"],[11,C.rosa,"empates"],[15,C.verm,"derrotas"]],tot=35,R=46,Cc=2*Math.PI*R,acc=0;
+    var parts=[[9,C.verde,"vitórias"],[11,C.rosa,"empates"],[16,C.verm,"derrotas"]],tot=36,R=46,Cc=2*Math.PI*R,acc=0;
     var s=el("svg",{viewBox:"0 0 120 120","aria-hidden":"true"});
     parts.forEach(function(p){
       var len=Cc*p[0]/tot;var c=el("circle",{cx:60,cy:60,r:R,fill:"none",stroke:p[1],"stroke-width":"12","stroke-dasharray":(len-2)+" "+(Cc-len+2),"stroke-dashoffset":-acc,transform:"rotate(-90 60 60)",tabindex:"0"});
       dica(c,p[0]+" "+p[2]+" ("+Math.round(p[0]/tot*100)+"%)");s.appendChild(c);acc+=len;});
-    s.appendChild(el("text",{x:60,y:64,"text-anchor":"middle","font-size":"26",fill:C.verm},"36%"));
+    s.appendChild(el("text",{x:60,y:64,"text-anchor":"middle","font-size":"26",fill:C.verm},"35%"));
     s.appendChild(el("text",{x:60,y:80,"text-anchor":"middle","font-size":"9.5",fill:C.tinta2},"aproveitamento"));
     box.appendChild(s);
   }
@@ -818,7 +792,7 @@ footer a{color:#fff}
     document.getElementById("ag-vazio").hidden=n>0;document.getElementById("agenda-tab").style.display=n?"":"none";});});
 
   /* IA: risco por clube */
-  var risco=[["Grêmio",66.6],["Internacional",55.8],["Mirassol",38.6],["Corinthians",19.9],["Vitória",15.4],["Botafogo",3.6],["Coritiba",0.006]];
+  var risco=[["Internacional",91.1],["Mirassol",46.3],["Grêmio",32.2],["Corinthians",23.0],["Botafogo",7.4],["Vitória",0.03]];
   var rb=document.getElementById("ia-risco");
   risco.forEach(function(d){var r=document.createElement("div");r.className="rbar"+(d[0]==="Internacional"?" inter":"");r.tabIndex=0;
     var pct=(d[1]<0.1?"menos de 0,1":d[1].toFixed(1).replace(".",","));r.setAttribute("aria-label",d[0]+": "+pct+"% de risco de queda");
@@ -828,7 +802,7 @@ footer a{color:#fff}
   if("IntersectionObserver" in window){var o2=new IntersectionObserver(function(es){if(es[0].isIntersecting){fills.forEach(function(f){f.style.transform="scaleX(1)";});o2.disconnect();}});o2.observe(rb);}
   else fills.forEach(function(f){f.style.transform="scaleX(1)";});
 
-  var jogos=[["Inter x Vitória","Seg 23/11, casa",50,26,24,"Vitória"],["Inter x Bragantino","Dom 29/11, casa",39,28,33,"Bragantino"],["Cruzeiro x Inter","Qua 02/12, fora",23,23,54,"Cruzeiro"]];
+  var jogos=[["Inter x Bragantino","Dom 29/11, casa",38,28,34,"Bragantino"],["Cruzeiro x Inter","Qua 02/12, fora",21,22,57,"Cruzeiro"]];
   var jb=document.getElementById("ia-jogos");
   jogos.forEach(function(j){var d=document.createElement("div");d.className="jg";d.tabIndex=0;
     var txt=j[0]+": vitória do Inter "+j[2]+"%, empate "+j[3]+"%, derrota "+j[4]+"%";d.setAttribute("aria-label",txt);
@@ -836,7 +810,7 @@ footer a{color:#fff}
     dica(d,txt);jb.appendChild(d);});
 
   /* Simulador */
-  var riscoPorPts={38:100,39:100,40:100,41:93.8,42:60.2,43:36.2,44:7.9,45:0.8,46:0,47:0};
+  var riscoPorPts={38:100,39:100,40:100,41:99.0,42:87.3,44:17.7};
   var esc={};var sj=document.getElementById("sim-jogos");
   jogos.forEach(function(j,i){
     var row=document.createElement("div");row.className="sj";
@@ -857,7 +831,7 @@ footer a{color:#fff}
   function simula(){
     var ks=Object.keys(esc),out=document.getElementById("sim-txt");
     document.querySelectorAll(".seg button").forEach(function(b){b.setAttribute("aria-pressed",esc[b.dataset.i]===b.dataset.r?"true":"false");});
-    if(ks.length<3){gauge(null);var falta=3-ks.length;out.innerHTML="<b class='big'>"+(ks.length?"Falta"+(falta>1?"m ":" ")+falta+" jogo"+(falta>1?"s":""):"Escolha os 3 resultados")+"</b><span class='nota'>Toque em V, E ou D em cada jogo para ver os pontos finais e o risco.</span>";return;}
+    if(ks.length<2){gauge(null);var falta=2-ks.length;out.innerHTML="<b class='big'>"+(ks.length?"Falta"+(falta>1?"m ":" ")+falta+" jogo"+(falta>1?"s":""):"Escolha os 2 resultados")+"</b><span class='nota'>Toque em V, E ou D em cada jogo para ver os pontos finais e o risco.</span>";return;}
     var pts=38;ks.forEach(function(k){pts+=({v:3,e:1,d:0})[esc[k]];});
     var p=riscoPorPts[pts];gauge(p);
     var leitura=p>=90?"Rebaixamento quase certo.":p>=40?"Fica na zona de perigo e depende dos rivais.":p>=10?"Escapa na maioria dos cenários, mas sem folga.":p>=1?"Permanência muito provável.":"Permanência praticamente assegurada nas simulações, sem garantia matemática.";
@@ -866,9 +840,9 @@ footer a{color:#fff}
   sj.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;var i=b.dataset.i;esc[i]=esc[i]===b.dataset.r?undefined:b.dataset.r;if(!esc[i])delete esc[i];simula();});
   document.querySelectorAll("[data-preset]").forEach(function(b){b.addEventListener("click",function(){
     var v=b.dataset.preset;esc={};
-    if(v==="vveev"){esc={0:"v",1:"v",2:"d"};}
-    else if(v==="evve"){esc={0:"v",1:"v",2:"e"};}
-    else if(v==="dedd"){esc={0:"d",1:"e",2:"d"};}
+    if(v==="vv"){esc={0:"v",1:"v"};}
+    else if(v==="ve"){esc={0:"v",1:"e"};}
+    else if(v==="dd"){esc={0:"d",1:"d"};}
     simula();});});
 
   var rz;window.addEventListener("resize",function(){clearTimeout(rz);rz=setTimeout(function(){barras();linha();},150);});
