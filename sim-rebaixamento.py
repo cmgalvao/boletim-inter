@@ -1,11 +1,11 @@
 import numpy as np, json, collections
-rng=np.random.default_rng(20261125)
-T={ # P,J,V,GP,GC  (tabela valorfinal.com.br atualizada 25/11/2026 00:00, apos 36a rodada + Chapecoense 3x0 Palmeiras da 37a; Atletico-MG x Corinthians pendente 25/11 20h)
+rng=np.random.default_rng(20261127)
+T={ # P,J,V,GP,GC  (valorfinal.com.br, atualizado 27/11/2026 06:00, apos 36a rodada + 2 jogos da 37a: Sao Paulo 3x1 Remo e Chapecoense 3x0 Palmeiras)
 "Flamengo":(80,36,24,74,31),"Palmeiras":(74,37,21,64,29),"Cruzeiro":(66,36,20,59,50),"Fluminense":(63,36,18,57,42),
-"Athletico-PR":(57,36,16,56,47),"Bahia":(54,36,14,50,46),"Atlético-MG":(51,35,14,44,40),"Bragantino":(50,36,14,46,41),
-"Santos":(50,36,13,51,51),"São Paulo":(45,36,12,40,41),"Botafogo":(43,36,11,47,58),"Coritiba":(45,36,12,41,52),
+"Athletico-PR":(57,36,16,56,47),"Bahia":(54,36,14,50,46),"Atlético-MG":(52,36,14,45,41),"Bragantino":(50,36,14,46,41),
+"Santos":(50,36,13,51,51),"São Paulo":(48,37,13,43,42),"Botafogo":(43,36,11,47,58),"Coritiba":(45,36,12,41,52),
 "Vasco":(47,36,13,47,52),"Mirassol":(41,36,10,39,49),"Vitória":(44,36,12,42,54),"Internacional":(38,36,9,41,49),
-"Corinthians":(40,35,10,40,42),"Grêmio":(41,36,10,40,47),"Remo":(32,36,7,41,61),"Chapecoense":(24,37,5,37,74)}
+"Corinthians":(41,36,10,41,43),"Grêmio":(41,36,10,40,47),"Remo":(32,37,7,42,64),"Chapecoense":(24,37,5,37,74)}
 gp=sum(v[3] for v in T.values());gc=sum(v[4] for v in T.values());J=sum(v[1] for v in T.values())
 assert gp==gc,(gp,gc)
 avg=gp/J  # gols por time por jogo
@@ -13,10 +13,9 @@ K=8
 att={t:((v[3]+K*avg)/(v[1]+K))/avg for t,v in T.items()}
 dfn={t:((v[4]+K*avg)/(v[1]+K))/avg for t,v in T.items()}
 F=[
-("Atlético-MG","Corinthians"),
-("São Paulo","Remo"),("Fluminense","Cruzeiro"),("Botafogo","Bahia"),("Coritiba","Flamengo"),("Vitória","Santos"),("Corinthians","Grêmio"),("Internacional","Bragantino"),("Mirassol","Athletico-PR"),("Atlético-MG","Vasco"),
-("Flamengo","Chapecoense"),("Vasco","Vitória"),("Santos","Botafogo"),("Palmeiras","Coritiba"),("Bragantino","Fluminense"),("Cruzeiro","Internacional"),("Grêmio","Mirassol"),("Athletico-PR","São Paulo"),("Bahia","Atlético-MG"),("Remo","Corinthians")]
-assert len(F)==20
+("Fluminense","Cruzeiro"),("Botafogo","Bahia"),("Coritiba","Flamengo"),("Vitória","Santos"),("Corinthians","Grêmio"),("Internacional","Bragantino"),("Mirassol","Athletico-PR"),("Atlético-MG","Vasco"),
+("Athletico-PR","São Paulo"),("Bahia","Atlético-MG"),("Bragantino","Fluminense"),("Cruzeiro","Internacional"),("Flamengo","Chapecoense"),("Grêmio","Mirassol"),("Palmeiras","Coritiba"),("Remo","Corinthians"),("Santos","Botafogo"),("Vasco","Vitória")]
+assert len(F)==18
 cnt=collections.Counter(); 
 for h,a in F: cnt[h]+=1;cnt[a]+=1
 for t,v in T.items(): assert v[1]+cnt[t]==38,(t,v[1],cnt[t])
